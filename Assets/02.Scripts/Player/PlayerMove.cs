@@ -1,8 +1,15 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed = 7.0f;
+    private CharacterController _controller;
+
+    private void Awake()
+    {
+        _controller = GetComponent<CharacterController>();
+    }
     
     private void Update()
     {
@@ -13,6 +20,6 @@ public class PlayerMove : MonoBehaviour
         direction.Normalize();
         direction = Camera.main.transform.TransformDirection(direction);
         
-        transform.position += direction * (_movementSpeed * Time.deltaTime);
+        _controller.Move(direction * (_movementSpeed * Time.deltaTime));
     }
 }
