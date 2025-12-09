@@ -11,7 +11,7 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private float  _regenerationRate;
     [SerializeField] private float  _regenerateCooldown;
     private float  _lastUseStaminaTime;
-    public static Action OnStaminaChanged;
+    public Action<float, float> OnStaminaChanged;
     private float Stamina
     {
         get => _stamina;
@@ -19,7 +19,7 @@ public class PlayerStat : MonoBehaviour
         {
             if (Mathf.Approximately(_stamina, value)) return;
             _stamina = Mathf.Clamp(value, 0, _maxStamina );
-            OnStaminaChanged?.Invoke();
+            OnStaminaChanged?.Invoke(Stamina, _maxStamina);
         }
     }
     

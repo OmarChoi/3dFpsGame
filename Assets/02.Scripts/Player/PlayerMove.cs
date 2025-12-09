@@ -9,15 +9,15 @@ public class PlayerMove : MonoBehaviour
     
     [Header("Movement")]
     [Space]
-    [SerializeField] private float _movementSpeed = 7.0f;
-    [SerializeField] private float _runningSpeed = 2.0f;
-    [SerializeField] private float _runStaminaUsage = 1.0f;
+    [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _runningSpeed;
+    [SerializeField] private float _runStaminaUsage;
     private float _staminaUseTime;
     
     [Header("Jump")]
     [Space]
-    [SerializeField] private float _jumpPower = 5.0f;
-    [SerializeField] private float _jumpStaminaUsage = 10.0f;
+    [SerializeField] private float _jumpPower;
+    [SerializeField] private float _jumpStaminaUsage;
     private const float Gravity = -9.81f;
     private float _yVelocity = 0.0f;    // 중력에 의해 누적될 y값 변수
     
