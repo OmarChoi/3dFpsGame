@@ -548,10 +548,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 766106898}
-  _yMinLimit: -20
-  _yMaxLimit: 80
+  _yMinLimit: -90
+  _yMaxLimit: 90
   _rotationSpeed: 200
-  _offset: {x: 0, y: 4, z: -8}
+  _offset: {x: 0, y: 2.5, z: 0}
   _distance: 5
 --- !u!114 &330585549
 MonoBehaviour:
