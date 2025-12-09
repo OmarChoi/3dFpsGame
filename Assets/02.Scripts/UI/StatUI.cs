@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StatUI : MonoBehaviour
 {
-    private PlayerStat _playerStat;
+    private PlayerStat _stat;
     
     [Header("UI")]
     [Space]
@@ -12,19 +12,14 @@ public class StatUI : MonoBehaviour
 
     private void Awake()
     {
-        _playerStat = FindFirstObjectByType<PlayerStat>();
+        _stat = FindFirstObjectByType<PlayerStat>();
+    }
+
+    private void Update()
+    {
+        UpdateStaminaUI(_stat.Stamina.Value, _stat.Stamina.MaxValue);
     }
     
-    private void OnEnable()
-    {
-        _playerStat.OnStaminaChanged += UpdateStaminaUI;
-    }
-
-    private void OnDisable()
-    {
-        _playerStat.OnStaminaChanged -= UpdateStaminaUI;
-    }
-
     private void UpdateStaminaUI(float stamina, float maxStamina)
     {
         _staminaBar.value = stamina / maxStamina;

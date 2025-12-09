@@ -4,43 +4,31 @@ using UnityEngine.Serialization;
 
 public class PlayerStat : MonoBehaviour
 {
-    [Header("Stamina")]
-    [Space]
-    [SerializeField] private float  _stamina;
-    [SerializeField] private float  _maxStamina;
-    [SerializeField] private float  _regenerationRate;
-    [SerializeField] private float  _regenerateCooldown;
-    private float  _lastUseStaminaTime;
-    public Action<float, float> OnStaminaChanged;
-    private float Stamina
-    {
-        get => _stamina;
-        set
-        {
-            if (Mathf.Approximately(_stamina, value)) return;
-            _stamina = Mathf.Clamp(value, 0, _maxStamina );
-            OnStaminaChanged?.Invoke(Stamina, _maxStamina);
-        }
-    }
+    [SerializeField] private ConsumableStat _stamina;
+    public ConsumableStat Stamina => _stamina;
+    [SerializeField] private ConsumableStat _health;
+    public ConsumableStat Health => _health;
+
+    [SerializeField] private ValueStat _damage;
+    public float Damage => _damage.Value;
+    [SerializeField] private ValueStat _moveSpeed;
+    public float MoveSpeed => _moveSpeed.Value;
+    [SerializeField] private ValueStat _runSpeed;
+    public float RunSpeed => _runSpeed.Value;
+    [SerializeField] private ValueStat _jumpPower;
+    public float JumpPower => _jumpPower.Value;
     
+    private void Start()
+    {
+        _health.Initialize();
+        _stamina.Initialize();
+    }
+
     private void Update()
     {
-        RegenerateStamina();
-    }
-
-    private void RegenerateStamina()
-    {
-        if (Mathf.Approximately(Stamina, _maxStamina)) return;
-        float currentTime = Time.time;
-        if (currentTime - _lastUseStaminaTime < _regenerateCooldown) return;
-        Stamina += _maxStamina * _regenerationRate * Time.deltaTime;
-    }
-
-    public bool TryUseStamina(float stamina)
-    {
-        if (Stamina < stamina) return false;
-        Stamina -= stamina;
-        _lastUseStaminaTime = Time.time;
-        return true;
+        float deltaTime = Time.deltaTime;
+        
+        _health.Regenerate(deltaTime);
+        _stamina.Regenerate(deltaTime);
     }
 }

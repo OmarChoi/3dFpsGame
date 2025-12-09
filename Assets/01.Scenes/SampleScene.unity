@@ -1025,11 +1025,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06510161ee01d74eb8c71c8196bd834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 7
-  _runningSpeed: 14
-  _runStaminaUsage: 10
-  _jumpPower: 5
-  _jumpStaminaUsage: 20
+  _config:
+    Gravity: -9.8
+    RunStaminaUsage: 10
+    JumpStaminaUsage: 20
   _maxJumpCount: 2
 --- !u!143 &766106901
 CharacterController:
@@ -1068,10 +1067,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58177c7939f13544bbed29ba1a3eb6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stamina: 100
-  _maxStamina: 100
-  _regenerationRate: 0.05
-  _regenerateCooldown: 1
+  _stamina:
+    _value: 100
+    _maxValue: 100
+    _regenValue: 2
+  _health:
+    _value: 100
+    _maxValue: 100
+    _regenValue: 10
+  _damage:
+    _value: 10
+  _moveSpeed:
+    _value: 7
+  _runSpeed:
+    _value: 14
+  _jumpPower:
+    _value: 5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

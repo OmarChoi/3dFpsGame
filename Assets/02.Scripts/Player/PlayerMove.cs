@@ -3,25 +3,22 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController)), RequireComponent(typeof(PlayerStat))]
 public class PlayerMove : MonoBehaviour
 {
+    [System.Serializable]
+    public class MoveConfig
+    {
+        public float Gravity;
+        public float RunStaminaUsage;
+        public float JumpStaminaUsage;
+    }
+
     private CharacterController _controller;
     private PlayerStat _stat;
     private Camera _mainCamera;
+    [SerializeField] private MoveConfig _config;
     
-    [Header("Movement")]
-    [Space]
-    [SerializeField] private float _movementSpeed;
-    [SerializeField] private float _runningSpeed;
-    [SerializeField] private float _runStaminaUsage;
-    private float _staminaUseTime;
-    
-    [Header("Jump")]
-    [Space]
-    [SerializeField] private float _jumpPower;
-    [SerializeField] private float _jumpStaminaUsage;
     [SerializeField] private float _maxJumpCount;
+    private float _yVelocity;
     private int _jumpCounter;
-    private const float Gravity = -9.81f;
-    private float _yVelocity;    // 중력에 의해 누적될 y값 변수
     
     private void Awake()
     {
@@ -39,8 +36,8 @@ public class PlayerMove : MonoBehaviour
     private float GetSpeed()
     {
         bool canRun = Input.GetKey(KeyCode.LeftShift) && 
-                      _stat.TryUseStamina(_runStaminaUsage * Time.deltaTime);
-        return canRun ? _runningSpeed : _movementSpeed;
+                      _stat.Stamina.TryConsume(_config.RunStaminaUsage * Time.deltaTime);
+        return canRun ? _stat.RunSpeed : _stat.MoveSpeed;
     }
     
     private void Move()
@@ -64,23 +61,23 @@ public class PlayerMove : MonoBehaviour
     
     private void Jump()
     {
-        _yVelocity += Gravity * Time.deltaTime;
+        _yVelocity += _config.Gravity * Time.deltaTime;
         if (!Input.GetButtonDown("Jump")) return;
 
         if (_controller.isGrounded)
         {
             _jumpCounter = 1;
-            _yVelocity = _jumpPower;
+            _yVelocity = _stat.JumpPower;
             return;
         }
 
         bool canAirJump = _jumpCounter < _maxJumpCount 
-                          && _stat.TryUseStamina(_jumpStaminaUsage);
+                          && _stat.Stamina.TryConsume(_config.JumpStaminaUsage);
 
         if (canAirJump)
         {
             _jumpCounter++;
-            _yVelocity = _jumpPower;
+            _yVelocity = _stat.JumpPower;
         }
     }
 }
