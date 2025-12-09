@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerStat : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private ConsumableStat _stamina;
     public ConsumableStat Stamina => _stamina;

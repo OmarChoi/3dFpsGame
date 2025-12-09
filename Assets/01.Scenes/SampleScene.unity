@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d149f54a7d7e49a7ea9ac5879ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionEffectPrefab: {fileID: 7522982781472501662, guid: 017c9fcd02ca72049806a4014da0bea6, type: 3}
+  _explosionEffectPrefab: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
 --- !u!54 &1350409550
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1572,7 +1572,7 @@ GameObject:
   - component: {fileID: 1409091532}
   - component: {fileID: 1409091533}
   m_Layer: 5
-  m_Name: StatUI
+  m_Name: StatsUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

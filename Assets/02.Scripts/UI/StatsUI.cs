@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatUI : MonoBehaviour
+public class StatsUI : MonoBehaviour
 {
-    private PlayerStat _stat;
+    private PlayerStats _stats;
     
     [Header("UI")]
     [Space]
@@ -12,12 +12,12 @@ public class StatUI : MonoBehaviour
 
     private void Awake()
     {
-        _stat = FindFirstObjectByType<PlayerStat>();
+        _stats = FindFirstObjectByType<PlayerStats>();
     }
 
     private void Update()
     {
-        UpdateStaminaUI(_stat.Stamina.Value, _stat.Stamina.MaxValue);
+        UpdateStaminaUI(_stats.Stamina.Value, _stats.Stamina.MaxValue);
     }
     
     private void UpdateStaminaUI(float stamina, float maxStamina)

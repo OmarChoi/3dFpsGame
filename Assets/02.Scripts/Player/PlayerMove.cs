@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController)), RequireComponent(typeof(PlayerStat))]
+[RequireComponent(typeof(CharacterController)), RequireComponent(typeof(PlayerStats))]
 public class PlayerMove : MonoBehaviour
 {
     [System.Serializable]
@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     private CharacterController _controller;
-    private PlayerStat _stat;
+    private PlayerStats _stats;
     private Camera _mainCamera;
     [SerializeField] private MoveConfig _config;
     
@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        _stat = GetComponent<PlayerStat>();
+        _stats = GetComponent<PlayerStats>();
         _mainCamera = Camera.main;
     }
     
@@ -36,8 +36,8 @@ public class PlayerMove : MonoBehaviour
     private float GetSpeed()
     {
         bool canRun = Input.GetKey(KeyCode.LeftShift) && 
-                      _stat.Stamina.TryConsume(_config.RunStaminaUsage * Time.deltaTime);
-        return canRun ? _stat.RunSpeed : _stat.MoveSpeed;
+                      _stats.Stamina.TryConsume(_config.RunStaminaUsage * Time.deltaTime);
+        return canRun ? _stats.RunSpeed : _stats.MoveSpeed;
     }
     
     private void Move()
@@ -67,17 +67,17 @@ public class PlayerMove : MonoBehaviour
         if (_controller.isGrounded)
         {
             _jumpCounter = 1;
-            _yVelocity = _stat.JumpPower;
+            _yVelocity = _stats.JumpPower;
             return;
         }
 
         bool canAirJump = _jumpCounter < _maxJumpCount 
-                          && _stat.Stamina.TryConsume(_config.JumpStaminaUsage);
+                          && _stats.Stamina.TryConsume(_config.JumpStaminaUsage);
 
         if (canAirJump)
         {
             _jumpCounter++;
-            _yVelocity = _stat.JumpPower;
+            _yVelocity = _stats.JumpPower;
         }
     }
 }
