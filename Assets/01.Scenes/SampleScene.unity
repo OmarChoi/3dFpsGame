@@ -1027,9 +1027,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 7
   _runningSpeed: 14
-  _runStaminaUsage: 1
+  _runStaminaUsage: 10
   _jumpPower: 5
-  _jumpStaminaUsage: 1
+  _jumpStaminaUsage: 20
+  _maxJumpCount: 2
 --- !u!143 &766106901
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1069,7 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stamina: 100
   _maxStamina: 100
-  _regenerationRate: 0.02
+  _regenerationRate: 0.05
   _regenerateCooldown: 1
 --- !u!1 &832575517
 GameObject:
