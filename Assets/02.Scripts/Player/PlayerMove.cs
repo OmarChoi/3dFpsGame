@@ -1,39 +1,75 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController)), RequireComponent(typeof(PlayerStat))]
 public class PlayerMove : MonoBehaviour
 {
     private CharacterController _controller;
+    private PlayerStat _stat;
+    private Camera _mainCamera;
     
+    [Header("Movement")]
+    [Space]
     [SerializeField] private float _movementSpeed = 7.0f;
+    [SerializeField] private float _runningSpeed = 2.0f;
+    [SerializeField] private float _runStaminaUsage = 1.0f;
+    private float _staminaUseTime;
     
-    private readonly float _gravity = -9.81f;
-    private float _yVelocity = 0.0f;    // 중력에 의해 누적될 y값 변수
+    [Header("Jump")]
+    [Space]
     [SerializeField] private float _jumpPower = 5.0f;
+    [SerializeField] private float _jumpStaminaUsage = 10.0f;
+    private const float Gravity = -9.81f;
+    private float _yVelocity = 0.0f;    // 중력에 의해 누적될 y값 변수
     
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        _stat = GetComponent<PlayerStat>();
+        _mainCamera = Camera.main;
     }
     
     private void Update()
     {
-        _yVelocity += _gravity * Time.deltaTime;
-        
+        Move();
+    }
+
+    private float GetSpeed()
+    {
+        float speed = _movementSpeed;
+        if (Input.GetKey(KeyCode.LeftShift) && _stat.TryUseStamina(_runStaminaUsage * Time.deltaTime))
+        {
+            speed = _runningSpeed;
+        }
+        return speed;
+    }
+    
+    private void Move()
+    {
+        float movementSpeed = GetSpeed();
+        float yVelocity = GetYVelocity();
+        Vector3 direction = GetDirection(yVelocity);
+        _controller.Move(direction * (movementSpeed * Time.deltaTime));
+    }
+
+    private Vector3 GetDirection(float yVelocity)
+    {        
         float xMovement = Input.GetAxis("Horizontal");
         float zMovement = Input.GetAxis("Vertical");
         
         Vector3 direction = new Vector3(xMovement, 0, zMovement);
         direction.Normalize();
-
+        direction = _mainCamera.transform.TransformDirection(direction);
+        direction.y = yVelocity;
+        return direction;
+    }
+    
+    private float GetYVelocity()
+    {
+        _yVelocity += Gravity * Time.deltaTime;
         if (Input.GetButtonDown("Jump") && _controller.isGrounded)
         {
             _yVelocity = _jumpPower;
         }
-        
-        direction = Camera.main.transform.TransformDirection(direction);
-        direction.y = _yVelocity;
-        
-        _controller.Move(direction * (_movementSpeed * Time.deltaTime));
+        return _yVelocity;
     }
 }
