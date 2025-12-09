@@ -5,7 +5,7 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private Transform _fireTransform;
     [SerializeField] private Bomb _bombPrefab;
     [SerializeField] private float _throwPower = 15f;
-
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))
