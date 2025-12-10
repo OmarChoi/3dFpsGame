@@ -29,7 +29,8 @@ public class PlayerMove : MonoBehaviour
     
     private void Update()
     {
-        Jump();
+        ApplyGravity();
+        HandleJump();
         Move();
     }
 
@@ -59,9 +60,13 @@ public class PlayerMove : MonoBehaviour
         return direction;
     }
     
-    private void Jump()
+    private void ApplyGravity()
     {
         _yVelocity += _config.Gravity * Time.deltaTime;
+    }
+
+    private void HandleJump()
+    {
         if (!Input.GetButtonDown("Jump")) return;
 
         if (_controller.isGrounded)
