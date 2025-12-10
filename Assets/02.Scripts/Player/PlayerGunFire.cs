@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerGunFire : MonoBehaviour
 {
-    public  event Action<int> OnBulletCountChanged;
-    public  event Action<int> OnTotalBulletCountChanged;
+    public event Action<int> OnBulletCountChanged;
+    public event Action<int> OnTotalBulletCountChanged;
+    public event Action<float> OnReload;
 
     
     [SerializeField] private Transform _firePosition;
@@ -17,15 +19,14 @@ public class PlayerGunFire : MonoBehaviour
     
     [Header("탄창")]
     [Space]
-    private int _remainBullet;
     [SerializeField] private int _magazineSize;
     [SerializeField] private int _totalBullet;
     [SerializeField] private float _reloadTime;
-
-    private void Awake()
+    private int _remainBullet;
+    private Coroutine _reloadCoroutine;
+    private void Start()
     {
-        _remainBullet = _magazineSize;
-        OnBulletCountChanged?.Invoke(_remainBullet);
+        Reload();
     }
     
     private void Update()
@@ -37,8 +38,19 @@ public class PlayerGunFire : MonoBehaviour
                 Shot();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TryReload();
+        }
     }
 
+    private void TryReload()
+    {
+        if (_reloadCoroutine != null) return;
+        _reloadCoroutine = StartCoroutine(ReloadCoroutine());
+    }
+    
     private bool CanShot()
     {
         if (_fireSpeed <= 0) return false;
@@ -55,6 +67,31 @@ public class PlayerGunFire : MonoBehaviour
         _remainBullet--;
         OnBulletCountChanged?.Invoke(_remainBullet);
         return true;
+    }
+
+    private void Reload()
+    {
+        int chargingBullet = _magazineSize - _remainBullet;
+        _totalBullet -= chargingBullet;
+        OnTotalBulletCountChanged?.Invoke(_totalBullet);
+        
+        _remainBullet = _magazineSize;
+        OnBulletCountChanged?.Invoke(_remainBullet);
+    }
+
+    private IEnumerator ReloadCoroutine()
+    {
+        float elapsedTime = 0.0f;
+        OnReload?.Invoke(0.0f);
+        while (elapsedTime < _reloadTime)
+        {
+            elapsedTime += Time.deltaTime;
+            OnReload?.Invoke(elapsedTime / _reloadTime);
+            yield return null;
+        }
+        Reload();
+        OnReload?.Invoke(1.0f);
+        _reloadCoroutine = null;
     }
     
     private void Shot()
