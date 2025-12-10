@@ -19,7 +19,6 @@ public class WeaponUI : MonoBehaviour
     [Header("재장전")]
     [Space]
     [SerializeField] private Slider _reloadProgressBar;
-    private bool _isReloading = false;
     
     private void Awake()
     {

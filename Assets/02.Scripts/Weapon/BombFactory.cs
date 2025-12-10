@@ -35,6 +35,7 @@ public class BombFactory : MonoBehaviour
     private void OnGetBomb(Bomb bomb)
     {
         bomb.gameObject.SetActive(true);
+        bomb.Reset();
     }
 
     private void OnReleaseBomb(Bomb bomb)
