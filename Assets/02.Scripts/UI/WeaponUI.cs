@@ -23,17 +23,17 @@ public class WeaponUI : MonoBehaviour
     private void Awake()
     {
         _playerBombFire.OnBombCountChanged += UpdateBombCount;
-        _playerGunFire.OnBulletCountChanged += UpdateBulletCount;
-        _playerGunFire.OnTotalBulletCountChanged += UpdateTotalBulletCount;
-        _playerGunFire.OnReload += UpdateReloadProgressBar;
+        _playerGunFire.GunWeapon.Magazine.OnBulletCountChanged += UpdateBulletCount;
+        _playerGunFire.GunWeapon.Magazine.OnTotalBulletCountChanged += UpdateTotalBulletCount;
+        _playerGunFire.GunWeapon.OnReload += UpdateReloadProgressBar;
     }
 
     private void OnDisable()
     {
         _playerBombFire.OnBombCountChanged -= UpdateBombCount;
-        _playerGunFire.OnBulletCountChanged -= UpdateBulletCount;
-        _playerGunFire.OnTotalBulletCountChanged -= UpdateTotalBulletCount;
-        _playerGunFire.OnReload -= UpdateReloadProgressBar;
+        _playerGunFire.GunWeapon.Magazine.OnBulletCountChanged -= UpdateBulletCount;
+        _playerGunFire.GunWeapon.Magazine.OnTotalBulletCountChanged -= UpdateTotalBulletCount;
+        _playerGunFire.GunWeapon.OnReload -= UpdateReloadProgressBar;
     }
     
     private void UpdateBombCount(int count)

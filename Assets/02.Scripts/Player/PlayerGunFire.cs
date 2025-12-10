@@ -1,50 +1,45 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 public class PlayerGunFire : MonoBehaviour
 {
-    public event Action<int> OnBulletCountChanged;
-    public event Action<int> OnTotalBulletCountChanged;
-    public event Action<float> OnReload;
-
+    [Header("무기 설정")]
+    [SerializeField] private GunWeapon _gunWeapon = new GunWeapon();
+    public GunWeapon GunWeapon => _gunWeapon;
     
+    [Header("발사 위치")]
     [SerializeField] private Transform _firePosition;
+    
+    [Header("이펙트")]
     [SerializeField] private ParticleSystem _hitEffect;
-
-    [Header("발사속도")]
-    [Space]
-    [SerializeField] private float _fireSpeed;
-    private float _lastFireTime;
     
-    [Header("반동")]
-    [Space]    
-    [SerializeField] float _minRecoilStrengthX;
-    [SerializeField] float _maxRecoilStrengthX;
-    [SerializeField] float _recoilStrengthY;
-    [SerializeField] float _recoilRecoverySpeed = 1.0f;
+    private Camera _mainCamera;
 
-    
-    [Header("탄창")]
-    [Space]
-    [SerializeField] private int _magazineSize;
-    [SerializeField] private int _totalBullet;
-    [SerializeField] private float _reloadTime;
-    private int _remainBullet;
-    private Coroutine _reloadCoroutine;
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+        _gunWeapon.OnCoroutineRequested += StartCoroutine;
+    }
+
+    private void OnDestroy()
+    {
+        _gunWeapon.OnCoroutineRequested -= StartCoroutine;
+    }
+
     private void Start()
     {
-        Reload();
+        _gunWeapon.Init();
     }
-    
+
     private void Update()
+    {
+        HandleInput();
+    }
+
+    private void HandleInput()
     {
         if (Input.GetMouseButton(0))
         {
-            if (CanShot() && CheckBullet())
-            {
-                Shot();
-            }
+            TryFire();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -53,71 +48,16 @@ public class PlayerGunFire : MonoBehaviour
         }
     }
 
+    private void TryFire()
+    {
+        Vector3 firePosition = _firePosition.position;
+        Vector3 fireDirection = _mainCamera.transform.forward;
+        
+        _gunWeapon.TryShot(firePosition, fireDirection, _hitEffect, _mainCamera);
+    }
+
     private void TryReload()
     {
-        if (_reloadCoroutine != null) return;
-        _reloadCoroutine = StartCoroutine(ReloadCoroutine());
+        _gunWeapon.TryReload();
     }
-    
-    private bool CanShot()
-    {
-        if (_fireSpeed <= 0) return false;
-        
-        float currentTime = Time.time;
-        float duration = currentTime - _lastFireTime;
-        float cooldown = 1 / _fireSpeed;
-        return duration > cooldown;
-    }
-
-    private bool CheckBullet()
-    {
-        if (_remainBullet <= 0) return false;
-        _remainBullet--;
-        OnBulletCountChanged?.Invoke(_remainBullet);
-        return true;
-    }
-
-    private void Reload()
-    {
-        int chargingBullet = _magazineSize - _remainBullet;
-        _totalBullet -= chargingBullet;
-        OnTotalBulletCountChanged?.Invoke(_totalBullet);
-        
-        _remainBullet = _magazineSize;
-        OnBulletCountChanged?.Invoke(_remainBullet);
-    }
-
-    private IEnumerator ReloadCoroutine()
-    {
-        float elapsedTime = 0.0f;
-        OnReload?.Invoke(0.0f);
-        while (elapsedTime < _reloadTime)
-        {
-            elapsedTime += Time.deltaTime;
-            OnReload?.Invoke(elapsedTime / _reloadTime);
-            yield return null;
-        }
-        Reload();
-        OnReload?.Invoke(1.0f);
-        _reloadCoroutine = null;
-    }
-    
-    private void Shot()
-    {
-        _lastFireTime = Time.time;
-        Ray ray = new Ray(_firePosition.position, Camera.main.transform.forward);
-        RaycastHit hitInfo = new RaycastHit();
-        bool isHit = Physics.Raycast(ray, out hitInfo);
-        if (isHit)
-        {
-            _hitEffect.transform.position = hitInfo.point;
-            _hitEffect.transform.forward = hitInfo.normal;
-            _hitEffect.Play();
-        }
-        
-        
-        float recoilX = UnityEngine.Random.Range(_minRecoilStrengthX, _maxRecoilStrengthX);
-        Camera.main.GetComponent<CameraController>().CurrentCamera.AddRecoil(_recoilStrengthY, recoilX);
-    }
-    
 }
