@@ -17,6 +17,14 @@ public class PlayerGunFire : MonoBehaviour
     [SerializeField] private float _fireSpeed;
     private float _lastFireTime;
     
+    [Header("반동")]
+    [Space]    
+    [SerializeField] float _minRecoilStrengthX;
+    [SerializeField] float _maxRecoilStrengthX;
+    [SerializeField] float _recoilStrengthY;
+    [SerializeField] float _recoilRecoverySpeed = 1.0f;
+
+    
     [Header("탄창")]
     [Space]
     [SerializeField] private int _magazineSize;
@@ -106,6 +114,10 @@ public class PlayerGunFire : MonoBehaviour
             _hitEffect.transform.forward = hitInfo.normal;
             _hitEffect.Play();
         }
+        
+        
+        float recoilX = UnityEngine.Random.Range(_minRecoilStrengthX, _maxRecoilStrengthX);
+        Camera.main.GetComponent<CameraController>().CurrentCamera.AddRecoil(_recoilStrengthY, recoilX);
     }
     
 }

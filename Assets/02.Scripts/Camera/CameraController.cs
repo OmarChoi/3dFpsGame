@@ -14,8 +14,10 @@ public class CameraController : MonoBehaviour
     private BaseCamera[] _cameras;
     private ECameraType _currentType = ECameraType.FirstView;
     private ECameraType _previousType;
+    public BaseCamera CurrentCamera => _cameras[(int)_currentType];
 
     private bool _isSwitching;
+    private bool _isShot;
     private float _blend;
 
     private void Awake()
@@ -30,6 +32,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (_isShot == true) return;
         if (_isSwitching)
         {
             ProcessCameraTransition();
@@ -50,13 +53,13 @@ public class CameraController : MonoBehaviour
 
     private void StartChangingCamera()
     {
-        BaseCamera prevCamera = _cameras[(int)_currentType];
+        BaseCamera prevCamera = CurrentCamera;
         (float x, float y) = prevCamera.GetAngle();
 
         _previousType = _currentType;
         _currentType = (_currentType == ECameraType.FirstView) ? ECameraType.ThirdView : ECameraType.FirstView;
 
-        BaseCamera nextCamera = _cameras[(int)_currentType];
+        BaseCamera nextCamera = CurrentCamera;
         nextCamera.Init(x, y);
 
         _blend = 0f;
@@ -70,7 +73,7 @@ public class CameraController : MonoBehaviour
     private void ProcessCameraTransition()
     {
         BaseCamera prevCamera = _cameras[(int)_previousType];
-        BaseCamera nextCamera = _cameras[(int)_currentType];
+        BaseCamera nextCamera = CurrentCamera;
 
         ApplyRotationInput(prevCamera);
         ApplyRotationInput(nextCamera);
@@ -88,7 +91,7 @@ public class CameraController : MonoBehaviour
 
     private void FollowActiveCamera()
     {
-        BaseCamera active = _cameras[(int)_currentType];
+        BaseCamera active = CurrentCamera;
         ApplyRotationInput(active);
         active.Move();
         ApplyToTransform(active.CalculateCameraPosition(), active.GetRotation());
