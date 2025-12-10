@@ -1,15 +1,19 @@
+using System;
 using UnityEngine;
 
 [System.Serializable]
 public class ConsumableStat
 {
+    public event Action<float, float> OnValueChanged;
+    
     [SerializeField] private float _value;
     [SerializeField] private float _maxValue;
     [SerializeField] private float _regenValue;
 
     public float Value => _value;
     public float MaxValue => _maxValue;
-    
+
+
     public void Initialize()
     {
         SetValue(_maxValue);
@@ -39,7 +43,7 @@ public class ConsumableStat
     
     public void IncreaseMax(float amount)
     {
-        _maxValue += amount;
+        SetMaxValue(_maxValue + amount);
     }
 
     public void Decrease(float amount)
@@ -49,16 +53,23 @@ public class ConsumableStat
     
     public void DecreaseMax(float amount)
     {
-        _maxValue -= amount;
+        float afterMaxValue = _maxValue - amount;
+        SetMaxValue(afterMaxValue);
+        if (_value > afterMaxValue)
+        {
+            SetValue(afterMaxValue);
+        }
     }
 
     public void SetValue(float value)
     {
         _value = Mathf.Clamp(value, 0, _maxValue);
+        OnValueChanged?.Invoke(_value, _maxValue);
     }
 
     public void SetMaxValue(float maxValue)
     {
         _maxValue = maxValue;
+        OnValueChanged?.Invoke(_value, _maxValue);
     }
 }

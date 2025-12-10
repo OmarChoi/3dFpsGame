@@ -6,17 +6,27 @@ public class StatsUI : MonoBehaviour
 {
     [SerializeField] private PlayerStats _stats;
     [SerializeField] private PlayerBombFire _playerBombFire;
+    [SerializeField] private PlayerGunFire _playerGunFire;
     
     [Header("UI")]
     [Space]
     [SerializeField] private Slider _healthBar;
     [SerializeField] private Slider _staminaBar;
     [SerializeField] private TextMeshProUGUI _bombCount;
+    [SerializeField] private TextMeshProUGUI _bulletCount;
 
-    private void Update()
+    private void Awake()
     {
-        UpdateStaminaUI(_stats.Stamina.Value, _stats.Stamina.MaxValue);
-        UpdateBombCount();
+        _stats.Stamina.OnValueChanged += UpdateStaminaUI;
+        // _playerGunFire.OnBulletCountChanged += UpdateBulletCountCount;
+        _playerBombFire.OnBombCountChanged += UpdateBombCount;
+    }
+
+    private void OnDisable()
+    {
+        _stats.Stamina.OnValueChanged -= UpdateStaminaUI;
+        // _playerGunFire.OnBulletCountChanged -= UpdateBulletCountCount;
+        _playerBombFire.OnBombCountChanged -= UpdateBombCount;
     }
     
     private void UpdateStaminaUI(float stamina, float maxStamina)
@@ -24,9 +34,13 @@ public class StatsUI : MonoBehaviour
         _staminaBar.value = stamina / maxStamina;
     }
 
-    private void UpdateBombCount()
+    private void UpdateBombCount(int count)
     {
-        int count = _playerBombFire.BombCount;
         _bombCount.text = $"x{count}";
+    }
+
+    private void UpdateBulletCountCount(int count, int totalCount)
+    {
+        _bulletCount.text = $"{count} / {totalCount}";
     }
 }

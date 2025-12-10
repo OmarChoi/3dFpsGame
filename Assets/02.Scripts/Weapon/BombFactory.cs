@@ -8,7 +8,7 @@ public class BombFactory : MonoBehaviour
     
     private IObjectPool<Bomb> _bombPool;
     private int _defaultCapacity = 5;
-    [SerializeField] private Bomb _bombPrefab;
+    [SerializeField] private GameObject _bombPrefab;
     [SerializeField] private ParticleSystem _bombEffect;
 
     private void Awake()
@@ -25,9 +25,10 @@ public class BombFactory : MonoBehaviour
     
     private Bomb CreateBomb()
     {
-        Bomb bomb = Instantiate(_bombPrefab, this.transform);
+        Bomb bomb = Instantiate(_bombPrefab).GetComponent<Bomb>();
         bomb.SetEffect(_bombEffect);
         bomb.gameObject.SetActive(false);
+        bomb.transform.SetParent(transform);
         return bomb;
     }
 
