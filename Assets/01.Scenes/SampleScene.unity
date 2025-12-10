@@ -599,8 +599,6 @@ RectTransform:
   m_Children:
   - {fileID: 1409091532}
   - {fileID: 2034330104}
-  - {fileID: 946901434}
-  - {fileID: 1467947958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1413,9 +1411,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePosition: {fileID: 1784039401}
   _hitEffect: {fileID: 1546527174}
-  _fireSpeed: 0
-  _magazineSize: 0
-  _totalBullet: 0
+  _fireSpeed: 5
+  _magazineSize: 30
+  _totalBullet: 150
   _reloadTime: 0
 --- !u!1 &832575517
 GameObject:
@@ -1614,11 +1612,11 @@ Transform:
   m_GameObject: {fileID: 946901431}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 268296303}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151522670
 GameObject:
@@ -2030,6 +2028,7 @@ RectTransform:
   - {fileID: 1987066940}
   - {fileID: 1212554088}
   - {fileID: 1151522671}
+  - {fileID: 1467947958}
   m_Father: {fileID: 268296303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2055,7 +2054,8 @@ MonoBehaviour:
   _healthBar: {fileID: 1987066941}
   _staminaBar: {fileID: 1212554089}
   _bombCount: {fileID: 1184541638}
-  _bulletCount: {fileID: 0}
+  _bulletCount: {fileID: 2128200114}
+  _totalBulletCount: {fileID: 107468172}
 --- !u!1 &1465669162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,7 +2117,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467947957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2125,7 +2125,7 @@ RectTransform:
   - {fileID: 64642436}
   - {fileID: 2128200113}
   - {fileID: 107468171}
-  m_Father: {fileID: 268296303}
+  m_Father: {fileID: 1409091532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.799, y: 0.024}
   m_AnchorMax: {x: 0.9824792, y: 0.112}
@@ -3090,3 +3090,4 @@ SceneRoots:
   - {fileID: 1791398833}
   - {fileID: 2101648723}
   - {fileID: 1990332030}
+  - {fileID: 946901434}
