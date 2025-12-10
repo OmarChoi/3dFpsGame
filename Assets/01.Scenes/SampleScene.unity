@@ -1797,6 +1797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65f3e92d7d66ee479cd392376bbc200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stats: {fileID: 766106902}
+  _playerBombFire: {fileID: 766106903}
   _healthBar: {fileID: 1987066941}
   _staminaBar: {fileID: 1212554089}
   _bombCount: {fileID: 1184541638}

@@ -4,19 +4,14 @@ using TMPro;
 
 public class StatsUI : MonoBehaviour
 {
-    private PlayerStats _stats;
-    private PlayerBombFire _playerBombFire;
+    [SerializeField] private PlayerStats _stats;
+    [SerializeField] private PlayerBombFire _playerBombFire;
     
     [Header("UI")]
     [Space]
     [SerializeField] private Slider _healthBar;
     [SerializeField] private Slider _staminaBar;
     [SerializeField] private TextMeshProUGUI _bombCount;
-    private void Awake()
-    {
-        _stats = FindFirstObjectByType<PlayerStats>();
-        _playerBombFire = FindFirstObjectByType<PlayerBombFire>();
-    }
 
     private void Update()
     {
