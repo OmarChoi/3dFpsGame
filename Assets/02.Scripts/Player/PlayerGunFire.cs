@@ -3,11 +3,12 @@ using UnityEngine;
 public class PlayerGunFire : MonoBehaviour
 {
     [SerializeField] private Transform _firePosition;
+    [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private float _attackRange;
     [SerializeField] private LayerMask _enemyMask;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Shot();
         }
@@ -20,7 +21,9 @@ public class PlayerGunFire : MonoBehaviour
         bool isHit = Physics.Raycast(ray, out hitInfo);
         if (isHit)
         {
-            Debug.Log(hitInfo.transform.name);
+            _hitEffect.transform.position = hitInfo.point;
+            _hitEffect.transform.forward = hitInfo.normal;
+            _hitEffect.Play();
         }
     }
 }
