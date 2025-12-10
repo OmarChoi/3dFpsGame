@@ -12,8 +12,7 @@ public class PlayerBombFire : MonoBehaviour
         {
             _bombCount--;
             Bomb bomb = BombFactory.Instance.Get(_fireTransform.position);
-            Rigidbody rigidbody = bomb.GetComponent<Rigidbody>();
-            rigidbody?.AddForce(Camera.main.transform.forward * _throwPower, ForceMode.Impulse);
+            bomb.Launch(Camera.main.transform.forward, _throwPower);
         }
     }
 }
