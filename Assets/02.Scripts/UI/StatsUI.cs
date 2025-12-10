@@ -5,7 +5,7 @@ using TMPro;
 public class StatsUI : MonoBehaviour
 {
     private PlayerStats _stats;
-    private PlayerFire _playerFire;
+    private PlayerBombFire _playerBombFire;
     
     [Header("UI")]
     [Space]
@@ -15,7 +15,7 @@ public class StatsUI : MonoBehaviour
     private void Awake()
     {
         _stats = FindFirstObjectByType<PlayerStats>();
-        _playerFire = FindFirstObjectByType<PlayerFire>();
+        _playerBombFire = FindFirstObjectByType<PlayerBombFire>();
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class StatsUI : MonoBehaviour
 
     private void UpdateBombCount()
     {
-        int count = _playerFire.BombCount;
+        int count = _playerBombFire.BombCount;
         _bombCount.text = $"x{count}";
     }
 }

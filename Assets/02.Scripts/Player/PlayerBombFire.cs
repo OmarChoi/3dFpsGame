@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class PlayerFire : MonoBehaviour
+public class PlayerBombFire : MonoBehaviour
 {
     [SerializeField] private Transform _fireTransform;
-    [SerializeField] private Bomb _bombPrefab;
     [SerializeField] private float _throwPower = 15f;
-    private int _bombCount = 5;
+    [SerializeField] private int _bombCount = 5;
     public int BombCount => _bombCount;
     private void Update()
     {
