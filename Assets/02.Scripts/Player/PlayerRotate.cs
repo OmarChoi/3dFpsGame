@@ -11,6 +11,6 @@ public class PlayerRotate : MonoBehaviour
         
         _accumulationX += mouseX * _rotationSpeed * Time.deltaTime;
         
-        transform.eulerAngles = new Vector3(0, _accumulationX, 0);
+        transform.rotation = Quaternion.Euler(0, _accumulationX, 0);
     }
 }
