@@ -10,6 +10,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     
     private float _health = 100.0f;
+    private Vector3 _startPosition;
     
     [Header("Move")]
     [Space]
@@ -22,6 +23,11 @@ public class Zombie : MonoBehaviour
     [SerializeField] private float _damage = 20.0f;
     [SerializeField] private float _attackSpeed = 2.0f;
     private float _attackTimer = 2.0f;
+
+    private void Awake()
+    {
+        _startPosition = transform.position;
+    }
     
     private void Update()
     {
@@ -55,24 +61,39 @@ public class Zombie : MonoBehaviour
         }
     }
 
+    private void Move(Vector3 targetPosition)
+    {        
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        _characterController.Move(direction * (_moveSpeed * Time.deltaTime));
+    }
+    
     private void Trace()
     {
         // Todo. Run Animation 실행
-        Vector3 direction = (_player.transform.position - transform.position).normalized;
-        _characterController.Move(direction * (_moveSpeed * Time.deltaTime));
-        
+        Move(_player.transform.position);
         float distance = Vector3.Distance(transform.position, _player.transform.position);
         if (distance <= _attackDistance)
         {
             Debug.Log("Change State Trace -> Attack");
             State = EZombieState.Attack;
         }
+        else if (distance >= _detectDistance)
+        {
+            Debug.Log("Change State Trace -> Comeback");
+            State = EZombieState.Comeback;
+        }
     }
 
     private void Comeback()
     {
         // Todo. Run Animation 실행
-        
+        Move(_startPosition);
+        float distance = Vector3.Distance(transform.position, _startPosition);
+        if (distance <= 1.0f)
+        {
+            Debug.Log("Change State Comeback -> Idle");
+            State = EZombieState.Idle;
+        }
     }
 
     private void Attack()
