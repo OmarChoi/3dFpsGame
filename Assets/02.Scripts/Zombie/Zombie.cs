@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public EZombieState State = EZombieState.Idle;
+    private EZombieState _state = EZombieState.Idle;
 
     [SerializeField] private GameObject _player;
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private CharacterController _characterController;
     
-    private float _health = 100.0f;
+    [SerializeField] private float _health;
     private Vector3 _startPosition;
     
     private Coroutine _knockbackCoroutine;
@@ -26,6 +26,9 @@ public class Zombie : MonoBehaviour
     [SerializeField] private float _damage = 20.0f;
     [SerializeField] private float _attackSpeed = 2.0f;
     private float _attackTimer;
+    
+    [SerializeField] private float _arrivalThreshold;
+    [SerializeField] private float _deathDuration;
 
     private void Awake()
     {
@@ -35,7 +38,7 @@ public class Zombie : MonoBehaviour
     
     private void Update()
     {
-        switch (State)
+        switch (_state)
         {
             case EZombieState.Idle:
                 Idle();
@@ -52,16 +55,23 @@ public class Zombie : MonoBehaviour
             case EZombieState.Attack:
                 Attack();
                 break;
+            
+            default:
+                break;
         }
     }
 
+    private bool IsInRange(Vector3 targetPosition, float range)
+    {
+        return (targetPosition - transform.position).sqrMagnitude <= range * range;
+    }
+    
     private void Idle()
     {
         // Todo. Idle Animation 실행
-        if (Vector3.Distance(transform.position, _player.transform.position) <= _detectDistance)
+        if (IsInRange(_player.transform.position, _detectDistance))
         {
-            Debug.Log("Change State Idle -> Trace");
-            State = EZombieState.Trace;
+            _state = EZombieState.Trace;
         }
     }
 
@@ -75,16 +85,13 @@ public class Zombie : MonoBehaviour
     {
         // Todo. Run Animation 실행
         Move(_player.transform.position);
-        float distance = Vector3.Distance(transform.position, _player.transform.position);
-        if (distance <= _attackDistance)
+        if (IsInRange(_player.transform.position, _attackDistance))
         {
-            Debug.Log("Change State Trace -> Attack");
-            State = EZombieState.Attack;
+            _state = EZombieState.Attack;
         }
-        else if (distance >= _detectDistance)
+        else if (!IsInRange(_player.transform.position, _detectDistance))
         {
-            Debug.Log("Change State Trace -> Comeback");
-            State = EZombieState.Comeback;
+            _state = EZombieState.Comeback;
         }
     }
 
@@ -92,28 +99,23 @@ public class Zombie : MonoBehaviour
     {
         // Todo. Run Animation 실행
         Move(_startPosition);
-        float distance = Vector3.Distance(transform.position, _startPosition);
-        if (distance <= 1.0f)
+        if (IsInRange(_startPosition, _arrivalThreshold))
         {
-            Debug.Log("Change State Comeback -> Idle");
-            State = EZombieState.Idle;
+            _state = EZombieState.Idle;
         }
     }
 
     private void Attack()
     {
-        float distance = Vector3.Distance(transform.position, _player.transform.position);
-        if (distance > _attackDistance)
+        if (!IsInRange(_player.transform.position, _attackDistance))
         {
-            Debug.Log("Change State Attack -> Trace");
-            State = EZombieState.Trace;
+            _state = EZombieState.Trace;
             return;
         }
 
         _attackTimer += Time.deltaTime;
         if (_attackTimer >= _attackSpeed)
         {
-            Debug.Log("Attack");
             _attackTimer = 0f;
             _playerStats?.Health.Decrease(_damage);
         }
@@ -133,16 +135,16 @@ public class Zombie : MonoBehaviour
     
     public bool TryTakeDamage(float damage, Vector3 hitPoint, float knockbackForce)
     {
-        if (State == EZombieState.Death || State == EZombieState.Hit) return false;
+        if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
         _health -= damage;
         if (_health <= 0)
         {
-            State = EZombieState.Death;
+            _state = EZombieState.Death;
             StartCoroutine(DeathCoroutine());
         }
         else
         {
-            State = EZombieState.Hit;
+            _state = EZombieState.Hit;
             StartCoroutine(HitCoroutine());
             ApplyKnockback(hitPoint, knockbackForce);
         }
@@ -162,17 +164,15 @@ public class Zombie : MonoBehaviour
     
     private IEnumerator HitCoroutine()
     {
-        Debug.Log("Hit");
         // Todo. Hit Animation 실행
         yield return new WaitForSeconds(_hitDuration);
-        State = EZombieState.Idle;
+        _state = EZombieState.Idle;
     }
 
     private IEnumerator DeathCoroutine()
     {
-        Debug.Log("Death");
         // Todo. Death Animation 실행
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(_deathDuration);
         Destroy(gameObject);
     }
 }
