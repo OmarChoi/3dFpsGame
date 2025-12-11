@@ -15,26 +15,25 @@ public abstract class BaseCamera : MonoBehaviour
     
     private float _recoilX;
     private float _recoilY;
+    private float _recoilApplySpeed = 0.2f;
     
     public virtual void Rotate(float mouseX, float mouseY)
     {
         _accumulationX += mouseX * _rotationSpeed * Time.deltaTime;
         _accumulationY -= mouseY * _rotationSpeed * Time.deltaTime;
         _accumulationY = Mathf.Clamp(_accumulationY, _yMinLimit, _yMaxLimit);
-        
-        _recoilX = Mathf.Lerp(_recoilX, 0f, Time.deltaTime);
-        _recoilY = Mathf.Lerp(_recoilY, 0f, Time.deltaTime);
     }
 
     public virtual Quaternion GetRotation()
     {
-        return Quaternion.Euler(_accumulationY + _recoilY, _accumulationX + _recoilX, 0);
+        return Quaternion.Euler(_accumulationY, _accumulationX, 0);
     }
     
     public void AddRecoil(float verticalRecoil, float horizontalRecoil)
     {
-        _recoilY -= verticalRecoil;
-        _recoilX += horizontalRecoil;
+        _accumulationY -= verticalRecoil;
+        _accumulationX += horizontalRecoil;
+        _accumulationY = Mathf.Clamp(_accumulationY, _yMinLimit, _yMaxLimit);
     }
     
     public void Init(float x, float y)
@@ -45,6 +44,6 @@ public abstract class BaseCamera : MonoBehaviour
 
     public (float, float) GetAngle()
     {
-        return (_accumulationX + _recoilX, _accumulationY + _recoilY);
+        return (_accumulationX, _accumulationY);
     }
 }
