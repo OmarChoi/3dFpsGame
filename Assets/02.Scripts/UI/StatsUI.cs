@@ -10,7 +10,7 @@ public class StatsUI : MonoBehaviour
     [SerializeField] private Slider _healthBar;
     [SerializeField] private Slider _staminaBar;
 
-    private void Awake()
+    private void OnEnable()
     {
         _stats.Stamina.OnValueChanged += UpdateStaminaUI;
         _stats.Health.OnValueChanged += UpdateHealthUI;

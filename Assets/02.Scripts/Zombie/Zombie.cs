@@ -1,19 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class Zombie : MonoBehaviour
 {
     private EZombieState _state = EZombieState.Idle;
 
     [SerializeField] private GameObject _player;
     [SerializeField] private PlayerStats _playerStats;
-    [SerializeField] private CharacterController _characterController;
+    private CharacterController _characterController;
     
     [SerializeField] private float _health;
     private Vector3 _startPosition;
     
     private Coroutine _knockbackCoroutine;
-    private float _hitDuration = 0.3f;
+    [SerializeField] private float _hitDuration = 0.3f;
     
     [Header("Move")]
     [Space]
@@ -34,6 +35,7 @@ public class Zombie : MonoBehaviour
     {
         _startPosition = transform.position;
         _attackTimer = _attackSpeed;
+        _characterController = GetComponent<CharacterController>();
     }
     
     private void Update()
