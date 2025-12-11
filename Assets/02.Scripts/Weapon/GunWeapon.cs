@@ -8,7 +8,7 @@ public class GunWeapon
     [Header("데미지")]
     [Space]
     [SerializeField] private float _damage;
-    [SerializeField] private float _knockbackForece;
+    [SerializeField] private float _knockbackForce;
     
     [Header("발사속도")]
     [Space]
@@ -100,8 +100,10 @@ public class GunWeapon
             hitEffect.transform.forward = hitInfo.normal;
             hitEffect.Play();
             
-            Zombie zombie = hitInfo.collider.gameObject.GetComponent<Zombie>();
-            zombie?.TryTakeDamage(_damage, hitInfo.point, _knockbackForece);
+            if (hitInfo.collider.TryGetComponent(out Zombie zombie))
+            {
+                zombie.TryTakeDamage(_damage, hitInfo.point, _knockbackForce);
+            }
         }
         
         ApplyRecoil(cameraController);
