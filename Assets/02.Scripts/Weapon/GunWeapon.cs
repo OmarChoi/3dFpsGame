@@ -5,7 +5,10 @@ using UnityEngine;
 [Serializable]
 public class GunWeapon
 {
+    [Header("데미지")]
+    [Space]
     [SerializeField] private float _damage;
+    [SerializeField] private float _knockbackForece;
     
     [Header("발사속도")]
     [Space]
@@ -98,7 +101,7 @@ public class GunWeapon
             hitEffect.Play();
             
             Zombie zombie = hitInfo.collider.gameObject.GetComponent<Zombie>();
-            zombie?.TryTakeDamage(_damage);
+            zombie?.TryTakeDamage(_damage, hitInfo.point, _knockbackForece);
         }
         
         ApplyRecoil(cameraController);

@@ -1657,6 +1657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunWeapon:
     _damage: 5
+    _knockbackForece: 1
     _fireSpeed: 15
     _minRecoilStrengthX: -1.5
     _maxRecoilStrengthX: 1.5

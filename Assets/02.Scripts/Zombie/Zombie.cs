@@ -12,6 +12,9 @@ public class Zombie : MonoBehaviour
     private float _health = 100.0f;
     private Vector3 _startPosition;
     
+    private Coroutine _knockbackCoroutine;
+    private float _hitDuration = 0.3f;
+    
     [Header("Move")]
     [Space]
     [SerializeField] private float _detectDistance = 4f;
@@ -22,11 +25,12 @@ public class Zombie : MonoBehaviour
     [SerializeField] private float _attackDistance = 1.5f;
     [SerializeField] private float _damage = 20.0f;
     [SerializeField] private float _attackSpeed = 2.0f;
-    private float _attackTimer = 2.0f;
+    private float _attackTimer;
 
     private void Awake()
     {
         _startPosition = transform.position;
+        _attackTimer = _attackSpeed;
     }
     
     private void Update()
@@ -115,7 +119,19 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    public bool TryTakeDamage(float damage)
+    public void ApplyKnockback(Vector3 hitPoint, float knockbackForce)
+    {
+        Vector3 direction = (transform.position - hitPoint);
+        direction.y = 0f;
+        direction.Normalize();
+        if (_knockbackCoroutine != null)
+        {
+            StopCoroutine(_knockbackCoroutine);
+        }
+        _knockbackCoroutine = StartCoroutine(KnockbackCoroutine(direction, knockbackForce));
+    }
+    
+    public bool TryTakeDamage(float damage, Vector3 hitPoint, float knockbackForce)
     {
         if (State == EZombieState.Death || State == EZombieState.Hit) return false;
         _health -= damage;
@@ -128,15 +144,27 @@ public class Zombie : MonoBehaviour
         {
             State = EZombieState.Hit;
             StartCoroutine(HitCoroutine());
+            ApplyKnockback(hitPoint, knockbackForce);
         }
         return true;
     }
 
+    private IEnumerator KnockbackCoroutine(Vector3 direction, float knockbackForce)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < _hitDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            _characterController.Move(direction * (knockbackForce * Time.deltaTime));
+            yield return null;
+        }
+    }
+    
     private IEnumerator HitCoroutine()
     {
         Debug.Log("Hit");
         // Todo. Hit Animation 실행
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(_hitDuration);
         State = EZombieState.Idle;
     }
 
