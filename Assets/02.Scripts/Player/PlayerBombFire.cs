@@ -9,8 +9,10 @@ public class PlayerBombFire : MonoBehaviour
     [SerializeField] private int _bombCount = 5;
     public int BombCount => _bombCount;
     
+    private Camera _mainCamera;
     private void Start()
     {
+        _mainCamera = Camera.main;
         OnBombCountChanged?.Invoke(_bombCount);
     }
     
@@ -21,7 +23,7 @@ public class PlayerBombFire : MonoBehaviour
             _bombCount--;
             OnBombCountChanged?.Invoke(_bombCount);
             Bomb bomb = BombFactory.Instance.Get(_fireTransform.position);
-            bomb.Launch(Camera.main.transform.forward, _throwPower);
+            bomb.Launch(_mainCamera.transform.forward, _throwPower);
         }
     }
 }

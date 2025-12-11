@@ -31,11 +31,11 @@ public class GunWeapon
         _magazine.Init();
     }
 
-    public bool TryShot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, Camera shooterCamera)
+    public bool TryShot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
     {
         if (!CanShot()) return false;
         
-        Shot(position, direction, hitEffect, shooterCamera);
+        Shot(position, direction, hitEffect, cameraController);
         return true;
     }
 
@@ -80,7 +80,7 @@ public class GunWeapon
         return duration >= cooldown;
     }
     
-    private void Shot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, Camera shooterCamera)
+    private void Shot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
     {
         if (!_magazine.TryConsumeBullet()) return;
         
@@ -96,15 +96,12 @@ public class GunWeapon
             hitEffect.Play();
         }
         
-        ApplyRecoil(shooterCamera);
+        ApplyRecoil(cameraController);
     }
 
-    private void ApplyRecoil(Camera shooterCamera)
+    private void ApplyRecoil(CameraController cameraController)
     {
-        if (shooterCamera == null) return;
-        
         float recoilX = UnityEngine.Random.Range(_minRecoilStrengthX, _maxRecoilStrengthX);
-        var cameraController = shooterCamera.GetComponent<CameraController>();
         cameraController?.CurrentCamera.AddRecoil(_recoilStrengthY, recoilX);
     }
 }

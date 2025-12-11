@@ -21,7 +21,7 @@ public abstract class BaseCamera : MonoBehaviour
         _accumulationX += mouseX * _rotationSpeed * Time.deltaTime;
         _accumulationY -= mouseY * _rotationSpeed * Time.deltaTime;
         _accumulationY = Mathf.Clamp(_accumulationY, _yMinLimit, _yMaxLimit);
-    
+        
         _recoilX = Mathf.Lerp(_recoilX, 0f, Time.deltaTime);
         _recoilY = Mathf.Lerp(_recoilY, 0f, Time.deltaTime);
     }

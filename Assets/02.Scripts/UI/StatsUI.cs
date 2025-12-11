@@ -22,6 +22,9 @@ public class StatsUI : MonoBehaviour
     
     private void UpdateStaminaUI(float stamina, float maxStamina)
     {
-        _staminaBar.value = stamina / maxStamina;
+        if (maxStamina > 0)
+        {
+            _staminaBar.value = stamina / maxStamina;
+        }
     }
 }

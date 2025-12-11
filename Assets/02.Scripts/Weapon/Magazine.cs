@@ -40,9 +40,10 @@ public class Magazine
     public void Reload()
     {
         int neededBullet = _magazineSize - _remainBullet;
+        int bulletsToReload = Mathf.Min(neededBullet, _totalBullet);
         
-        _totalBullet -= neededBullet;
-        _remainBullet += neededBullet;
+        _totalBullet -= bulletsToReload;
+        _remainBullet += bulletsToReload;
         
         OnBulletCountChanged?.Invoke(_remainBullet);
         OnTotalBulletCountChanged?.Invoke(_totalBullet);

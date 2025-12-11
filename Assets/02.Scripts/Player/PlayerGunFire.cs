@@ -13,10 +13,12 @@ public class PlayerGunFire : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffect;
     
     private Camera _mainCamera;
+    private CameraController _cameraController;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
+        _cameraController = _mainCamera?.GetComponent<CameraController>();
         _gunWeapon.OnCoroutineRequested += StartCoroutine;
     }
 
@@ -53,7 +55,7 @@ public class PlayerGunFire : MonoBehaviour
         Vector3 firePosition = _firePosition.position;
         Vector3 fireDirection = _mainCamera.transform.forward;
         
-        _gunWeapon.TryShot(firePosition, fireDirection, _hitEffect, _mainCamera);
+        _gunWeapon.TryShot(firePosition, fireDirection, _hitEffect, _cameraController);
     }
 
     private void TryReload()

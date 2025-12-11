@@ -55,16 +55,8 @@ public class WeaponUI : MonoBehaviour
     {
         amount = Mathf.Clamp01(amount);
 
-        if (amount <= 0f)
-        {
-            _reloadProgressBar.gameObject.SetActive(true);
-        }
-
+        bool isReloading = amount < 1.0f;
+        _reloadProgressBar.gameObject.SetActive(isReloading);
         _reloadProgressBar.value = amount;
-
-        if (amount >= 1f)
-        {
-            _reloadProgressBar.gameObject.SetActive(false);
-        }
     }
 }

@@ -23,7 +23,7 @@ public class Bomb : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        _explosionEffect.transform.position = this.transform.position;
+        _explosionEffect.transform.position = transform.position;
         _explosionEffect.Play();
         BombFactory.Instance.Release(this);
     }
