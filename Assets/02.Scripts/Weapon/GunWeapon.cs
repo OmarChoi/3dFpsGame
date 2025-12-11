@@ -5,6 +5,8 @@ using UnityEngine;
 [Serializable]
 public class GunWeapon
 {
+    [SerializeField] private float _damage;
+    
     [Header("발사속도")]
     [Space]
     [SerializeField] private float _fireSpeed = 10f;
@@ -94,6 +96,9 @@ public class GunWeapon
             hitEffect.transform.position = hitInfo.point;
             hitEffect.transform.forward = hitInfo.normal;
             hitEffect.Play();
+            
+            Zombie zombie = hitInfo.collider.gameObject.GetComponent<Zombie>();
+            zombie?.TryTakeDamage(_damage);
         }
         
         ApplyRecoil(cameraController);

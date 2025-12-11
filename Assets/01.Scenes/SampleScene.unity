@@ -1522,10 +1522,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunWeapon:
+    _damage: 5
     _fireSpeed: 15
-    _minRecoilStrengthX: -2.5
-    _maxRecoilStrengthX: 2.5
-    _recoilStrengthY: 5
+    _minRecoilStrengthX: -1.5
+    _maxRecoilStrengthX: 1.5
+    _recoilStrengthY: 2.5
     _magazine:
       _magazineSize: 30
       _totalBullet: 120
@@ -2894,13 +2895,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 0
   _player: {fileID: 766106893}
+  _playerStats: {fileID: 766106902}
   _characterController: {fileID: 1773058690}
   _detectDistance: 10
-  _attackDistance: 1.5
   _moveSpeed: 5
+  _attackDistance: 1.5
   _damage: 20
   _attackSpeed: 2
-  _attackTimer: 0
 --- !u!143 &1773058690
 CharacterController:
   m_ObjectHideFlags: 0
