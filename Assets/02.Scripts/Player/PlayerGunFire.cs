@@ -52,10 +52,8 @@ public class PlayerGunFire : MonoBehaviour
 
     private void TryFire()
     {
-        Vector3 firePosition = _firePosition.position;
         Vector3 fireDirection = _mainCamera.transform.forward;
-        
-        _gunWeapon.TryShot(firePosition, fireDirection, _hitEffect, _cameraController);
+        _gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController);
     }
 
     private void TryReload()

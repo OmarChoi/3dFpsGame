@@ -5,6 +5,10 @@ using UnityEngine;
 [Serializable]
 public class GunWeapon
 {
+    [Header("데미지")]
+    [Space]
+    [SerializeField] private float _damage;
+    
     [Header("발사속도")]
     [Space]
     [SerializeField] private float _fireSpeed = 10f;
@@ -21,7 +25,7 @@ public class GunWeapon
     [SerializeField] private Magazine _magazine = new Magazine();
     public Magazine Magazine => _magazine;
     
-    private bool _isReloading = false;
+    private bool _isReloading;
 
     public event Func<IEnumerator, Coroutine> OnCoroutineRequested;
     public event Action<float> OnReload;
@@ -31,11 +35,11 @@ public class GunWeapon
         _magazine.Init();
     }
 
-    public bool TryShot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
+    public bool TryShot(Transform shooter, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
     {
         if (!CanShot()) return false;
         
-        Shot(position, direction, hitEffect, cameraController);
+        Shot(shooter, direction, hitEffect, cameraController);
         return true;
     }
 
@@ -80,13 +84,13 @@ public class GunWeapon
         return duration >= cooldown;
     }
     
-    private void Shot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
+    private void Shot(Transform shooter, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
     {
         if (!_magazine.TryConsumeBullet()) return;
         
         _lastFireTime = Time.time;
         
-        Ray ray = new Ray(position, direction);
+        Ray ray = new Ray(shooter.transform.position, direction);
         RaycastHit hitInfo = new RaycastHit();
         bool isHit = Physics.Raycast(ray, out hitInfo);
         if (isHit)
@@ -94,6 +98,12 @@ public class GunWeapon
             hitEffect.transform.position = hitInfo.point;
             hitEffect.transform.forward = hitInfo.normal;
             hitEffect.Play();
+            
+            if (hitInfo.collider.TryGetComponent(out IDamageable damageable))
+            {
+                Damage damage = new Damage(_damage, shooter.gameObject);
+                damageable.TryTakeDamage(damage);
+            }
         }
         
         ApplyRecoil(cameraController);
