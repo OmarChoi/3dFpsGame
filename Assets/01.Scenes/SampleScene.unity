@@ -1485,7 +1485,7 @@ MonoBehaviour:
   _health:
     _value: 100
     _maxValue: 100
-    _regenValue: 10
+    _regenValue: 5
   _damage:
     _value: 10
   _moveSpeed:
@@ -2894,9 +2894,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 0
   _player: {fileID: 766106893}
-  _detectDistance: 10
-  _moveSpeed: 5
   _characterController: {fileID: 1773058690}
+  _detectDistance: 10
+  _attackDistance: 1.5
+  _moveSpeed: 5
+  _damage: 20
+  _attackSpeed: 2
+  _attackTimer: 0
 --- !u!143 &1773058690
 CharacterController:
   m_ObjectHideFlags: 0

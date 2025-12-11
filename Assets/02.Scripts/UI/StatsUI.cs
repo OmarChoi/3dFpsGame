@@ -13,11 +13,21 @@ public class StatsUI : MonoBehaviour
     private void Awake()
     {
         _stats.Stamina.OnValueChanged += UpdateStaminaUI;
+        _stats.Health.OnValueChanged += UpdateHealthUI;
     }
 
     private void OnDisable()
     {
         _stats.Stamina.OnValueChanged -= UpdateStaminaUI;
+        _stats.Health.OnValueChanged -= UpdateHealthUI;
+    }
+    
+    private void UpdateHealthUI(float health, float maxHealth)
+    {
+        if (maxHealth > 0)
+        {
+            _healthBar.value = health / maxHealth;
+        }
     }
     
     private void UpdateStaminaUI(float stamina, float maxStamina)
