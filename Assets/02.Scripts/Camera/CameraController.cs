@@ -80,21 +80,21 @@ public class CameraController : MonoBehaviour
         
         Vector3 prevPosition = prevCamera.CalculateCameraPosition();
         Vector3 nextPosition = nextCamera.CalculateCameraPosition();
-        Vector3 blendedPos = Vector3.Lerp(prevPosition,  nextPosition, _blend);
+        Vector3 blendedPosition = Vector3.Lerp(prevPosition,  nextPosition, _blend);
 
         Quaternion prevRotation = prevCamera.GetRotation();
         Quaternion nextRotation = nextCamera.GetRotation();
-        Quaternion blendedRot = Quaternion.Slerp(prevRotation, nextRotation, _blend);
+        Quaternion blendedRotation = Quaternion.Slerp(prevRotation, nextRotation, _blend);
 
-        ApplyToTransform(blendedPos, blendedRot);
+        ApplyToTransform(blendedPosition, blendedRotation);
     }
 
     private void FollowActiveCamera()
     {
-        BaseCamera active = CurrentCamera;
-        ApplyRotationInput(active);
-        active.Move();
-        ApplyToTransform(active.CalculateCameraPosition(), active.GetRotation());
+        BaseCamera activeCamera = CurrentCamera;
+        ApplyRotationInput(activeCamera);
+        activeCamera.Move();
+        ApplyToTransform(activeCamera.CalculateCameraPosition(), activeCamera.GetRotation());
     }
 
     private void ApplyRotationInput(BaseCamera cam)

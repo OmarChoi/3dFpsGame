@@ -13,9 +13,9 @@ public abstract class BaseCamera : MonoBehaviour
     public abstract Vector3 CalculateCameraPosition();
     public abstract void Move();
     
-    private float _recoilX = 0f;
-    private float _recoilY = 0f;
-
+    private float _recoilX;
+    private float _recoilY;
+    
     public virtual void Rotate(float mouseX, float mouseY)
     {
         _accumulationX += mouseX * _rotationSpeed * Time.deltaTime;
@@ -29,15 +29,6 @@ public abstract class BaseCamera : MonoBehaviour
     public virtual Quaternion GetRotation()
     {
         return Quaternion.Euler(_accumulationY + _recoilY, _accumulationX + _recoilX, 0);
-    }
-    
-    public void ApplyCameraRotation()
-    {
-        transform.rotation = Quaternion.Euler(
-            _accumulationY + _recoilY,
-            _accumulationX + _recoilX,
-            0f
-        );
     }
     
     public void AddRecoil(float verticalRecoil, float horizontalRecoil)

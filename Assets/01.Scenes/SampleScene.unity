@@ -1522,24 +1522,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunWeapon:
-    _fireSpeed: 25
-    _minRecoilStrengthX: -5
-    _maxRecoilStrengthX: 5
-    _recoilStrengthY: 5
+    _fireSpeed: 15
+    _minRecoilStrengthX: -7.5
+    _maxRecoilStrengthX: 7.5
+    _recoilStrengthY: 7.5
     _magazine:
       _magazineSize: 30
       _totalBullet: 120
       _remainBullet: 30
       _reloadTime: 2
-    _maxDistance: 100
-    _hitLayer:
-      serializedVersion: 2
-      m_Bits: 4294967295
   _firePosition: {fileID: 1784039401}
   _hitEffect: {fileID: 1546527174}
-  _muzzleFlash: {fileID: 0}
-  _fireSound: {fileID: 0}
-  _shooterCamera: {fileID: 330585545}
 --- !u!1 &770968792
 GameObject:
   m_ObjectHideFlags: 0

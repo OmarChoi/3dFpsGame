@@ -3,7 +3,7 @@ using UnityEngine;
 public class ThirdViewCamera : BaseCamera
 {
     [SerializeField] private Vector3 _offset;
-    [SerializeField] private float   _distance;
+    [SerializeField] private float _distance;
 
     public override Vector3 CalculateCameraPosition()
     {
