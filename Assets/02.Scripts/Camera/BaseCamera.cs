@@ -15,7 +15,6 @@ public abstract class BaseCamera : MonoBehaviour
     
     private float _recoilX;
     private float _recoilY;
-    private float _recoilApplySpeed = 0.2f;
     
     public virtual void Rotate(float mouseX, float mouseY)
     {
