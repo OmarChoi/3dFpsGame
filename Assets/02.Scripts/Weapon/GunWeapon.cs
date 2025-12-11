@@ -8,7 +8,6 @@ public class GunWeapon
     [Header("데미지")]
     [Space]
     [SerializeField] private float _damage;
-    [SerializeField] private float _knockbackForce;
     
     [Header("발사속도")]
     [Space]
@@ -26,7 +25,7 @@ public class GunWeapon
     [SerializeField] private Magazine _magazine = new Magazine();
     public Magazine Magazine => _magazine;
     
-    private bool _isReloading = false;
+    private bool _isReloading;
 
     public event Func<IEnumerator, Coroutine> OnCoroutineRequested;
     public event Action<float> OnReload;
@@ -100,9 +99,10 @@ public class GunWeapon
             hitEffect.transform.forward = hitInfo.normal;
             hitEffect.Play();
             
-            if (hitInfo.collider.TryGetComponent(out Zombie zombie))
+            if (hitInfo.collider.TryGetComponent(out IDamageable damageable))
             {
-                zombie.TryTakeDamage(_damage, hitInfo.point, _knockbackForce);
+                Damage damage = new Damage(_damage, position);
+                damageable.TryTakeDamage(damage);
             }
         }
         

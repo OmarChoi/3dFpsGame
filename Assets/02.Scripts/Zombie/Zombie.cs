@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class Zombie : MonoBehaviour
+public class Zombie : MonoBehaviour, IDamageable
 {
     private EZombieState _state = EZombieState.Idle;
 
@@ -15,6 +15,7 @@ public class Zombie : MonoBehaviour
     
     private Coroutine _knockbackCoroutine;
     [SerializeField] private float _hitDuration = 0.3f;
+    [SerializeField] private float _knockbackRate = 0.2f;
     
     [Header("Move")]
     [Space]
@@ -123,43 +124,25 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    public void ApplyKnockback(Vector3 hitPoint, float knockbackForce)
+    private void ApplyKnockback(Damage damage)
     {
-        Vector3 direction = (transform.position - hitPoint);
+        Vector3 direction = (transform.position - damage.Attacker);
         direction.y = 0f;
         direction.Normalize();
         if (_knockbackCoroutine != null)
         {
             StopCoroutine(_knockbackCoroutine);
         }
-        _knockbackCoroutine = StartCoroutine(KnockbackCoroutine(direction, knockbackForce));
+        _knockbackCoroutine = StartCoroutine(KnockbackCoroutine(direction, damage.Value));
     }
     
-    public bool TryTakeDamage(float damage, Vector3 hitPoint, float knockbackForce)
-    {
-        if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
-        _health -= damage;
-        if (_health <= 0)
-        {
-            _state = EZombieState.Death;
-            StartCoroutine(DeathCoroutine());
-        }
-        else
-        {
-            _state = EZombieState.Hit;
-            StartCoroutine(HitCoroutine());
-            ApplyKnockback(hitPoint, knockbackForce);
-        }
-        return true;
-    }
-
     private IEnumerator KnockbackCoroutine(Vector3 direction, float knockbackForce)
     {
         float elapsedTime = 0f;
         while (elapsedTime < _hitDuration)
         {
             elapsedTime += Time.deltaTime;
-            _characterController.Move(direction * (knockbackForce * Time.deltaTime));
+            _characterController.Move(direction * (knockbackForce * _knockbackRate * Time.deltaTime));
             yield return null;
         }
     }
@@ -176,5 +159,23 @@ public class Zombie : MonoBehaviour
         // Todo. Death Animation 실행
         yield return new WaitForSeconds(_deathDuration);
         Destroy(gameObject);
+    }
+    
+    public bool TryTakeDamage(Damage damage)
+    {
+        if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
+        _health -= damage.Value;
+        if (_health <= 0)
+        {
+            _state = EZombieState.Death;
+            StartCoroutine(DeathCoroutine());
+        }
+        else
+        {
+            _state = EZombieState.Hit;
+            StartCoroutine(HitCoroutine());
+            ApplyKnockback(damage);
+        }
+        return true;
     }
 }
