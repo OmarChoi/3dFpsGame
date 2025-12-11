@@ -1400,6 +1400,7 @@ GameObject:
   - component: {fileID: 766106902}
   - component: {fileID: 766106903}
   - component: {fileID: 766106904}
+  - component: {fileID: 766106905}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1587,8 +1588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunWeapon:
-    _damage: 5
-    _knockbackForece: 1
+    _damage: 10
     _fireSpeed: 15
     _minRecoilStrengthX: -1.5
     _maxRecoilStrengthX: 1.5
@@ -1600,6 +1600,18 @@ MonoBehaviour:
       _reloadTime: 2
   _firePosition: {fileID: 1784039401}
   _hitEffect: {fileID: 1546527174}
+--- !u!114 &766106905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766106893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea26f5f0a9b96a46b105b69b223448c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &770968792
 GameObject:
   m_ObjectHideFlags: 0

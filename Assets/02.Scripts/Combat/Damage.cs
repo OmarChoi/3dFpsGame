@@ -3,9 +3,9 @@ using UnityEngine;
 public struct Damage
 {
     public float Value;
-    public Vector3 Attacker;
+    public GameObject Attacker;
 
-    public Damage(float damage, Vector3 attacker)
+    public Damage(float damage, GameObject attacker)
     {
         Value = damage;
         Attacker = attacker;

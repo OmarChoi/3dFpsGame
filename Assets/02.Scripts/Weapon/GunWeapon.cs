@@ -35,11 +35,11 @@ public class GunWeapon
         _magazine.Init();
     }
 
-    public bool TryShot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
+    public bool TryShot(Transform shooter, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
     {
         if (!CanShot()) return false;
         
-        Shot(position, direction, hitEffect, cameraController);
+        Shot(shooter, direction, hitEffect, cameraController);
         return true;
     }
 
@@ -84,13 +84,13 @@ public class GunWeapon
         return duration >= cooldown;
     }
     
-    private void Shot(Vector3 position, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
+    private void Shot(Transform shooter, Vector3 direction, ParticleSystem hitEffect, CameraController cameraController)
     {
         if (!_magazine.TryConsumeBullet()) return;
         
         _lastFireTime = Time.time;
         
-        Ray ray = new Ray(position, direction);
+        Ray ray = new Ray(shooter.transform.position, direction);
         RaycastHit hitInfo = new RaycastHit();
         bool isHit = Physics.Raycast(ray, out hitInfo);
         if (isHit)
@@ -101,7 +101,7 @@ public class GunWeapon
             
             if (hitInfo.collider.TryGetComponent(out IDamageable damageable))
             {
-                Damage damage = new Damage(_damage, position);
+                Damage damage = new Damage(_damage, shooter.gameObject);
                 damageable.TryTakeDamage(damage);
             }
         }

@@ -7,7 +7,6 @@ public class Zombie : MonoBehaviour, IDamageable
     private EZombieState _state = EZombieState.Idle;
 
     [SerializeField] private GameObject _player;
-    [SerializeField] private PlayerStats _playerStats;
     private CharacterController _characterController;
     
     [SerializeField] private float _health;
@@ -120,13 +119,17 @@ public class Zombie : MonoBehaviour, IDamageable
         if (_attackTimer >= _attackSpeed)
         {
             _attackTimer = 0f;
-            _playerStats?.Health.Decrease(_damage);
+            if (_player.TryGetComponent(out IDamageable damageable))
+            {
+                Damage damage = new Damage(_damage, transform.gameObject);
+                damageable.TryTakeDamage(damage);
+            }
         }
     }
 
     private void ApplyKnockback(Damage damage)
     {
-        Vector3 direction = (transform.position - damage.Attacker);
+        Vector3 direction = (transform.position - damage.Attacker.transform.position);
         direction.y = 0f;
         direction.Normalize();
         if (_knockbackCoroutine != null)
