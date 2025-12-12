@@ -2788,23 +2788,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.186563
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0026745796
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.260578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.68702215
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.72663647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3015,6 +3015,14 @@ PrefabInstance:
       propertyPath: _explodeEffect
       value: 
       objectReference: {fileID: 2143873257}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.Effect
+      value: 
+      objectReference: {fileID: 2143873257}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.ExplosionForce
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2417770693925521955, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.34
@@ -3058,6 +3066,10 @@ PrefabInstance:
     - target: {fileID: 4882812473781722032, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
       propertyPath: m_Name
       value: Drum (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882812473781722032, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3759,6 +3771,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1990332030}
     m_Modifications:
     - target: {fileID: 9111320563476075609, guid: c6fb71e58ec36784687d958bc39de3f2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111320563476075609, guid: c6fb71e58ec36784687d958bc39de3f2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111320563476075609, guid: c6fb71e58ec36784687d958bc39de3f2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111320563476075609, guid: c6fb71e58ec36784687d958bc39de3f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3906,6 +3930,26 @@ PrefabInstance:
       propertyPath: _explodeEffect
       value: 
       objectReference: {fileID: 2143873257}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.Damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.Effect
+      value: 
+      objectReference: {fileID: 2143873257}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.Radius
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.IsExploded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3398688560884278392, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: _explosionData.ExplosionForce
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2417770693925521955, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.89
@@ -3949,6 +3993,10 @@ PrefabInstance:
     - target: {fileID: 4882812473781722032, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
       propertyPath: m_Name
       value: Drum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882812473781722032, guid: e0f8cdfde74fbb749a01999174b96c69, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

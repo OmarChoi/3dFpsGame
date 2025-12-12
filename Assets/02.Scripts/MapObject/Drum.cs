@@ -4,8 +4,8 @@ using UnityEngine;
 public class Drum : MonoBehaviour, IDamageable
 {
     [SerializeField] private ValueStat _health;
-    [SerializeField] private ParticleSystem _explodeEffect;
-    private bool _isExplode;
+    [SerializeField] private ExplosionData _explosionData;
+    [SerializeField] private float _torqueMultiplier;
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class Drum : MonoBehaviour, IDamageable
     
     public bool TryTakeDamage(Damage damage)
     {
-        if (_isExplode) return false;
+        if (_explosionData.IsExploded) return false;
         _health.Decrease(damage.Value);
         if (_health.Value <= 0)
         {
@@ -26,13 +26,22 @@ public class Drum : MonoBehaviour, IDamageable
 
     private void Explode()
     {
-        _isExplode = true;
+        _explosionData.IsExploded = true;
         PlayExplodeEffect();
+        FlyAway();
     }
 
     private void PlayExplodeEffect()
     {
-        _explodeEffect.transform.position = transform.position;
-        _explodeEffect.Play();
+        _explosionData.Effect.transform.position = transform.position;
+        _explosionData.Effect.Emit(1);
+    }
+
+    private void FlyAway()
+    {
+        Vector2 randomCircle = UnityEngine.Random.insideUnitCircle;
+        Vector3 randomDirection = new Vector3(randomCircle.x, 1f, randomCircle.y).normalized;
+        _rigidbody.AddForce(randomDirection * _explosionData.ExplosionForce, ForceMode.Impulse);
+        _rigidbody.AddTorque(UnityEngine.Random.insideUnitSphere * (_explosionData.ExplosionForce * _torqueMultiplier), ForceMode.Impulse);
     }
 }

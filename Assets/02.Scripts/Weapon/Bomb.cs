@@ -4,11 +4,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    private ParticleSystem _explosionEffect;
-    private bool _isExploded = false;
-    [SerializeField] private float _damage;
-    [SerializeField] private float _explodeRadius;
-    [SerializeField] private LayerMask _damageableLayer;
+    [SerializeField] private ExplosionData _explosionData;
     
     private void Awake()
     {
@@ -17,29 +13,29 @@ public class Bomb : MonoBehaviour
 
     public void Reset()
     {
-        _isExploded = false;
+        _explosionData.IsExploded = false;
         _rigidbody.linearVelocity = Vector3.zero;
     }
     
     public void SetEffect(ParticleSystem effect)
     {
-        _explosionEffect = effect;
+        _explosionData.Effect = effect;
     }
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isExploded) return;
-        _isExploded = true;
-        _explosionEffect.transform.position = transform.position;
-        _explosionEffect.Play();
+        if (_explosionData.IsExploded) return;
+        _explosionData.IsExploded = true;
+        _explosionData.Effect.transform.position = transform.position;
+        _explosionData.Effect.Play();
         ApplyBombDamage();
         BombFactory.Instance.Release(this);
     }
 
     private void ApplyBombDamage()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _explodeRadius, _damageableLayer);
-        Damage damage = new Damage(_damage, gameObject);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _explosionData.Radius, _explosionData.LayerMask);
+        Damage damage = new Damage(_explosionData.Damage, gameObject);
         foreach (Collider hit in colliders)
         {
             if (hit.TryGetComponent(out IDamageable damageable))

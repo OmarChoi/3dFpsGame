@@ -122,11 +122,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d149f54a7d7e49a7ea9ac5879ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
-  _explodeRadius: 10
-  _damageableLayer:
-    serializedVersion: 2
-    m_Bits: 384
+  _explosionData:
+    Effect: {fileID: 0}
+    IsExploded: 0
+    Damage: 20
+    ExplosionForce: 10
+    Radius: 8
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 768
 --- !u!54 &4985222015725472816
 Rigidbody:
   m_ObjectHideFlags: 0
