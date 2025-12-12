@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 
 [RequireComponent(typeof(CharacterController))]
 public class Zombie : MonoBehaviour, IDamageable
@@ -107,12 +106,18 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         // Todo. Run Animation 실행
         Move(_startPosition);
+        if (transform.IsInRange(_player.transform.position, _detectDistance))
+        {
+            _state = EZombieState.Trace;
+            return;
+        }
+        
         float distanceToStart = transform.GetSquaredDistance(_startPosition);
         if (Util.IsInRange(distanceToStart, _arrivalThreshold))
         {
             _state = EZombieState.Idle;
         }
-        else if (!Util.IsInRange(distanceToStart, _patrolDistance))
+        else if (Util.IsInRange(distanceToStart, _patrolDistance))
         {
             OnStartPatrol();
         }

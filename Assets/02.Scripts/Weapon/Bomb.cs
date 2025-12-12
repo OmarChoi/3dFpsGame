@@ -8,6 +8,8 @@ public class Bomb : MonoBehaviour
     private bool _isExploded = false;
     [SerializeField] private float _damage;
     [SerializeField] private float _explodeRadius;
+    [SerializeField] private LayerMask _damageableLayer;
+    
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -36,8 +38,8 @@ public class Bomb : MonoBehaviour
 
     private void ApplyBombDamage()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _explodeRadius);
-        Damage damage = new Damage(_damage, this.transform.gameObject);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _explodeRadius, _damageableLayer);
+        Damage damage = new Damage(_damage, gameObject);
         foreach (Collider hit in colliders)
         {
             if (hit.TryGetComponent(out IDamageable damageable))
