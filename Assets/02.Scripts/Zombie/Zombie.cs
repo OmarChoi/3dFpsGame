@@ -20,6 +20,7 @@ public class Zombie : MonoBehaviour, IDamageable
     [Space]
     [SerializeField] private float _detectDistance;
     [SerializeField] private float _moveSpeed;
+    private float _yVelocity;
 
     [Header("Patrol")]
     [Space]
@@ -45,6 +46,7 @@ public class Zombie : MonoBehaviour, IDamageable
     
     private void Update()
     {
+        ApplyGravity();
         switch (_state)
         {
             case EZombieState.Idle:
@@ -89,8 +91,8 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         Vector3 direction = (targetPosition - transform.position);
         direction.y = 0.0f;
-        direction.Normalize();
         if (direction.sqrMagnitude < 0.0001f) return;
+        direction.Normalize();
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = targetRotation;
     }
@@ -101,8 +103,23 @@ public class Zombie : MonoBehaviour, IDamageable
         Vector3 direction = (targetPosition - transform.position);
         direction.y = 0.0f;
         direction.Normalize();
-        direction.y = Define.Gravity;
-        _characterController.Move(direction * (_moveSpeed * Time.deltaTime));
+        
+        Vector3 horizontalVelocity = direction * _moveSpeed;
+        Vector3 moveVector = horizontalVelocity + (Vector3.up * _yVelocity);
+
+        _characterController.Move(moveVector * Time.deltaTime);
+    }
+    
+    private void ApplyGravity()
+    {
+        if (_characterController.isGrounded && _yVelocity < 0)
+        {
+            _yVelocity = -1f;
+        }
+        else
+        {
+            _yVelocity += Define.Gravity * Time.deltaTime;
+        }
     }
     
     private void Trace()

@@ -44,7 +44,10 @@ public class PlayerMove : MonoBehaviour
     {
         float movementSpeed = GetSpeed();
         Vector3 direction = GetDirection();
-        _controller.Move(direction * (movementSpeed * Time.deltaTime));
+        
+        Vector3 horizontalVelocity = direction * _stats.MoveSpeed; 
+        Vector3 moveVector = horizontalVelocity + (Vector3.up * _yVelocity); 
+        _controller.Move(moveVector * Time.deltaTime);
     }
 
     private Vector3 GetDirection()
@@ -55,15 +58,23 @@ public class PlayerMove : MonoBehaviour
         Vector3 direction = new Vector3(xMovement, 0, zMovement);
         direction.Normalize();
         direction = _mainCamera.transform.TransformDirection(direction);
-        direction.y = _yVelocity;
+        direction.y = 0f;
+        direction.Normalize();
+
         return direction;
     }
     
     private void ApplyGravity()
     {
-        _yVelocity += Define.Gravity * Time.deltaTime;
+        if (_controller.isGrounded && _yVelocity < 0)
+        {
+            _yVelocity = -1f;
+        }
+        else
+        {
+            _yVelocity += Define.Gravity * Time.deltaTime;
+        }
     }
-
     private void HandleJump()
     {
         if (!Input.GetButtonDown("Jump")) return;

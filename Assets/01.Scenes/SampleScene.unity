@@ -1503,7 +1503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    Gravity: -9.8
     RunStaminaUsage: 10
     JumpStaminaUsage: 20
   _maxJumpCount: 2
@@ -1559,7 +1558,7 @@ MonoBehaviour:
   _runSpeed:
     _value: 14
   _jumpPower:
-    _value: 5
+    _value: 10
 --- !u!114 &766106903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2888,7 +2887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565505292
@@ -3587,7 +3586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.344, y: 0.027521882}
   m_AnchorMax: {x: 0.5991934, y: 0.96852195}
-  m_AnchoredPosition: {x: -0.3999939, y: 0}
+  m_AnchoredPosition: {x: -0.4000244, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2128200114
