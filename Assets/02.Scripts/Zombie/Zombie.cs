@@ -13,24 +13,24 @@ public class Zombie : MonoBehaviour, IDamageable
     private Vector3 _startPosition;
     
     private Coroutine _knockbackCoroutine;
-    [SerializeField] private float _hitDuration = 0.3f;
-    [SerializeField] private float _knockbackRate = 0.2f;
-    
+    [SerializeField] private float _hitDuration;
+    [SerializeField] private float _knockbackRate;
+
     [Header("Move")]
     [Space]
-    [SerializeField] private float _detectDistance = 4f;
-    [SerializeField] private float _moveSpeed = 5.0f;
-    
+    [SerializeField] private float _detectDistance;
+    [SerializeField] private float _moveSpeed;
+
     [Header("Patrol")]
     [Space]
-    [SerializeField] private float _patrolDistance = 4f;
+    [SerializeField] private float _patrolDistance;
     private Vector3 _patrolDestination;
-    
+
     [Header("Attack")]
     [Space]
-    [SerializeField] private float _attackDistance = 1.5f;
-    [SerializeField] private float _damage = 20.0f;
-    [SerializeField] private float _attackSpeed = 2.0f;
+    [SerializeField] private float _attackDistance;
+    [SerializeField] private float _damage;
+    [SerializeField] private float _attackSpeed;
     private float _attackTimer;
     
     [SerializeField] private float _arrivalThreshold;
@@ -79,10 +79,26 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             _state = EZombieState.Trace;
         }
+        else
+        {
+            OnStartPatrol();
+        }
     }
 
+    private void Rotate(Vector3 targetPosition)
+    {
+        Vector3 direction = (targetPosition - transform.position);
+        direction.y = 0.0f;
+        direction.Normalize();
+
+        if (direction.sqrMagnitude < 0.0001f) return;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        transform.rotation = targetRotation;
+    }
+    
     private void Move(Vector3 targetPosition)
-    {        
+    {
+        Rotate(targetPosition);
         Vector3 direction = (targetPosition - transform.position).normalized;
         _characterController.Move(direction * (_moveSpeed * Time.deltaTime));
     }
