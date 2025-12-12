@@ -29,6 +29,7 @@ public class Drum : MonoBehaviour, IDamageable
         _explosionData.IsExploded = true;
         PlayExplodeEffect();
         FlyAway();
+        ApplyDamage();
     }
 
     private void PlayExplodeEffect()
@@ -43,5 +44,18 @@ public class Drum : MonoBehaviour, IDamageable
         Vector3 randomDirection = new Vector3(randomCircle.x, 1f, randomCircle.y).normalized;
         _rigidbody.AddForce(randomDirection * _explosionData.ExplosionForce, ForceMode.Impulse);
         _rigidbody.AddTorque(UnityEngine.Random.insideUnitSphere * (_explosionData.ExplosionForce * _torqueMultiplier), ForceMode.Impulse);
+    }
+
+    private void ApplyDamage()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _explosionData.Radius, _explosionData.LayerMask);
+        Damage damage = new Damage(_explosionData.Damage, gameObject);
+        foreach (Collider hit in colliders)
+        {
+            if (hit.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TryTakeDamage(damage);
+            }
+        }
     }
 }
