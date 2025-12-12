@@ -62,16 +62,11 @@ public class Zombie : MonoBehaviour, IDamageable
                 break;
         }
     }
-
-    private bool IsInRange(Vector3 targetPosition, float range)
-    {
-        return (targetPosition - transform.position).sqrMagnitude <= range * range;
-    }
     
     private void Idle()
     {
         // Todo. Idle Animation 실행
-        if (IsInRange(_player.transform.position, _detectDistance))
+        if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
             _state = EZombieState.Trace;
         }
@@ -87,11 +82,12 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         // Todo. Run Animation 실행
         Move(_player.transform.position);
-        if (IsInRange(_player.transform.position, _attackDistance))
+        float distance = transform.GetSquaredDistance(_player.transform.position);
+        if (Util.IsInRange(distance, _attackDistance))
         {
             _state = EZombieState.Attack;
         }
-        else if (!IsInRange(_player.transform.position, _detectDistance))
+        else if (!Util.IsInRange(distance, _detectDistance))
         {
             _state = EZombieState.Comeback;
         }
@@ -101,7 +97,7 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         // Todo. Run Animation 실행
         Move(_startPosition);
-        if (IsInRange(_startPosition, _arrivalThreshold))
+        if (transform.IsInRange(_startPosition, _arrivalThreshold))
         {
             _state = EZombieState.Idle;
         }
