@@ -163,3 +163,4 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 896
   _torqueMultiplier: 0.5
+  _destroyTime: 5

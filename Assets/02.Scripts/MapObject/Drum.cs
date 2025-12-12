@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -7,6 +8,8 @@ public class Drum : MonoBehaviour, IDamageable
     [SerializeField] private ExplosionData _explosionData;
     [SerializeField] private float _torqueMultiplier;
     private Rigidbody _rigidbody;
+    private Coroutine _destroyCoroutine;
+    [SerializeField] private float _destroyTime;
 
     private void Awake()
     {
@@ -30,6 +33,7 @@ public class Drum : MonoBehaviour, IDamageable
         PlayExplodeEffect();
         FlyAway();
         ApplyDamage();
+        StartCoroutine(DestroyCoroutine());
     }
 
     private void PlayExplodeEffect()
@@ -57,5 +61,11 @@ public class Drum : MonoBehaviour, IDamageable
                 damageable.TryTakeDamage(damage);
             }
         }
+    }
+
+    private IEnumerator DestroyCoroutine()
+    {
+        yield return new WaitForSeconds(_destroyTime);
+        Destroy(gameObject);
     }
 }
