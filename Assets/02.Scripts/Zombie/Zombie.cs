@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 
 [RequireComponent(typeof(CharacterController))]
 public class Zombie : MonoBehaviour, IDamageable
@@ -20,6 +21,11 @@ public class Zombie : MonoBehaviour, IDamageable
     [Space]
     [SerializeField] private float _detectDistance = 4f;
     [SerializeField] private float _moveSpeed = 5.0f;
+    
+    [Header("Patrol")]
+    [Space]
+    [SerializeField] private float _patrolDistance = 4f;
+    private Vector3 _patrolDestination;
     
     [Header("Attack")]
     [Space]
@@ -48,6 +54,10 @@ public class Zombie : MonoBehaviour, IDamageable
             
             case EZombieState.Trace:
                 Trace();
+                break;
+            
+            case EZombieState.Patrol:
+                Patrol();
                 break;
             
             case EZombieState.Comeback:
@@ -97,15 +107,49 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         // Todo. Run Animation 실행
         Move(_startPosition);
-        if (transform.IsInRange(_startPosition, _arrivalThreshold))
+        float distanceToStart = transform.GetSquaredDistance(_startPosition);
+        if (Util.IsInRange(distanceToStart, _arrivalThreshold))
         {
             _state = EZombieState.Idle;
         }
+        else if (!Util.IsInRange(distanceToStart, _patrolDistance))
+        {
+            OnStartPatrol();
+        }
     }
 
+    private void OnStartPatrol()
+    {
+        _patrolDestination = GetRandomPositionInRange(_startPosition, _patrolDistance);
+        _state = EZombieState.Patrol;
+    }
+    
+    private void Patrol()
+    {
+        // Todo. Run Animation 실행
+        if (transform.IsInRange(_player.transform.position, _detectDistance))
+        {
+            _state = EZombieState.Trace;
+            return;
+        }
+        if (transform.IsInRange(_patrolDestination, _arrivalThreshold))
+        {
+            _patrolDestination = GetRandomPositionInRange(_startPosition, _patrolDistance);
+        }
+        Move(_patrolDestination);
+    }
+
+    private Vector3 GetRandomPositionInRange(Vector3 center, float range)
+    {
+        Vector2 randomPosition = UnityEngine.Random.insideUnitCircle.normalized * range;
+        Vector3 nextPositon = new Vector3(randomPosition.x, 0f, randomPosition.y);
+        nextPositon += center;
+        return nextPositon;
+    }
+    
     private void Attack()
     {
-        if (!IsInRange(_player.transform.position, _attackDistance))
+        if (!transform.IsInRange(_player.transform.position, _attackDistance))
         {
             _state = EZombieState.Trace;
             return;
