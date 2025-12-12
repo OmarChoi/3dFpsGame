@@ -8,7 +8,6 @@ public class Drum : MonoBehaviour, IDamageable
     [SerializeField] private ExplosionData _explosionData;
     [SerializeField] private float _torqueMultiplier;
     private Rigidbody _rigidbody;
-    private Coroutine _destroyCoroutine;
     [SerializeField] private float _destroyTime;
 
     private void Awake()
@@ -22,7 +21,7 @@ public class Drum : MonoBehaviour, IDamageable
         _health.Decrease(damage.Value);
         if (_health.Value <= 0)
         {
-            Explode();   
+            Explode();
         }
         return true;
     }
