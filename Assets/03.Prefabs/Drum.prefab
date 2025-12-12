@@ -153,6 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health:
     _value: 100
+    _maxValue: 100
+    _regenValue: 0
   _explosionData:
     Effect: {fileID: 0}
     IsExploded: 0

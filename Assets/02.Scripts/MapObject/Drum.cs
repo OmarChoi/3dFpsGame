@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Drum : MonoBehaviour, IDamageable
 {
-    [SerializeField] private ValueStat _health;
+    [SerializeField] private ConsumableStat _health;
     [SerializeField] private ExplosionData _explosionData;
     [SerializeField] private float _torqueMultiplier;
     private Rigidbody _rigidbody;
@@ -38,7 +38,7 @@ public class Drum : MonoBehaviour, IDamageable
     private void PlayExplodeEffect()
     {
         _explosionData.Effect.transform.position = transform.position;
-        _explosionData.Effect.Emit(1);
+        _explosionData.Effect.Play();
     }
 
     private void FlyAway()
