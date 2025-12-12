@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d149f54a7d7e49a7ea9ac5879ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionEffectPrefab: {fileID: 1620140131458704099, guid: 57e5b83dfee152a47aedf7d83c83e9f5, type: 3}
+  _damage: 20
+  _explodeRadius: 100
 --- !u!54 &4985222015725472816
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 166244993947062320}
   - component: {fileID: 273724986330085479}
   - component: {fileID: 3897240417773942304}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,11 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _playerStats: {fileID: 0}
-  _characterController: {fileID: 273724986330085479}
   _health: 100
+  _hitDuration: 0.3
+  _knockbackRate: 0.2
   _detectDistance: 10
   _moveSpeed: 5
+  _patrolDistance: 4
   _attackDistance: 1.5
   _damage: 20
   _attackSpeed: 2
