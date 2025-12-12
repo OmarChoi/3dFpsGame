@@ -90,7 +90,6 @@ public class Zombie : MonoBehaviour, IDamageable
         Vector3 direction = (targetPosition - transform.position);
         direction.y = 0.0f;
         direction.Normalize();
-
         if (direction.sqrMagnitude < 0.0001f) return;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = targetRotation;
@@ -99,7 +98,10 @@ public class Zombie : MonoBehaviour, IDamageable
     private void Move(Vector3 targetPosition)
     {
         Rotate(targetPosition);
-        Vector3 direction = (targetPosition - transform.position).normalized;
+        Vector3 direction = (targetPosition - transform.position);
+        direction.y = 0.0f;
+        direction.Normalize();
+        direction.y = Define.Gravity;
         _characterController.Move(direction * (_moveSpeed * Time.deltaTime));
     }
     

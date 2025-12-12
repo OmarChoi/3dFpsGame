@@ -6,7 +6,6 @@ public class PlayerMove : MonoBehaviour
     [System.Serializable]
     public class MoveConfig
     {
-        public float Gravity;
         public float RunStaminaUsage;
         public float JumpStaminaUsage;
     }
@@ -62,7 +61,7 @@ public class PlayerMove : MonoBehaviour
     
     private void ApplyGravity()
     {
-        _yVelocity += _config.Gravity * Time.deltaTime;
+        _yVelocity += Define.Gravity * Time.deltaTime;
     }
 
     private void HandleJump()
