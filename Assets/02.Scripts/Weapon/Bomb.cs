@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _explosionData.ExplosionObject = gameObject;
     }
 
     public void Reset()
@@ -34,15 +35,8 @@ public class Bomb : MonoBehaviour
 
     private void ApplyBombDamage()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _explosionData.Radius, _explosionData.LayerMask);
-        Damage damage = new Damage(_explosionData.Damage, gameObject);
-        foreach (Collider hit in colliders)
-        {
-            if (hit.TryGetComponent(out IDamageable damageable))
-            {
-                damageable.TryTakeDamage(damage);
-            }
-        }
+        _explosionData.Center = transform.position;
+        ExplosionHelper.ApplyExplosionDamage(_explosionData);
     }
     
     public void Launch(Vector3 direction, float power)

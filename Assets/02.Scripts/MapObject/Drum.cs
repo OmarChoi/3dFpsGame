@@ -13,6 +13,7 @@ public class Drum : MonoBehaviour, IDamageable
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _explosionData.ExplosionObject = gameObject;
     }
     
     public bool TryTakeDamage(Damage damage)
@@ -51,15 +52,8 @@ public class Drum : MonoBehaviour, IDamageable
 
     private void ApplyDamage()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _explosionData.Radius, _explosionData.LayerMask);
-        Damage damage = new Damage(_explosionData.Damage, gameObject);
-        foreach (Collider hit in colliders)
-        {
-            if (hit.TryGetComponent(out IDamageable damageable))
-            {
-                damageable.TryTakeDamage(damage);
-            }
-        }
+        _explosionData.Center = transform.position;
+        ExplosionHelper.ApplyExplosionDamage(_explosionData);
     }
 
     private IEnumerator DestroyCoroutine()
