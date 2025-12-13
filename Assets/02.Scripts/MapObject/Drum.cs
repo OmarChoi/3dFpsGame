@@ -7,8 +7,10 @@ public class Drum : MonoBehaviour, IDamageable
     [SerializeField] private ConsumableStat _health;
     [SerializeField] private ExplosionData _explosionData;
     [SerializeField] private float _torqueMultiplier;
-    private Rigidbody _rigidbody;
     [SerializeField] private float _destroyTime;
+    private Rigidbody _rigidbody;
+    
+    private const float UpwardBias = 1f;
 
     private void Awake()
     {
@@ -45,7 +47,7 @@ public class Drum : MonoBehaviour, IDamageable
     private void FlyAway()
     {
         Vector2 randomCircle = UnityEngine.Random.insideUnitCircle;
-        Vector3 randomDirection = new Vector3(randomCircle.x, 1f, randomCircle.y).normalized;
+        Vector3 randomDirection = new Vector3(randomCircle.x, UpwardBias, randomCircle.y).normalized;
         _rigidbody.AddForce(randomDirection * _explosionData.ExplosionForce, ForceMode.Impulse);
         _rigidbody.AddTorque(UnityEngine.Random.insideUnitSphere * (_explosionData.ExplosionForce * _torqueMultiplier), ForceMode.Impulse);
     }
