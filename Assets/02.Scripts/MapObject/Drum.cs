@@ -41,7 +41,7 @@ public class Drum : MonoBehaviour, IDamageable
     private void PlayExplodeEffect()
     {
         _explosionData.Effect.transform.position = transform.position;
-        _explosionData.Effect.Play();
+        _explosionData.Effect.Emit(1);
     }
 
     private void FlyAway()

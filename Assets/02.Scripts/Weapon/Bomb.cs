@@ -26,10 +26,10 @@ public class Bomb : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (_explosionData.IsExploded) return;
-        _explosionData.IsExploded = true;
         _explosionData.Effect.transform.position = transform.position;
         _explosionData.Effect.Play();
         ApplyBombDamage();
+        _explosionData.IsExploded = true;
         BombFactory.Instance.Release(this);
     }
 
