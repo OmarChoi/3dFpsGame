@@ -54,4 +54,9 @@ public class GameManager : MonoBehaviour
         _stateTextUI.text = GameOverStateText;
         _stateTextUI.gameObject.SetActive(true);
     }
+
+    public bool CanPlay()
+    {
+        return _state == EGameState.Playing;
+    }
 }
