@@ -13,8 +13,7 @@ public class MiniMapCamera : MonoBehaviour
     private void UpdateRotation()
     {
         Vector3 targetAngle = _target.eulerAngles;
-        targetAngle.x = 90.0f;
-        transform.eulerAngles = targetAngle;
+        transform.eulerAngles = new Vector3(90f, _target.eulerAngles.y, 0f);
     }
     
     private void UpdatePosition()
