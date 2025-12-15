@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800304e922181cd41a00b6b2bf77598b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gaugeImage: {fileID: 0}
+  _gaugeImage: {fileID: 7522671297428690814}
   _healthBarTransform: {fileID: 2110238952434368311}
 --- !u!1 &6709678519879535288
 GameObject:
