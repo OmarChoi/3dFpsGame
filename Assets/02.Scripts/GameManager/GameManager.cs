@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager _instance;
+    public static GameManager Instance => _instance;
     private EGameState _state = EGameState.Ready;
     public EGameState State => _state;
 
     [SerializeField] private TextMeshProUGUI _stateTextUI;
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        _instance = this;
+    }
     
     private void Start()
     {
