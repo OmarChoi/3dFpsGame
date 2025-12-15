@@ -238,7 +238,7 @@ MonoBehaviour:
     _regenValue: 0
   _hitDuration: 0.3
   _knockbackRate: 0.2
-  _detectDistance: 15
+  _detectDistance: 10
   _moveSpeed: 5
   _patrolDistance: 8
   _attackDistance: 1.5

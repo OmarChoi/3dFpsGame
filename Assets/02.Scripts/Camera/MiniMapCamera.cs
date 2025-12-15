@@ -6,11 +6,11 @@ public class MiniMapCamera : MonoBehaviour
     [SerializeField] private float _yOffset = 10.0f;
     private void LateUpdate()
     {
-        UpdateRotatation();
+        UpdateRotation();
         UpdatePosition();
     }
 
-    private void UpdateRotatation()
+    private void UpdateRotation()
     {
         Vector3 targetAngle = _target.eulerAngles;
         targetAngle.x = 90.0f;
