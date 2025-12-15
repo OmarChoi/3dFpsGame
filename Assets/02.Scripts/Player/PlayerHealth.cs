@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (_stats.Health.Value <= 0)
         {
             // Todo. 플레이어 사망 처리
+            GameManager.Instance.GameOver();
         }
         return true;
     }

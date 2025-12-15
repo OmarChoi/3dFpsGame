@@ -6,7 +6,6 @@ public static class ExplosionHelper
     private readonly static Collider[] _colliderCache = new Collider[MaxHitColliders];
     public static void ApplyExplosionDamage(ExplosionData data)
     {
-        if (data.IsExploded) return;
         int hitCount = Physics.OverlapSphereNonAlloc(data.Center, data.Radius, _colliderCache, data.LayerMask);
         
         Damage damage = new Damage(data.Damage, data.ExplosionObject);
