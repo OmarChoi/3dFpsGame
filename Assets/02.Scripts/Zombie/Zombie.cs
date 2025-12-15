@@ -246,7 +246,7 @@ public class Zombie : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
     
-    public bool TryTakeDamage(Damage damage)
+    public bool TryTakeDamage(in Damage damage)
     {
         if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
         _health.TryConsume(damage.Value);

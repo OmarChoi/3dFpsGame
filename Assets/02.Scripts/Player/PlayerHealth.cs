@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _stats = GetComponent<PlayerStats>();
     }
     
-    public bool TryTakeDamage(Damage damage)
+    public bool TryTakeDamage(in Damage damage)
     {
         if (_stats.Health.Value <= 0) return false;
         _stats.Health.Decrease(damage.Value);

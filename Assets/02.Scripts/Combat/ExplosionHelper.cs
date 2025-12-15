@@ -4,7 +4,7 @@ public static class ExplosionHelper
 {
     private const int MaxHitColliders = 64;
     private readonly static Collider[] _colliderCache = new Collider[MaxHitColliders];
-    public static void ApplyExplosionDamage(ExplosionData data)
+    public static void ApplyExplosionDamage(in ExplosionData data)
     {
         int hitCount = Physics.OverlapSphereNonAlloc(data.Center, data.Radius, _colliderCache, data.LayerMask);
         
