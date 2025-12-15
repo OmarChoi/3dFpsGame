@@ -9,7 +9,8 @@ public class Zombie : MonoBehaviour, IDamageable
     [SerializeField] private GameObject _player;
     private CharacterController _characterController;
     
-    [SerializeField] private float _health;
+    [SerializeField] private ConsumableStat _health;
+    public ConsumableStat Health => _health;
     private Vector3 _startPosition;
     
     private Coroutine _knockbackCoroutine;
@@ -46,6 +47,7 @@ public class Zombie : MonoBehaviour, IDamageable
     
     private void Update()
     {
+        if (GameManager.Instance.State != EGameState.Playing) return;
         ApplyGravity();
         switch (_state)
         {
@@ -244,11 +246,11 @@ public class Zombie : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
     
-    public bool TryTakeDamage(Damage damage)
+    public bool TryTakeDamage(in Damage damage)
     {
         if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
-        _health -= damage.Value;
-        if (_health <= 0)
+        _health.TryConsume(damage.Value);
+        if (_health.Value <= 0)
         {
             _state = EZombieState.Death;
             StartCoroutine(DeathCoroutine());

@@ -18,7 +18,7 @@ public class Drum : MonoBehaviour, IDamageable
         _explosionData.ExplosionObject = gameObject;
     }
     
-    public bool TryTakeDamage(Damage damage)
+    public bool TryTakeDamage(in Damage damage)
     {
         if (_explosionData.IsExploded) return false;
         _health.Decrease(damage.Value);

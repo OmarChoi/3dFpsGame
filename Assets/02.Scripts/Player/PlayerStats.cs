@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.State != EGameState.Playing) return;
         float deltaTime = Time.deltaTime;
         
         _health.Regenerate(deltaTime);

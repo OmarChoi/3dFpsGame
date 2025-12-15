@@ -28,12 +28,14 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.State != EGameState.Playing) return;
         GetKeyInput();
     }
 
     private void LateUpdate()
     {
-        if (_isShot == true) return;
+        if (GameManager.Instance.State != EGameState.Playing) return;
+        if (_isShot) return;
         if (_isSwitching)
         {
             ProcessCameraTransition();
