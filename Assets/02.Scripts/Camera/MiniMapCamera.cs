@@ -1,0 +1,26 @@
+using UnityEngine;
+
+public class MiniMapCamera : MonoBehaviour
+{
+    [SerializeField] private Transform _target;
+    [SerializeField] private float _yOffset = 10.0f;
+    private void LateUpdate()
+    {
+        UpdateRotatation();
+        UpdatePosition();
+    }
+
+    private void UpdateRotatation()
+    {
+        Vector3 targetAngle = _target.eulerAngles;
+        targetAngle.x = 90.0f;
+        transform.eulerAngles = targetAngle;
+    }
+    
+    private void UpdatePosition()
+    {
+        Vector3 targetPosition = _target.position;
+        Vector3 finalPosition = targetPosition + new Vector3(0, _yOffset, 0);
+        transform.position = finalPosition;
+    }
+}
