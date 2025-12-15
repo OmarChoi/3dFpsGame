@@ -3857,22 +3857,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _patrolDistance
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistanceInCombat
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie
