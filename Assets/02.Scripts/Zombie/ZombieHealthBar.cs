@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ZombieHealthBar : MonoBehaviour
 {
     private Zombie _zombie;
-    [SerializeField] private Image _guageImage;
+    [SerializeField] private Image _gaugeImage;
     [SerializeField] private Transform _healthBarTransform;
     private Camera _mainCamera;
     private float _lastHealth = -1;
@@ -20,7 +20,7 @@ public class ZombieHealthBar : MonoBehaviour
         float currentHealth = _zombie.Health.Value / _zombie.Health.MaxValue;
         if (!Mathf.Approximately(_lastHealth, currentHealth))
         {
-            _guageImage.fillAmount = currentHealth;
+            _gaugeImage.fillAmount = currentHealth;
             _lastHealth = currentHealth;
         }
         

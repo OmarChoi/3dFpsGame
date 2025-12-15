@@ -21,7 +21,7 @@ public class ConsumableStat
 
     public bool TryConsume(float amount)
     {
-        if (_value < amount) return false;
+        if (_value < 0) return false;
         Consume(amount);
         return true;
     }
