@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,6 @@ public class StatsUI : MonoBehaviour
     
     [Header("Stats")]
     [Space]
-    private float _currentHealth;
     [SerializeField] private HealthBarController _healthBar;
     [SerializeField] private Slider _staminaBar;
     

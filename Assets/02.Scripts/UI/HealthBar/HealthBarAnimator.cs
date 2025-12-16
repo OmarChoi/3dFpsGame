@@ -10,12 +10,6 @@ public class HealthBarAnimator : MonoBehaviour
 
     private Tween _delayedHealthTween;
     
-    private enum HealthBarType
-    {
-        Slider,
-        Image
-    }
-    
     private void Start()
     {
         InitializeHealthBar();

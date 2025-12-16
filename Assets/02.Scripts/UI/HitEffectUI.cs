@@ -28,12 +28,17 @@ public class HitEffectUI : MonoBehaviour
     {
         _playerHealth.OnHit -= PlayHitEffect;
     }
+
+    private void OnDestroy()
+    {
+        ClearTweens();
+    }
     
     private void PlayHitEffect()
     {
-        _effectTween?.Kill();
         SetImage();
         ResetAlpha();
+        _effectTween?.Kill();
         AnimateEffect();
     }
 
@@ -45,13 +50,16 @@ public class HitEffectUI : MonoBehaviour
     
     private void ResetAlpha()
     {
-        Color color = _hitEffect.color;
-        color.a = 1f;
-        _hitEffect.color = color;
+        _hitEffect.color = _fullAlphaColor;
     }
 
     private void AnimateEffect()
     {
-        _hitEffect.DOFade(0, _effectDuration).SetEase(Ease.InQuad);
+        _effectTween = _hitEffect.DOFade(0, _effectDuration).SetEase(Ease.InQuad);
+    }
+
+    private void ClearTweens()
+    {
+        _effectTween?.Kill();
     }
 }
