@@ -6,16 +6,16 @@ public class Zombie : MonoBehaviour, IDamageable
 {
     private EZombieState _state = EZombieState.Idle;
 
-    [SerializeField] private GameObject   _player;
+    [SerializeField] private GameObject _player;
     [SerializeField] private NavMeshAgent _agent;
 
     [SerializeField] private ConsumableStat _health;
-    public                   ConsumableStat Health => _health;
-    private                  Vector3        _startPosition;
+    public ConsumableStat Health => _health;
+    private Vector3 _startPosition;
 
-    private                  Coroutine _knockbackCoroutine;
-    [SerializeField] private float     _hitDuration;
-    [SerializeField] private float     _knockbackRate;
+    private Coroutine _knockbackCoroutine;
+    [SerializeField] private float _hitDuration;
+    [SerializeField] private float _knockbackRate;
 
     [Header("Move")]
     [Space]
@@ -32,7 +32,7 @@ public class Zombie : MonoBehaviour, IDamageable
     [SerializeField] private float _attackDistance;
     [SerializeField] private float _damage;
     [SerializeField] private float _attackSpeed;
-    private                  float _attackTimer;
+    private float _attackTimer;
 
     [SerializeField] private float _arrivalThreshold;
     [SerializeField] private float _deathDuration;
@@ -40,6 +40,7 @@ public class Zombie : MonoBehaviour, IDamageable
     [Header("Jump")]
     [Space]
     [SerializeField] private float _jumpForce;
+    private const float JumpArcHeight = 1.5f;
     private Coroutine _jumpCoroutine;
     private Vector3 _jumpStartPosition;
     private Vector3 _jumpEndPosition;
@@ -124,7 +125,7 @@ public class Zombie : MonoBehaviour, IDamageable
         direction.Normalize();
         transform.rotation = Quaternion.LookRotation(direction);
 
-        float jumpHeight = _jumpEndPosition.y - _jumpStartPosition.y + 1.0f;
+        float jumpHeight = _jumpEndPosition.y - _jumpStartPosition.y + JumpArcHeight;
         float jumpDuration = jumpHeight / _jumpForce;
         float elapsedTime = 0f;
 

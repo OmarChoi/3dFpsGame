@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         float movementSpeed = GetSpeed();
         Vector3 direction = GetDirection();
         
-        Vector3 horizontalVelocity = direction * _stats.MoveSpeed; 
+        Vector3 horizontalVelocity = direction * movementSpeed; 
         Vector3 moveVector = horizontalVelocity + (Vector3.up * _yVelocity); 
         _controller.Move(moveVector * Time.deltaTime);
     }
@@ -77,6 +77,7 @@ public class PlayerMove : MonoBehaviour
             _yVelocity += Define.Gravity * Time.deltaTime;
         }
     }
+    
     private void HandleJump()
     {
         if (!Input.GetButtonDown("Jump")) return;
