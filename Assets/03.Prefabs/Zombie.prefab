@@ -340,6 +340,11 @@ MonoBehaviour:
     Duration: 0.6
     StartDelay: 0.3
     DelayedBarEase: 5
+  _shakeInfo:
+    Strength: 0.15
+    Duration: 0.1
+    Vibrato: 5
+    Randomness: 90
 --- !u!1 &5839752776811979938
 GameObject:
   m_ObjectHideFlags: 0

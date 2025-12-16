@@ -5,15 +5,7 @@ public class HealthBarShaker : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private RectTransform _healthBarTransform;
-    
-    [Header("Shake Settings - Damage")]
-    [SerializeField] private float _strength = 8f;
-    [SerializeField] private float _duration = 0.4f;
-    
-    [Header("Advanced Settings")]
-    [SerializeField] private int _shakeVibrato = 15;
-    [SerializeField] private float _shakeRandomness = 90f;
-    
+    [SerializeField] private ShakeInfo _shakeInfo;
     private Sequence _shakeSequence;
     
     private void OnDestroy()
@@ -23,7 +15,7 @@ public class HealthBarShaker : MonoBehaviour
     
     public void ShakeOnDamage()
     {
-        Shake(_strength, _duration);
+        Shake(_shakeInfo.Strength, _shakeInfo.Duration);
     }
     
     private void Shake(float strength, float duration)
@@ -37,8 +29,8 @@ public class HealthBarShaker : MonoBehaviour
             .Append(_healthBarTransform.DOShakePosition(
                 duration: duration,
                 strength: strength,
-                vibrato: _shakeVibrato,
-                randomness: _shakeRandomness,
+                vibrato: _shakeInfo.Vibrato,
+                randomness: _shakeInfo.Randomness,
                 fadeOut: true
             ))
             .OnComplete(() => _healthBarTransform.anchoredPosition = Vector2.zero);

@@ -11,6 +11,11 @@ public class MiniMapUI : MonoBehaviour
     [SerializeField] private float _zoomSpeed;
     private int _currentLevel;
     private Tweener _zoomTween;
+
+    private void Start()
+    {
+        _miniMapCamera.orthographicSize = _zoomLevels[_currentLevel];
+    }
     
     public void ZoomIn()
     {

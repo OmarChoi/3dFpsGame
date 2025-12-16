@@ -5155,10 +5155,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarTransform: {fileID: 1987066940}
-  _strength: 8
-  _duration: 0.4
-  _shakeVibrato: 15
-  _shakeRandomness: 90
+  _shakeInfo:
+    Strength: 8
+    Duration: 0.4
+    Vibrato: 15
+    Randomness: 90
 --- !u!114 &1987066943
 MonoBehaviour:
   m_ObjectHideFlags: 0
