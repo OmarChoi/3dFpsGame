@@ -17,6 +17,7 @@ public class PlayerMove : MonoBehaviour
     
     [SerializeField] private float _maxJumpCount;
     private float _yVelocity;
+    private Vector3 _horizontalVelocity;
     private int _jumpCounter;
     
     private void Awake()
@@ -28,13 +29,29 @@ public class PlayerMove : MonoBehaviour
     
     private void Update()
     {
-        if (!GameManager.Instance.CanPlay()) return;
-        if (!CursorManager.Instance.IsCursorLocked) return;
         ApplyGravity();
-        HandleJump();
+        HandleInput();
         Move();
     }
 
+    private bool CanHandleInput()
+    {
+        return GameManager.Instance.CanPlay() &&
+               CursorManager.Instance.IsCursorLocked;
+    }
+    
+    private void HandleInput()
+    {
+        if (!CanHandleInput())
+        {
+            _horizontalVelocity = Vector3.zero;
+            return;
+        }
+
+        HandleJump();
+        CalculateHorizontalVelocity();
+    }
+    
     private float GetSpeed()
     {
         bool canRun = Input.GetKey(KeyCode.LeftShift) && 
@@ -44,14 +61,18 @@ public class PlayerMove : MonoBehaviour
     
     private void Move()
     {
-        float movementSpeed = GetSpeed();
-        Vector3 direction = GetDirection();
-        
-        Vector3 horizontalVelocity = direction * movementSpeed; 
-        Vector3 moveVector = horizontalVelocity + (Vector3.up * _yVelocity); 
+        Vector3 moveVector = _horizontalVelocity + (Vector3.up * _yVelocity); 
         _controller.Move(moveVector * Time.deltaTime);
     }
 
+    private void CalculateHorizontalVelocity()
+    {
+        float movementSpeed = GetSpeed();
+        Vector3 direction = GetDirection();
+        
+        _horizontalVelocity = direction * movementSpeed; 
+    }
+    
     private Vector3 GetDirection()
     {        
         float xMovement = Input.GetAxis("Horizontal");

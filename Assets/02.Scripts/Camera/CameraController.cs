@@ -17,7 +17,6 @@ public class CameraController : MonoBehaviour
     public BaseCamera CurrentCamera => _cameras[(int)_currentType];
 
     private bool _isSwitching;
-    private bool _isShot;
     private float _blend;
 
     private void Awake()
@@ -28,16 +27,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.CanPlay()) return;
-        if (!CursorManager.Instance.IsCursorLocked) return;
         GetKeyInput();
     }
 
     private void LateUpdate()
     {
-        if (!GameManager.Instance.CanPlay()) return;
-        if (!CursorManager.Instance.IsCursorLocked) return;
-        if (_isShot) return;
         if (_isSwitching)
         {
             ProcessCameraTransition();
@@ -104,6 +98,9 @@ public class CameraController : MonoBehaviour
 
     private void ApplyRotationInput(BaseCamera cam)
     {
+        if (!GameManager.Instance.CanPlay()) return;
+        if (!CursorManager.Instance.IsCursorLocked) return;
+        
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         cam.Rotate(mouseX, mouseY);
