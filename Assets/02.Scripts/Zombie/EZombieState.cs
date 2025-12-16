@@ -4,6 +4,7 @@ public enum EZombieState
     Trace,
     Comeback,
     Patrol,
+    Jump,
     Attack,
     Hit,
     Death
