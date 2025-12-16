@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Zombie : MonoBehaviour, IDamageable
 {
     private EZombieState _state = EZombieState.Idle;
@@ -55,6 +56,7 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         _agent.speed = _moveSpeed;
         _agent.stoppingDistance = _attackDistance;
+        _agent.autoTraverseOffMeshLink = false;
     }
 
     private void Update()
@@ -220,7 +222,7 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private Vector3 GetRandomPositionInRange(Vector3 center, float range)
     {
-        Vector2 randomPosition = Random.insideUnitCircle.normalized * range;
+        Vector2 randomPosition = Random.insideUnitCircle * range;
         Vector3 nextPosition = new Vector3(randomPosition.x, 0f, randomPosition.y);
         nextPosition += center;
         return nextPosition;
