@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,9 +6,8 @@ public class Zombie : MonoBehaviour, IDamageable
 {
     private EZombieState _state = EZombieState.Idle;
 
-    [SerializeField] private GameObject          _player;
-    [SerializeField] private CharacterController _characterController;
-    [SerializeField] private NavMeshAgent        _agent;
+    [SerializeField] private GameObject   _player;
+    [SerializeField] private NavMeshAgent _agent;
 
     [SerializeField] private ConsumableStat _health;
     public                   ConsumableStat Health => _health;
@@ -23,7 +21,6 @@ public class Zombie : MonoBehaviour, IDamageable
     [Space]
     [SerializeField] private float _detectDistance;
     [SerializeField] private float _moveSpeed;
-    private                  float _yVelocity;
 
     [Header("Patrol")]
     [Space]
@@ -40,7 +37,6 @@ public class Zombie : MonoBehaviour, IDamageable
     [SerializeField] private float _arrivalThreshold;
     [SerializeField] private float _deathDuration;
 
-    
     [Header("Jump")]
     [Space]
     [SerializeField] private float _jumpForce;
@@ -52,7 +48,6 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         _startPosition = transform.position;
         _attackTimer = _attackSpeed;
-        _characterController = GetComponent<CharacterController>();
     }
 
     private void Start()
@@ -64,7 +59,7 @@ public class Zombie : MonoBehaviour, IDamageable
     private void Update()
     {
         if (!GameManager.Instance.CanPlay()) return;
-        ApplyGravity();
+        
         switch (_state)
         {
             case EZombieState.Idle:
@@ -98,7 +93,6 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Idle()
     {
-        // Todo. Idle Animation 실행
         if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
             _state = EZombieState.Trace;
@@ -107,16 +101,6 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             OnStartPatrol();
         }
-    }
-
-    private void Rotate(Vector3 targetPosition)
-    {
-        Vector3 direction = (targetPosition - transform.position);
-        direction.y = 0.0f;
-        if (direction.sqrMagnitude < 0.0001f) return;
-        direction.Normalize();
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = targetRotation;
     }
 
     private void Move(Vector3 targetPosition)
@@ -128,7 +112,6 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         _agent.isStopped = true;
         _agent.ResetPath();
-        _agent.CompleteOffMeshLink();
 
         if (_jumpCoroutine != null) return;
         _jumpCoroutine = StartCoroutine(JumpCoroutine());
@@ -140,7 +123,7 @@ public class Zombie : MonoBehaviour, IDamageable
         direction.y = 0.0f;
         direction.Normalize();
         transform.rotation = Quaternion.LookRotation(direction);
-        
+
         float jumpHeight = _jumpEndPosition.y - _jumpStartPosition.y + 1.0f;
         float jumpDuration = jumpHeight / _jumpForce;
         float elapsedTime = 0f;
@@ -148,36 +131,27 @@ public class Zombie : MonoBehaviour, IDamageable
         while (elapsedTime < jumpDuration)
         {
             float progress = elapsedTime / jumpDuration;
-            
+
             Vector3 currentPosition = Vector3.Lerp(_jumpStartPosition, _jumpEndPosition, progress);
             currentPosition.y += jumpHeight * Mathf.Sin(progress * Mathf.PI);
-            transform.position = currentPosition;
+            _agent.Warp(currentPosition);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        transform.position = _jumpEndPosition;
+
+        _agent.Warp(_jumpEndPosition);
+        _agent.CompleteOffMeshLink();
+        _agent.isStopped = false;
         _state = EZombieState.Trace;
         _jumpCoroutine = null;
     }
 
-    private void ApplyGravity()
-    {
-        if (_characterController.isGrounded && _yVelocity < 0)
-        {
-            _yVelocity = -1f;
-        }
-        else
-        {
-            _yVelocity += Define.Gravity * Time.deltaTime;
-        }
-    }
-
     private void Trace()
     {
-        // Todo. Run Animation 실행
         Move(_player.transform.position);
         float distance = transform.GetSquaredDistance(_player.transform.position);
+        
         if (Util.IsInRange(distance, _attackDistance))
         {
             _state = EZombieState.Attack;
@@ -186,7 +160,7 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             _state = EZombieState.Comeback;
         }
-        
+
         if (_agent.isOnOffMeshLink)
         {
             OffMeshLinkData linkData = _agent.currentOffMeshLinkData;
@@ -202,8 +176,8 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Comeback()
     {
-        // Todo. Run Animation 실행
         Move(_startPosition);
+        
         if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
             _state = EZombieState.Trace;
@@ -229,25 +203,26 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Patrol()
     {
-        // Todo. Run Animation 실행
         if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
             _state = EZombieState.Trace;
             return;
         }
+        
         if (transform.IsInRange(_patrolDestination, _arrivalThreshold))
         {
             _patrolDestination = GetRandomPositionInRange(_startPosition, _patrolDistance);
         }
+        
         Move(_patrolDestination);
     }
 
     private Vector3 GetRandomPositionInRange(Vector3 center, float range)
     {
-        Vector2 randomPosition = UnityEngine.Random.insideUnitCircle.normalized * range;
-        Vector3 nextPositon = new Vector3(randomPosition.x, 0f, randomPosition.y);
-        nextPositon += center;
-        return nextPositon;
+        Vector2 randomPosition = Random.insideUnitCircle.normalized * range;
+        Vector3 nextPosition = new Vector3(randomPosition.x, 0f, randomPosition.y);
+        nextPosition += center;
+        return nextPosition;
     }
 
     private void Attack()
@@ -275,6 +250,7 @@ public class Zombie : MonoBehaviour, IDamageable
         Vector3 direction = (transform.position - damage.Attacker.transform.position);
         direction.y = 0f;
         direction.Normalize();
+        
         if (_knockbackCoroutine != null)
         {
             StopCoroutine(_knockbackCoroutine);
@@ -289,21 +265,18 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             elapsedTime += Time.deltaTime;
             _agent.Move(direction * (knockbackForce * _knockbackRate * Time.deltaTime));
-            // _characterController.Move(direction * (knockbackForce * _knockbackRate * Time.deltaTime));
             yield return null;
         }
     }
 
     private IEnumerator HitCoroutine()
     {
-        // Todo. Hit Animation 실행
         yield return new WaitForSeconds(_hitDuration);
         _state = EZombieState.Idle;
     }
 
     private IEnumerator DeathCoroutine()
     {
-        // Todo. Death Animation 실행
         yield return new WaitForSeconds(_deathDuration);
         Destroy(gameObject);
     }
@@ -311,9 +284,11 @@ public class Zombie : MonoBehaviour, IDamageable
     public bool TryTakeDamage(in Damage damage)
     {
         if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
+        
         _health.TryConsume(damage.Value);
         _agent.isStopped = true;
         _agent.ResetPath();
+        
         if (_health.Value <= 0)
         {
             _state = EZombieState.Death;
