@@ -31,6 +31,7 @@ public class HitEffectUI : MonoBehaviour
     
     private void PlayHitEffect()
     {
+        _effectTween?.Kill();
         SetImage();
         ResetAlpha();
         AnimateEffect();
@@ -51,7 +52,6 @@ public class HitEffectUI : MonoBehaviour
 
     private void AnimateEffect()
     {
-        _effectTween?.Kill();
         _hitEffect.DOFade(0, _effectDuration).SetEase(Ease.InQuad);
     }
 }
