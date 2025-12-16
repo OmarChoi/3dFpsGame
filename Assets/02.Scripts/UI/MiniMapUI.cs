@@ -9,11 +9,12 @@ public class MiniMapUI : MonoBehaviour
     [Space]
     [SerializeField] private int[] _zoomLevels;
     [SerializeField] private float _zoomSpeed;
-    private int _currentLevel;
+    private int _currentLevel = 1;
     private Tweener _zoomTween;
 
     private void Start()
     {
+        if (_zoomLevels.Length == 0) return;
         _miniMapCamera.orthographicSize = _zoomLevels[_currentLevel];
     }
     

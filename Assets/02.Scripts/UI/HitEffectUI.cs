@@ -44,6 +44,7 @@ public class HitEffectUI : MonoBehaviour
 
     private void SetImage()
     {
+        if (_imageSources == null || _imageSources.Length == 0) return;
         int randomIndex = UnityEngine.Random.Range(0, _imageSources.Length);
         _hitEffect.sprite = _imageSources[randomIndex];
     }
