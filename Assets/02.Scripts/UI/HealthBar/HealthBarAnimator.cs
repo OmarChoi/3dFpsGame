@@ -6,11 +6,8 @@ public class HealthBarAnimator : MonoBehaviour
 {
     [SerializeField] private Slider _healthBarSlider;
     [SerializeField] private Image _delayedHealthBarImage;
-    
-    [SerializeField] private float _delayedBarAnimationDuration = 0.6f;
-    [SerializeField] private float _delayedBarAnimationDelay = 0.3f;
-    [SerializeField] private Ease _delayedBarEase = Ease.InQuad;
-    
+    [SerializeField] private DelayedInfo _delayedInfo;
+
     private Tween _delayedHealthTween;
     
     private enum HealthBarType
@@ -61,9 +58,9 @@ public class HealthBarAnimator : MonoBehaviour
             DOTween.To(() => _delayedHealthBarImage.fillAmount,
                        x => _delayedHealthBarImage.fillAmount = x, 
                        targetValue,
-                       _delayedBarAnimationDuration).
-                    SetDelay(_delayedBarAnimationDelay)
-                    .SetEase(_delayedBarEase);
+                       _delayedInfo.Duration).
+                    SetDelay(_delayedInfo.StartDelay)
+                    .SetEase(_delayedInfo.DelayedBarEase);
     }
     
     public float GetCurrentHealthValue()

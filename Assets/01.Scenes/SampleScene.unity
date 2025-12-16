@@ -5187,9 +5187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarSlider: {fileID: 1987066941}
   _delayedHealthBarImage: {fileID: 204789016}
-  _delayedBarAnimationDuration: 0.6
-  _delayedBarAnimationDelay: 0.3
-  _delayedBarEase: 5
+  _delayedInfo:
+    Duration: 0.6
+    StartDelay: 0.3
+    DelayedBarEase: 5
 --- !u!1 &1990332029
 GameObject:
   m_ObjectHideFlags: 0
