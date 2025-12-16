@@ -7,9 +7,9 @@ public class StatsUI : MonoBehaviour
     
     [Header("Stats")]
     [Space]
-    [SerializeField] private Slider _healthBar;
+    [SerializeField] private HealthBarController _healthBar;
     [SerializeField] private Slider _staminaBar;
-
+    
     private void OnEnable()
     {
         _stats.Stamina.OnValueChanged += UpdateStaminaUI;
@@ -24,10 +24,7 @@ public class StatsUI : MonoBehaviour
     
     private void UpdateHealthUI(float health, float maxHealth)
     {
-        if (maxHealth > 0)
-        {
-            _healthBar.value = health / maxHealth;
-        }
+        _healthBar.UpdateHealth(health, maxHealth);
     }
     
     private void UpdateStaminaUI(float stamina, float maxStamina)
