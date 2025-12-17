@@ -13,7 +13,6 @@ public class ConsumableStat
     public float Value => _value;
     public float MaxValue => _maxValue;
 
-
     public void Initialize()
     {
         SetValue(_maxValue);
@@ -21,12 +20,12 @@ public class ConsumableStat
 
     public bool TryConsume(float amount)
     {
-        if (_value < 0) return false;
+        if (_value < amount) return false;
         Consume(amount);
         return true;
     }
 
-    private void Consume(float amount)
+    public void Consume(float amount)
     {
         SetValue(_value - amount);
     }
@@ -46,11 +45,6 @@ public class ConsumableStat
         SetMaxValue(_maxValue + amount);
     }
 
-    public void Decrease(float amount)
-    {
-        SetValue(_value - amount);
-    }
-    
     public void DecreaseMax(float amount)
     {
         float afterMaxValue = _maxValue - amount;
