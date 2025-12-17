@@ -6,7 +6,8 @@ public class CameraController : MonoBehaviour
     private enum ECameraType
     {
         FirstView, 
-        ThirdView
+        ThirdView,
+        TopView
     }
 
     [SerializeField] private float _cameraChangeDuration;
@@ -56,7 +57,8 @@ public class CameraController : MonoBehaviour
         (float x, float y) = prevCamera.GetAngle();
 
         _previousType = _currentType;
-        _currentType = (_currentType == ECameraType.FirstView) ? ECameraType.ThirdView : ECameraType.FirstView;
+        int nextIndex = ((int)_currentType + 1) % System.Enum.GetValues(typeof(ECameraType)).Length;
+        _currentType = (ECameraType)nextIndex;
 
         BaseCamera nextCamera = CurrentCamera;
         nextCamera.Init(x, y);

@@ -21,7 +21,7 @@ public class Drum : MonoBehaviour, IDamageable
     public bool TryTakeDamage(in Damage damage)
     {
         if (_explosionData.IsExploded) return false;
-        _health.Decrease(damage.Value);
+        _health.Consume(damage.Value);
         if (_health.Value <= 0)
         {
             Explode();

@@ -56,7 +56,6 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         _agent.speed = _moveSpeed;
         _agent.stoppingDistance = _attackDistance;
-        _agent.autoTraverseOffMeshLink = false;
     }
 
     private void Update()
@@ -113,9 +112,6 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Jump()
     {
-        _agent.isStopped = true;
-        _agent.ResetPath();
-
         if (_jumpCoroutine != null) return;
         _jumpCoroutine = StartCoroutine(JumpCoroutine());
     }
@@ -172,6 +168,8 @@ public class Zombie : MonoBehaviour, IDamageable
             if (_jumpEndPosition.y > _jumpStartPosition.y)
             {
                 _state = EZombieState.Jump;
+                _agent.isStopped = true;
+                _agent.ResetPath();
                 return;
             }
         }
@@ -288,7 +286,7 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
         
-        _health.TryConsume(damage.Value);
+        _health.Consume(damage.Value);
         _agent.isStopped = true;
         _agent.ResetPath();
         
