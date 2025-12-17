@@ -374,18 +374,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (2)
@@ -429,10 +417,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -994,14 +978,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (12)
@@ -1045,10 +1021,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2090,18 +2062,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (11)
@@ -2146,10 +2106,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2172,14 +2128,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (9)
@@ -2223,10 +2171,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2384,10 +2328,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (3)
@@ -2432,10 +2372,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2458,18 +2394,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (13)
@@ -2513,10 +2437,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2648,7 +2568,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: a6c1af6983b858449b8b671b13c42b4e, type: 2}
   m_BuildHeightMesh: 0
@@ -3075,7 +2995,7 @@ GameObject:
   - component: {fileID: 766106905}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3432,14 +3352,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (5)
@@ -3483,10 +3395,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3597,18 +3505,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (7)
@@ -3652,10 +3548,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4684,18 +4576,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (14)
@@ -4739,10 +4619,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4862,16 +4738,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 766106893}
     - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
+      propertyPath: _arrivalThreshold
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
@@ -4916,10 +4784,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5346,18 +5210,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (10)
@@ -5401,10 +5253,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5503,18 +5351,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (1)
@@ -5559,10 +5395,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5580,14 +5412,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (6)
@@ -5631,10 +5455,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5692,14 +5512,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _playerStats
-      value: 
-      objectReference: {fileID: 766106902}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie (4)
@@ -5743,10 +5555,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7660,14 +7468,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 766106893}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _detectDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _jumpEndYOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie
@@ -7682,7 +7482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 23.69
       objectReference: {fileID: 0}
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7711,10 +7511,6 @@ PrefabInstance:
     - target: {fileID: 6292315568665257228, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375145734530966130, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

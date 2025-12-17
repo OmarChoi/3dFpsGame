@@ -9,6 +9,7 @@ public class Zombie : MonoBehaviour, IDamageable
 
     [SerializeField] private GameObject _player;
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private ConsumableStat _health;
     public ConsumableStat Health => _health;
@@ -17,7 +18,7 @@ public class Zombie : MonoBehaviour, IDamageable
     private Coroutine _knockbackCoroutine;
     [SerializeField] private float _hitDuration;
     [SerializeField] private float _knockbackRate;
-
+    
     [Header("Move")]
     [Space]
     [SerializeField] private float _detectDistance;
@@ -31,7 +32,6 @@ public class Zombie : MonoBehaviour, IDamageable
     [Header("Attack")]
     [Space]
     [SerializeField] private float _attackDistance;
-    [SerializeField] private float _damage;
     [SerializeField] private float _attackSpeed;
     private float _attackTimer;
 
@@ -49,7 +49,10 @@ public class Zombie : MonoBehaviour, IDamageable
     private void Awake()
     {
         _startPosition = transform.position;
-        _attackTimer = _attackSpeed;
+        if (_animator == null)
+        {
+            _animator = GetComponentInChildren<Animator>();
+        }
     }
 
     private void Start()
@@ -87,9 +90,6 @@ public class Zombie : MonoBehaviour, IDamageable
             case EZombieState.Attack:
                 Attack();
                 break;
-
-            default:
-                break;
         }
     }
 
@@ -98,10 +98,7 @@ public class Zombie : MonoBehaviour, IDamageable
         if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
             _state = EZombieState.Trace;
-        }
-        else
-        {
-            OnStartPatrol();
+            _animator.SetTrigger("IdleToTrace");
         }
     }
 
@@ -154,10 +151,14 @@ public class Zombie : MonoBehaviour, IDamageable
         if (Util.IsInRange(distance, _attackDistance))
         {
             _state = EZombieState.Attack;
+            _agent.ResetPath();
+            _animator.SetTrigger("TraceToAttackIdle");
         }
         else if (!Util.IsInRange(distance, _detectDistance))
         {
             _state = EZombieState.Comeback;
+            _agent.ResetPath();
+            _animator.SetTrigger("TraceToPatrol");
         }
 
         if (_agent.isOnOffMeshLink)
@@ -170,7 +171,6 @@ public class Zombie : MonoBehaviour, IDamageable
                 _state = EZombieState.Jump;
                 _agent.isStopped = true;
                 _agent.ResetPath();
-                return;
             }
         }
     }
@@ -181,23 +181,29 @@ public class Zombie : MonoBehaviour, IDamageable
         
         if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
+            _agent.ResetPath();
+            _animator.SetTrigger("PatrolToTrace");
             _state = EZombieState.Trace;
             return;
         }
 
-        float distanceToStart = transform.GetSquaredDistance(_startPosition);
-        if (Util.IsInRange(distanceToStart, _arrivalThreshold))
+        if (transform.IsInRange(_startPosition, _arrivalThreshold))
         {
             _state = EZombieState.Idle;
+            _agent.ResetPath();
+            _animator.SetTrigger("PatrolToIdle");
         }
-        else if (Util.IsInRange(distanceToStart, _patrolDistance))
+
+        if (transform.IsInRange(_player.transform.position, _patrolDistance))
         {
+            _state = EZombieState.Patrol;
             OnStartPatrol();
         }
     }
 
     private void OnStartPatrol()
     {
+        _agent.ResetPath();
         _patrolDestination = GetRandomPositionInRange(_startPosition, _patrolDistance);
         _state = EZombieState.Patrol;
     }
@@ -207,12 +213,15 @@ public class Zombie : MonoBehaviour, IDamageable
         if (transform.IsInRange(_player.transform.position, _detectDistance))
         {
             _state = EZombieState.Trace;
+            _agent.ResetPath();
+            _animator.SetTrigger("PatrolToTrace");
             return;
         }
         
-        if (transform.IsInRange(_patrolDestination, _arrivalThreshold))
+        if (_agent.remainingDistance <= _agent.stoppingDistance)
         {
-            _patrolDestination = GetRandomPositionInRange(_startPosition, _patrolDistance);
+            OnStartPatrol();
+            return;
         }
         
         Move(_patrolDestination);
@@ -231,6 +240,7 @@ public class Zombie : MonoBehaviour, IDamageable
         if (!transform.IsInRange(_player.transform.position, _attackDistance))
         {
             _state = EZombieState.Trace;
+            _animator.SetTrigger("AttackIdleToTrace");
             return;
         }
 
@@ -238,11 +248,7 @@ public class Zombie : MonoBehaviour, IDamageable
         if (_attackTimer >= _attackSpeed)
         {
             _attackTimer = 0f;
-            if (_player.TryGetComponent(out IDamageable damageable))
-            {
-                Damage damage = new Damage(_damage, transform.gameObject);
-                damageable.TryTakeDamage(damage);
-            }
+            _animator.SetTrigger("Attack");
         }
     }
 
@@ -276,12 +282,6 @@ public class Zombie : MonoBehaviour, IDamageable
         _state = EZombieState.Idle;
     }
 
-    private IEnumerator DeathCoroutine()
-    {
-        yield return new WaitForSeconds(_deathDuration);
-        Destroy(gameObject);
-    }
-
     public bool TryTakeDamage(in Damage damage)
     {
         if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
@@ -293,7 +293,7 @@ public class Zombie : MonoBehaviour, IDamageable
         if (_health.Value <= 0)
         {
             _state = EZombieState.Death;
-            StartCoroutine(DeathCoroutine());
+            _animator.SetTrigger("Death");
         }
         else
         {
@@ -302,5 +302,10 @@ public class Zombie : MonoBehaviour, IDamageable
             ApplyKnockback(damage);
         }
         return true;
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }
