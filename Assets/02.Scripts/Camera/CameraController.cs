@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour
         (float x, float y) = prevCamera.GetAngle();
 
         _previousType = _currentType;
-        int nextIndex = ((int)_currentType + 1) % System.Enum.GetValues(typeof(ECameraType)).Length;
+        int nextIndex = ((int)_currentType + 1) % _cameras.Length;
         _currentType = (ECameraType)nextIndex;
 
         BaseCamera nextCamera = CurrentCamera;
@@ -94,7 +94,6 @@ public class CameraController : MonoBehaviour
     {
         BaseCamera activeCamera = CurrentCamera;
         ApplyRotationInput(activeCamera);
-        activeCamera.Move();
         ApplyToTransform(activeCamera.CalculateCameraPosition(), activeCamera.GetRotation());
     }
 

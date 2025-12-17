@@ -1791,6 +1791,7 @@ MonoBehaviour:
   _yMinLimit: -90
   _yMaxLimit: 90
   _rotationSpeed: 200
+  _recoilRecoverySpeed: 3
   _offset: {x: 0, y: 2.5, z: 0}
   _distance: 5
 --- !u!114 &330585549
@@ -1809,6 +1810,7 @@ MonoBehaviour:
   _yMinLimit: -90
   _yMaxLimit: 90
   _rotationSpeed: 200
+  _recoilRecoverySpeed: 3
 --- !u!114 &330585550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1838,6 +1840,7 @@ MonoBehaviour:
   _yMinLimit: 0
   _yMaxLimit: 0
   _rotationSpeed: 0
+  _recoilRecoverySpeed: 3
   _distance: 20
   _angle: 45
 --- !u!4 &331756427 stripped

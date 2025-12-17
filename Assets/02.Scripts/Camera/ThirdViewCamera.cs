@@ -11,9 +11,4 @@ public class ThirdViewCamera : BaseCamera
         Vector3 direction = rot * Vector3.back;
         return _target.position + direction * _distance + _offset;
     }
-
-    public override void Move()
-    {
-        transform.position = CalculateCameraPosition();
-    }
 }

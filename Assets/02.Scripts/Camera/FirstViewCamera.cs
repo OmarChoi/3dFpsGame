@@ -6,9 +6,4 @@ public class FirstViewCamera : BaseCamera
     {
         return _target.position;
     }
-
-    public override void Move()
-    {
-        transform.position = _target.position;
-    }
 }
