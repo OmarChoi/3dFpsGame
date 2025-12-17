@@ -298,6 +298,7 @@ public class Zombie : MonoBehaviour, IDamageable
         else
         {
             _state = EZombieState.Hit;
+            _animator.SetTrigger("Hit");
             StartCoroutine(HitCoroutine());
             ApplyKnockback(damage);
         }
