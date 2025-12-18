@@ -47,7 +47,12 @@ public class PlayerGunFire : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            _animator.SetBool("IsFire", true);
             TryFire();
+        }
+        else
+        {
+            _animator.SetBool("IsFire", false);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -61,7 +66,6 @@ public class PlayerGunFire : MonoBehaviour
         Vector3 fireDirection = _mainCamera.transform.forward;
         if (_gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController))
         {
-            _animator.SetTrigger("Fire");
             StartCoroutine(MuzzleFlashCoroutine());
         }
     }

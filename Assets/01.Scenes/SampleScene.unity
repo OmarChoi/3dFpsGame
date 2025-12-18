@@ -2814,6 +2814,7 @@ MonoBehaviour:
   _fireTransform: {fileID: 1536842002}
   _throwPower: 15
   _bombCount: 5
+  _animator: {fileID: 1196502891}
 --- !u!114 &766106904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3956,7 +3957,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400040, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 549747658}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196502892}
   m_SourcePrefab: {fileID: 100100000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
 --- !u!4 &1108970314 stripped
 Transform:
@@ -4386,6 +4390,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184541636}
   m_CullTransparentMesh: 1
+--- !u!1 &1196502890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+  m_PrefabInstance: {fileID: 1108970313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1196502891 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+  m_PrefabInstance: {fileID: 1108970313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1196502892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196502890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ab91cf6789a344880058563d4eb128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1201579901
 PrefabInstance:
   m_ObjectHideFlags: 0
