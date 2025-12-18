@@ -24,8 +24,18 @@ public class ZombieAnimationEvent : MonoBehaviour
         }
     }
 
+    public void AttackEnd()
+    {
+        _zombie.EndAttack();
+    }
+
     public void Death()
     {
         _zombie.Death();
+    }
+
+    public void EndHit()
+    {
+        _zombie.EndHit();
     }
 }
