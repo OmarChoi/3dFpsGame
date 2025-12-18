@@ -11,11 +11,12 @@ public class PlayerGunFire : MonoBehaviour
     
     [Header("이펙트")]
     [SerializeField] private ParticleSystem _hitEffect;
+    [SerializeField] private GameObject _fireEffect;
     
     private Camera _mainCamera;
     private CameraController _cameraController;
     private Animator _animator;
-
+    
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -60,6 +61,7 @@ public class PlayerGunFire : MonoBehaviour
         if (_gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController))
         {
             _animator.SetTrigger("Fire");
+            Instantiate(_fireEffect, _firePosition.position, Quaternion.LookRotation(transform.forward));
         }
     }
 
