@@ -10,7 +10,7 @@ public class ZombieAnimationEvent : MonoBehaviour
     {
         if (_zombie == null)
         {
-            _zombie = GetComponent<Zombie>();
+            _zombie = GetComponentInParent<Zombie>();
         }
         _player = GameObject.FindWithTag("Player");
     }
@@ -19,7 +19,7 @@ public class ZombieAnimationEvent : MonoBehaviour
     {
         if (_player.TryGetComponent(out IDamageable damageable))
         {
-            Damage damage = new Damage(_damage, transform.gameObject);
+            Damage damage = new Damage(_damage, _zombie.gameObject);
             damageable.TryTakeDamage(damage);
         }
     }

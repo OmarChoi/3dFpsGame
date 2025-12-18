@@ -70,6 +70,7 @@ public class PlayerGunFire : MonoBehaviour
     {
         GameObject muzzleEffect = _muzzleEffects[UnityEngine.Random.Range(0, _muzzleEffects.Count)];
         muzzleEffect.SetActive(true);
+        // Todo. 매직넘버 상수로 변경 필요
         yield return new WaitForSeconds(0.06f);
         muzzleEffect.SetActive(false);
     }
