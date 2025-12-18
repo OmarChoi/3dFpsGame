@@ -14,12 +14,14 @@ public class PlayerGunFire : MonoBehaviour
     
     private Camera _mainCamera;
     private CameraController _cameraController;
+    private Animator _animator;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
         _cameraController = _mainCamera?.GetComponent<CameraController>();
         _gunWeapon.OnCoroutineRequested += StartCoroutine;
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void OnDestroy()
@@ -55,7 +57,10 @@ public class PlayerGunFire : MonoBehaviour
     private void TryFire()
     {
         Vector3 fireDirection = _mainCamera.transform.forward;
-        _gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController);
+        if (_gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController))
+        {
+            _animator.SetTrigger("Fire");
+        }
     }
 
     private void TryReload()

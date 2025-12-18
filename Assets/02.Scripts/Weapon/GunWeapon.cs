@@ -8,6 +8,7 @@ public class GunWeapon
     [Header("데미지")]
     [Space]
     [SerializeField] private float _damage;
+    [SerializeField] private LayerMask _hitLayer;
     
     [Header("발사속도")]
     [Space]
@@ -92,7 +93,7 @@ public class GunWeapon
         
         Ray ray = new Ray(shooter.transform.position, direction);
         RaycastHit hitInfo = new RaycastHit();
-        bool isHit = Physics.Raycast(ray, out hitInfo);
+        bool isHit = Physics.Raycast(ray, out hitInfo, Mathf.Infinity,_hitLayer);
         if (isHit)
         {
             hitEffect.transform.position = hitInfo.point;
