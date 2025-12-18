@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerGunFire : MonoBehaviour
@@ -11,8 +13,7 @@ public class PlayerGunFire : MonoBehaviour
     
     [Header("이펙트")]
     [SerializeField] private ParticleSystem _hitEffect;
-    [SerializeField] private GameObject _fireEffect;
-    
+    [SerializeField] private List<GameObject> _muzzleEffects;
     private Camera _mainCamera;
     private CameraController _cameraController;
     private Animator _animator;
@@ -24,7 +25,7 @@ public class PlayerGunFire : MonoBehaviour
         _gunWeapon.OnCoroutineRequested += StartCoroutine;
         _animator = GetComponentInChildren<Animator>();
     }
-
+    
     private void OnDestroy()
     {
         _gunWeapon.OnCoroutineRequested -= StartCoroutine;
@@ -61,8 +62,16 @@ public class PlayerGunFire : MonoBehaviour
         if (_gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController))
         {
             _animator.SetTrigger("Fire");
-            Instantiate(_fireEffect, _firePosition.position, Quaternion.LookRotation(transform.forward));
+            StartCoroutine(MuzzleFlashCoroutine());
         }
+    }
+
+    private IEnumerator MuzzleFlashCoroutine()
+    {
+        GameObject muzzleEffect = _muzzleEffects[UnityEngine.Random.Range(0, _muzzleEffects.Count)];
+        muzzleEffect.SetActive(true);
+        yield return new WaitForSeconds(0.06f);
+        muzzleEffect.SetActive(false);
     }
 
     private void TryReload()
