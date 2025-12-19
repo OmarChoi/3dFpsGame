@@ -7,7 +7,7 @@ public class BombFactory : MonoBehaviour
     public static BombFactory Instance => _instance;
     
     private IObjectPool<Bomb> _bombPool;
-    private int _defaultCapacity = 5;
+    private const int DefaultCapacity = 5;
     [SerializeField] private GameObject _bombPrefab;
     [SerializeField] private ParticleSystem _bombEffect;
 
@@ -20,7 +20,7 @@ public class BombFactory : MonoBehaviour
         }
         _instance = this;
 
-        _bombPool = new ObjectPool<Bomb>(CreateBomb, OnGetBomb, OnReleaseBomb, OnDestroyBomb, true, _defaultCapacity);
+        _bombPool = new ObjectPool<Bomb>(CreateBomb, OnGetBomb, OnReleaseBomb, OnDestroyBomb, true, DefaultCapacity);
     }
     
     private Bomb CreateBomb()
