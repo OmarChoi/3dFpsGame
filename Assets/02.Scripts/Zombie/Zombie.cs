@@ -289,7 +289,7 @@ public class Zombie : MonoBehaviour, IDamageable
     
     private void ApplyKnockback(Damage damage)
     {
-        Vector3 direction = (transform.position - damage.HitPosition);
+        Vector3 direction = damage.Normal;
         direction.y = 0f;
         direction.Normalize();
         

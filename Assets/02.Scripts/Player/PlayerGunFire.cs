@@ -56,9 +56,7 @@ public class PlayerGunFire : MonoBehaviour
     private void HandleInput()
     {
         CheckIsFire();
-
         ZoomModeCheck();
-        
         if (Input.GetKeyDown(KeyCode.R))
         {
             TryReload();
@@ -67,7 +65,6 @@ public class PlayerGunFire : MonoBehaviour
     
     private void CheckIsFire()
     {
-
         if (Input.GetMouseButton(0))
         {
             _animator.SetBool("IsFire", true);
@@ -81,19 +78,12 @@ public class PlayerGunFire : MonoBehaviour
 
     private void ZoomModeCheck()
     {
+        bool isZooming = Input.GetMouseButton(1);
+        if (_zoomInCrosshair.activeSelf == isZooming) return;
 
-        if (Input.GetMouseButton(1))
-        {
-            _normalCrosshair.SetActive(false);
-            _zoomInCrosshair.SetActive(true);
-            _mainCamera.fieldOfView = _zoomInFOV;
-        }
-        else
-        {
-            _normalCrosshair.SetActive(true);
-            _zoomInCrosshair.SetActive(false);
-            _mainCamera.fieldOfView = _normalFOV;
-        }
+        _normalCrosshair.SetActive(!isZooming);
+        _zoomInCrosshair.SetActive(isZooming);
+        _mainCamera.fieldOfView = isZooming ? _zoomInFOV : _normalFOV;
     }
 
     private void TryFire()

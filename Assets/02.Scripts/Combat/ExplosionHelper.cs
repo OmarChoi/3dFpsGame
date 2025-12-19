@@ -11,7 +11,6 @@ public static class ExplosionHelper
         Damage damage = new Damage()
         {
             Value = data.Damage,
-            Normal = Vector3.one,
             Attacker = data.ExplosionObject,
             Critical = false,
         };
@@ -22,7 +21,8 @@ public static class ExplosionHelper
             if (hit.gameObject == data.ExplosionObject.gameObject) continue;
             if (hit.TryGetComponent(out IDamageable damageable))
             {
-                damage.HitPosition = hit.gameObject.transform.position;
+                damage.HitPosition = hit.ClosestPoint(data.Center);
+                damage.Normal = (damage.HitPosition - data.Center).normalized;
                 damageable.TryTakeDamage(damage);
             }
         }

@@ -22,7 +22,7 @@ public class ZombieAnimationEvent : MonoBehaviour
             {
                 Value = _zombie.Damage, 
                 HitPosition = _player.transform.position,
-                Normal = Vector3.one,
+                Normal = (_player.transform.position - _zombie.transform.position).normalized,
                 Attacker = _zombie.gameObject,
                 Critical = false,
             };
