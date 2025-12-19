@@ -2692,6 +2692,7 @@ GameObject:
   - component: {fileID: 766106903}
   - component: {fileID: 766106904}
   - component: {fileID: 766106905}
+  - component: {fileID: 766106906}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -2814,7 +2815,7 @@ MonoBehaviour:
   _fireTransform: {fileID: 1536842002}
   _throwPower: 15
   _bombCount: 5
-  _animator: {fileID: 1196502891}
+  _animator: {fileID: 1196502893}
 --- !u!114 &766106904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,6 +2862,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea26f5f0a9b96a46b105b69b223448c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &766106906
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766106893}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &770968792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,11 +4451,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
   m_PrefabInstance: {fileID: 1108970313}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1196502891 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
-  m_PrefabInstance: {fileID: 1108970313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1196502892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4445,6 +4463,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ab91cf6789a344880058563d4eb128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1196502893 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+  m_PrefabInstance: {fileID: 1108970313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1201579901
 PrefabInstance:
   m_ObjectHideFlags: 0

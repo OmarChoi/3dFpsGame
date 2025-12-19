@@ -9,10 +9,18 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int          _totalSegments   = 5;
     [SerializeField] private int          _visibleSegments = 3;
     private bool[] _activeSegments;
+    private int[] _indices;
+    private WaitForSeconds _lifeTimeWait;
 
     private void Awake()
     {
         _activeSegments = new bool[_totalSegments];
+        _lifeTimeWait = new WaitForSeconds(_lifeTime);
+        _indices = new int[_totalSegments];
+        for (int i = 0; i < _totalSegments; i++)
+        {
+            _indices[i] = i;
+        }
     }
 
     public void Init(Vector3 startPosition, Vector3 endPosition)
@@ -45,20 +53,17 @@ public class Bullet : MonoBehaviour
     {
         System.Array.Clear(_activeSegments, 0, _activeSegments.Length);
 
-        int selected = 0;
-        while (selected < _visibleSegments)
+        for (int i = 0; i < _visibleSegments; i++)
         {
-            int randomIndex = Random.Range(0, _totalSegments);
-            if (_activeSegments[randomIndex]) continue;
-
-            _activeSegments[randomIndex] = true;
-            selected++;
+            int r = Random.Range(i, _totalSegments);
+            (_indices[i], _indices[r]) = (_indices[r], _indices[i]);
+            _activeSegments[_indices[i]] = true;
         }
     }
 
     private IEnumerator ReleaseCoroutine()
     {
-        yield return new WaitForSeconds(_lifeTime);
+        yield return _lifeTimeWait;
         BulletFactory.Instance.Release(this);
     }
 }
