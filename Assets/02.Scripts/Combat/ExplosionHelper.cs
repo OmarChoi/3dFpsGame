@@ -7,8 +7,13 @@ public static class ExplosionHelper
     public static void ApplyExplosionDamage(in ExplosionData data)
     {
         int hitCount = Physics.OverlapSphereNonAlloc(data.Center, data.Radius, _colliderCache, data.LayerMask);
-        
-        Damage damage = new Damage(data.Damage, data.ExplosionObject);
+
+        Damage damage = new Damage()
+        {
+            Value = data.Damage,
+            Attacker = data.ExplosionObject,
+            Critical = false,
+        };
         
         for (int i = 0; i < hitCount; i++)
         {
@@ -16,6 +21,7 @@ public static class ExplosionHelper
             if (hit.gameObject == data.ExplosionObject.gameObject) continue;
             if (hit.TryGetComponent(out IDamageable damageable))
             {
+                damage.HitPosition = hit.gameObject.transform.position;
                 damageable.TryTakeDamage(damage);
             }
         }

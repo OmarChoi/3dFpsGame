@@ -26,7 +26,6 @@ public class PlayerGunFire : MonoBehaviour
     [SerializeField] private float _normalFOV = 60f;
     [SerializeField] private GameObject _normalCrosshair;
     [SerializeField] private GameObject _zoomInCrosshair;
-    private EZoomMode _zoomMode = EZoomMode.Normal;
     
     private void Awake()
     {
@@ -85,14 +84,12 @@ public class PlayerGunFire : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            _zoomMode = EZoomMode.ZoomIn;
             _normalCrosshair.SetActive(false);
             _zoomInCrosshair.SetActive(true);
             _mainCamera.fieldOfView = _zoomInFOV;
         }
         else
         {
-            _zoomMode = EZoomMode.Normal;
             _normalCrosshair.SetActive(true);
             _zoomInCrosshair.SetActive(false);
             _mainCamera.fieldOfView = _normalFOV;

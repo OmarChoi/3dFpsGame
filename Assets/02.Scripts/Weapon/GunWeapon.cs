@@ -102,7 +102,13 @@ public class GunWeapon
             
             if (hitInfo.collider.TryGetComponent(out IDamageable damageable))
             {
-                Damage damage = new Damage(_damage, shooter.gameObject);
+                Damage damage = new Damage()
+                {
+                    Value = _damage, 
+                    HitPosition = hitInfo.point,   
+                    Attacker = shooter.gameObject, 
+                    Critical = false,
+                };
                 damageable.TryTakeDamage(damage);
             }
         }

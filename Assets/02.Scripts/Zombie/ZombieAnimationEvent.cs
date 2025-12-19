@@ -18,7 +18,13 @@ public class ZombieAnimationEvent : MonoBehaviour
     {
         if (_player.TryGetComponent(out IDamageable damageable))
         {
-            Damage damage = new Damage(_zombie.Damage, _zombie.gameObject);
+            Damage damage = new Damage()
+            {
+                Value = _zombie.Damage, 
+                HitPosition = _player.transform.position,
+                Attacker = _zombie.gameObject,
+                Critical = false,
+            };
             damageable.TryTakeDamage(damage);
         }
     }
