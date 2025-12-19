@@ -25,7 +25,6 @@ public class GunWeapon
     [Space]
     [SerializeField] private Magazine _magazine = new Magazine();
     public Magazine Magazine => _magazine;
-    
     private bool _isReloading;
 
     public event Func<IEnumerator, Coroutine> OnCoroutineRequested;
@@ -96,6 +95,8 @@ public class GunWeapon
         bool isHit = Physics.Raycast(ray, out hitInfo, Mathf.Infinity,_hitLayer);
         if (isHit)
         {
+            BulletFactory.Instance.Get(shooter.position, hitInfo.point);
+            
             hitEffect.transform.position = hitInfo.point;
             hitEffect.transform.forward = hitInfo.normal;
             hitEffect.Play();
