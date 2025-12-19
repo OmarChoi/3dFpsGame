@@ -105,7 +105,8 @@ public class GunWeapon
                 Damage damage = new Damage()
                 {
                     Value = _damage, 
-                    HitPosition = hitInfo.point,   
+                    HitPosition = hitInfo.point,
+                    Normal = hitInfo.normal,
                     Attacker = shooter.gameObject, 
                     Critical = false,
                 };

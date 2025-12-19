@@ -11,6 +11,7 @@ public static class ExplosionHelper
         Damage damage = new Damage()
         {
             Value = data.Damage,
+            Normal = Vector3.one,
             Attacker = data.ExplosionObject,
             Critical = false,
         };
