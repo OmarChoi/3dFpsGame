@@ -6,10 +6,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     private PlayerStats _stats;
     public event Action OnHit;
+    private Animator _animator;
 
     private void Awake()
     {
         _stats = GetComponent<PlayerStats>();
+        _animator = GetComponentInChildren<Animator>();
+        _stats.Health.OnValueChanged += SetInjuryAnimation;
+    }
+
+    private void SetInjuryAnimation(float health, float maxHealth)
+    {
+        _animator.SetLayerWeight(2, (1.0f - (_stats.Health.Value / _stats.Health.MaxValue)));
     }
     
     public bool TryTakeDamage(in Damage damage)

@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     private CharacterController _controller;
     private PlayerStats _stats;
+    private Animator _animator;
     private Camera _mainCamera;
     [SerializeField] private MoveConfig _config;
     
@@ -25,6 +26,7 @@ public class PlayerMove : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _stats = GetComponent<PlayerStats>();
         _mainCamera = Camera.main;
+        _animator = GetComponentInChildren<Animator>();
     }
     
     private void Update()
@@ -77,8 +79,8 @@ public class PlayerMove : MonoBehaviour
     {        
         float xMovement = Input.GetAxis("Horizontal");
         float zMovement = Input.GetAxis("Vertical");
-        
         Vector3 direction = new Vector3(xMovement, 0, zMovement);
+        _animator.SetFloat("Speed", direction.magnitude);
         direction.Normalize();
         direction = _mainCamera.transform.TransformDirection(direction);
         direction.y = 0f;
