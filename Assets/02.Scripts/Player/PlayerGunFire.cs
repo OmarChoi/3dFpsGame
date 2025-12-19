@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerGunFire : MonoBehaviour
 {
+    private Animator _animator;
+    private Camera _mainCamera;
+    private CameraController _cameraController;
+    
     [Header("무기 설정")]
     [SerializeField] private GunWeapon _gunWeapon = new GunWeapon();
     public GunWeapon GunWeapon => _gunWeapon;
@@ -14,10 +18,14 @@ public class PlayerGunFire : MonoBehaviour
     [Header("이펙트")]
     [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private List<GameObject> _muzzleEffects;
-    private Coroutine[] _coroutines;
-    private Camera _mainCamera;
-    private CameraController _cameraController;
-    private Animator _animator;
+    private Coroutine[] _muzzleCoroutines;
+    
+    [Header("Zoom Mode")]
+    [Space]
+    [SerializeField] private float _zoomInFOV = 10f;
+    [SerializeField] private float _normalFOV = 60f;
+    [SerializeField] private GameObject _normalCrosshair;
+    [SerializeField] private GameObject _zoomInCrosshair;
     
     private void Awake()
     {
@@ -25,7 +33,7 @@ public class PlayerGunFire : MonoBehaviour
         _cameraController = _mainCamera?.GetComponent<CameraController>();
         _gunWeapon.OnCoroutineRequested += StartCoroutine;
         _animator = GetComponentInChildren<Animator>();
-        _coroutines = new Coroutine[_muzzleEffects.Count];
+        _muzzleCoroutines = new Coroutine[_muzzleEffects.Count];
     }
     
     private void OnDestroy()
@@ -47,6 +55,16 @@ public class PlayerGunFire : MonoBehaviour
 
     private void HandleInput()
     {
+        CheckIsFire();
+        ZoomModeCheck();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TryReload();
+        }
+    }
+    
+    private void CheckIsFire()
+    {
         if (Input.GetMouseButton(0))
         {
             _animator.SetBool("IsFire", true);
@@ -56,11 +74,16 @@ public class PlayerGunFire : MonoBehaviour
         {
             _animator.SetBool("IsFire", false);
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            TryReload();
-        }
+    private void ZoomModeCheck()
+    {
+        bool isZooming = Input.GetMouseButton(1);
+        if (_zoomInCrosshair.activeSelf == isZooming) return;
+
+        _normalCrosshair.SetActive(!isZooming);
+        _zoomInCrosshair.SetActive(isZooming);
+        _mainCamera.fieldOfView = isZooming ? _zoomInFOV : _normalFOV;
     }
 
     private void TryFire()
@@ -69,8 +92,8 @@ public class PlayerGunFire : MonoBehaviour
         if (_gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController))
         {
             int muzzleIndex = UnityEngine.Random.Range(0, _muzzleEffects.Count);
-            if (_coroutines[muzzleIndex] != null) return;
-            _coroutines[muzzleIndex] = StartCoroutine(MuzzleFlashCoroutine(muzzleIndex));
+            if (_muzzleCoroutines[muzzleIndex] != null) return;
+            _muzzleCoroutines[muzzleIndex] = StartCoroutine(MuzzleFlashCoroutine(muzzleIndex));
         }
     }
 
@@ -81,7 +104,7 @@ public class PlayerGunFire : MonoBehaviour
         // Todo. 매직넘버 상수로 변경 필요
         yield return new WaitForSeconds(0.06f);
         muzzleEffect.SetActive(false);
-        _coroutines[muzzleType] = null;
+        _muzzleCoroutines[muzzleType] = null;
     }
 
     private void TryReload()

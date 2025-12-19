@@ -15,9 +15,11 @@ public class Zombie : MonoBehaviour, IDamageable
     public ConsumableStat Health => _health;
     private Vector3 _startPosition;
 
-    private Coroutine _knockbackCoroutine;
+    [Header("Hit")]
     [SerializeField] private float _hitDuration;
     [SerializeField] private float _knockbackRate;
+    [SerializeField] private GameObject _bloodEffectPrefab;
+    private Coroutine _knockbackCoroutine;
 
     [Header("Animation")]
     [Space]
@@ -287,7 +289,7 @@ public class Zombie : MonoBehaviour, IDamageable
     
     private void ApplyKnockback(Damage damage)
     {
-        Vector3 direction = (transform.position - damage.Attacker.transform.position);
+        Vector3 direction = damage.Normal;
         direction.y = 0f;
         direction.Normalize();
         
@@ -314,6 +316,9 @@ public class Zombie : MonoBehaviour, IDamageable
         if (_state == EZombieState.Death || _state == EZombieState.Hit) return false;
         
         _health.Consume(damage.Value);
+        GameObject bloodEffect = Instantiate(_bloodEffectPrefab, damage.HitPosition, Quaternion.identity, transform);
+        bloodEffect.transform.forward = damage.Normal;
+        
         _agent.isStopped = true;
         _agent.ResetPath();
         
