@@ -4,7 +4,6 @@ public class ZombieAnimationEvent : MonoBehaviour
 {
     [SerializeField] private Zombie _zombie;
     [SerializeField] private GameObject _player;
-    [SerializeField] private float _damage;
     
     private void Awake()
     {
@@ -19,7 +18,7 @@ public class ZombieAnimationEvent : MonoBehaviour
     {
         if (_player.TryGetComponent(out IDamageable damageable))
         {
-            Damage damage = new Damage(_damage, _zombie.gameObject);
+            Damage damage = new Damage(_zombie.Damage, _zombie.gameObject);
             damageable.TryTakeDamage(damage);
         }
     }

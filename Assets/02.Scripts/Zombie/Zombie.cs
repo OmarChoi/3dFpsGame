@@ -39,6 +39,8 @@ public class Zombie : MonoBehaviour, IDamageable
     [Space]
     [SerializeField] private float _attackDistance;
     [SerializeField] private float _attackInterval;
+    [SerializeField] private float _damage;
+    public float Damage => _damage;
     private float _attackTimer;
     private bool _isAttacking;
 

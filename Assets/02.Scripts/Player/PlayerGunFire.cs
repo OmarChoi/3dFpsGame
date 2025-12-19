@@ -14,6 +14,7 @@ public class PlayerGunFire : MonoBehaviour
     [Header("이펙트")]
     [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private List<GameObject> _muzzleEffects;
+    private Coroutine[] _coroutines;
     private Camera _mainCamera;
     private CameraController _cameraController;
     private Animator _animator;
@@ -24,6 +25,7 @@ public class PlayerGunFire : MonoBehaviour
         _cameraController = _mainCamera?.GetComponent<CameraController>();
         _gunWeapon.OnCoroutineRequested += StartCoroutine;
         _animator = GetComponentInChildren<Animator>();
+        _coroutines = new Coroutine[_muzzleEffects.Count];
     }
     
     private void OnDestroy()
@@ -66,17 +68,20 @@ public class PlayerGunFire : MonoBehaviour
         Vector3 fireDirection = _mainCamera.transform.forward;
         if (_gunWeapon.TryShot(_firePosition, fireDirection, _hitEffect, _cameraController))
         {
-            StartCoroutine(MuzzleFlashCoroutine());
+            int muzzleIndex = UnityEngine.Random.Range(0, _muzzleEffects.Count);
+            if (_coroutines[muzzleIndex] != null) return;
+            _coroutines[muzzleIndex] = StartCoroutine(MuzzleFlashCoroutine(muzzleIndex));
         }
     }
 
-    private IEnumerator MuzzleFlashCoroutine()
+    private IEnumerator MuzzleFlashCoroutine(int muzzleType = 0)
     {
-        GameObject muzzleEffect = _muzzleEffects[UnityEngine.Random.Range(0, _muzzleEffects.Count)];
+        GameObject muzzleEffect = _muzzleEffects[muzzleType];
         muzzleEffect.SetActive(true);
         // Todo. 매직넘버 상수로 변경 필요
         yield return new WaitForSeconds(0.06f);
         muzzleEffect.SetActive(false);
+        _coroutines[muzzleType] = null;
     }
 
     private void TryReload()
