@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 6292315568665257228}
   - component: {fileID: 3897240417773942304}
   - component: {fileID: 4962763611870991286}
+  - component: {fileID: 2293213457746098681}
   - component: {fileID: 8375145734530966130}
   - component: {fileID: 1526217345939448140}
   m_Layer: 8
@@ -227,25 +228,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfcc56e03c16c147b7ed6ba29a304d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _agent: {fileID: 8375145734530966130}
-  _animator: {fileID: 0}
+  _stats: {fileID: 11400000, guid: ccc4e4f4861097e43bec834574167ca3, type: 2}
   _health:
     _value: 100
     _maxValue: 100
     _regenValue: 0
-  _hitDuration: 0.3
-  _knockbackRate: 0.2
-  _waitPatrolTime: 2
-  _detectDistance: 10
-  _moveSpeed: 0.5
-  _runSpeed: 5
-  _patrolDistance: 20
-  _attackDistance: 3
-  _attackInterval: 0.5
-  _arrivalThreshold: 3
-  _deathDuration: 2
-  _jumpForce: 5
+  _player: {fileID: 0}
+  _agent: {fileID: 8375145734530966130}
+  _animator: {fileID: 7032024473550985635}
+  _movement: {fileID: 2293213457746098681}
+  _bloodEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
 --- !u!114 &4962763611870991286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +262,18 @@ MonoBehaviour:
     Duration: 0.1
     Vibrato: 5
     Randomness: 90
+--- !u!114 &2293213457746098681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080313885844437856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddee1030d161a274dafae108fbbfcdcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &8375145734530966130
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -928,4 +932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombie: {fileID: 3897240417773942304}
   _player: {fileID: 0}
-  _damage: 5
+--- !u!95 &7032024473550985635 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 8f7380da49034cd488ddff94b1ac35d1, type: 3}
+  m_PrefabInstance: {fileID: 5361097817099149251}
+  m_PrefabAsset: {fileID: 0}

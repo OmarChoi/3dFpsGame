@@ -7359,10 +7359,6 @@ PrefabInstance:
       propertyPath: _attackSpeed
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3897240417773942304, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
-      propertyPath: _bloodEffectPrefab
-      value: 
-      objectReference: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
     - target: {fileID: 4080313885844437856, guid: d2723e0a636d73145abbbb330959dc4a, type: 3}
       propertyPath: m_Name
       value: Zombie
