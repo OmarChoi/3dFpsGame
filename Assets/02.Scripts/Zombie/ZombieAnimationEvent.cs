@@ -20,7 +20,7 @@ public class ZombieAnimationEvent : MonoBehaviour
         {
             Damage damage = new Damage()
             {
-                Value = _zombie.Damage, 
+                Value = _zombie.Stats.Damage, 
                 HitPosition = _player.transform.position,
                 Normal = (_player.transform.position - _zombie.transform.position).normalized,
                 Attacker = _zombie.gameObject,
@@ -30,18 +30,8 @@ public class ZombieAnimationEvent : MonoBehaviour
         }
     }
 
-    public void AttackEnd()
+    public void OnAnimationEnd()
     {
-        _zombie.EndAttack();
-    }
-
-    public void Death()
-    {
-        _zombie.Death();
-    }
-
-    public void EndHit()
-    {
-        _zombie.EndHit();
+        (_zombie.CurrentState as IAnimationEventHandler)?.OnAnimationEnd();
     }
 }
