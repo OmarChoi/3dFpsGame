@@ -1,19 +1,16 @@
-using UnityEngine;
-
 public class ZombieComebackState : ZombieStateBase
 {
     public ZombieComebackState(Zombie zombie) : base(zombie) { }
 
     protected override void OnEnter()
     {
-        Agent.ResetPath();
+        _zombie.StopAgent();
         Agent.speed = _zombie.Stats.MoveSpeed;
+        Movement.MoveTo(_zombie.StartPosition);
     }
 
     protected override void OnUpdate()
     {
-        Movement.Move(_zombie.StartPosition);
-
         if (Transform.IsInRange(Player.position, _zombie.Stats.DetectDistance))
         {
             Agent.ResetPath();

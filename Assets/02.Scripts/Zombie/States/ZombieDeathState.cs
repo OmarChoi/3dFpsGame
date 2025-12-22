@@ -4,12 +4,8 @@ public class ZombieDeathState : ZombieStateBase, IAnimationEventHandler
 
     protected override void OnEnter()
     {
-        // Terminal state - waits for OnDeathAnimationEnd() to destroy GameObject
-    }
-
-    protected override void OnUpdate()
-    {
-        // Do nothing - waiting for animation event
+        _zombie.Agent.isStopped = true;
+        _zombie.Agent.ResetPath();
     }
 
     public void OnAnimationEnd()

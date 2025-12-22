@@ -1,10 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class ZombieMovement : MonoBehaviour
 {
     private NavMeshAgent _agent;
     private ZombieStats _stats;
+    private Coroutine _jumpCoroutine;
+    private Coroutine _knockbackCoroutine;
     private const float JumpArcHeight = 1.5f;
 
     public void Init(NavMeshAgent agent, ZombieStats stats)
@@ -13,30 +17,32 @@ public class ZombieMovement : MonoBehaviour
         _stats = stats;
     }
 
-    public void Move(Vector3 targetPosition)
+    public void MoveTo(Vector3 targetPosition)
     {
         _agent.SetDestination(targetPosition);
     }
 
     public Vector3 GetRandomPositionInRange(Vector3 center, float range)
     {
-        Vector2 randomPosition = Random.insideUnitCircle * range;
+        Vector2 randomPosition = UnityEngine.Random.insideUnitCircle * range;
         Vector3 nextPosition = new Vector3(randomPosition.x, 0f, randomPosition.y);
         nextPosition += center;
         return nextPosition;
     }
 
-    public void ExecuteJump(in JumpData jumpData, System.Action onComplete)
+    public void ExecuteJump(JumpData jumpData, Action onComplete)
     {
-        StartCoroutine(JumpCoroutine(jumpData, onComplete));
+        if (_jumpCoroutine != null) return;
+        _jumpCoroutine = StartCoroutine(JumpCoroutine(jumpData, onComplete));
     }
 
-    public void ExecuteKnockback(Vector3 direction, float knockbackForce, System.Action onComplete)
+    public void ExecuteKnockback(Vector3 direction, float knockbackForce)
     {
-        StartCoroutine(KnockbackCoroutine(direction, knockbackForce, onComplete));
+        if (_knockbackCoroutine != null) return;
+        _knockbackCoroutine = StartCoroutine(KnockbackCoroutine(direction, knockbackForce));
     }
 
-    private System.Collections.IEnumerator JumpCoroutine(JumpData jumpData, System.Action onComplete)
+    private IEnumerator JumpCoroutine(JumpData jumpData, Action onComplete)
     {
 
         Vector3 direction = (jumpData.EndPosition - jumpData.StartPosition);
@@ -65,9 +71,10 @@ public class ZombieMovement : MonoBehaviour
         _agent.isStopped = false;
 
         onComplete?.Invoke();
+        _jumpCoroutine = null;
     }
 
-    private System.Collections.IEnumerator KnockbackCoroutine(Vector3 direction, float knockbackForce, System.Action onComplete)
+    private IEnumerator KnockbackCoroutine(Vector3 direction, float knockbackForce)
     {
         float elapsedTime = 0f;
         while (elapsedTime < _stats.HitDuration)
@@ -76,7 +83,6 @@ public class ZombieMovement : MonoBehaviour
             _agent.Move(direction * (knockbackForce * _stats.KnockbackRate * Time.deltaTime));
             yield return null;
         }
-
-        onComplete?.Invoke();
+        _knockbackCoroutine = null;
     }
 }

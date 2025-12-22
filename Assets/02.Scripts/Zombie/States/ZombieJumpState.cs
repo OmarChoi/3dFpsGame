@@ -1,17 +1,13 @@
-public class ZombieJumpState : ZombieDataStateBase<JumpData>
+public class ZombieJumpState : ZombieStateBase
 {
     public ZombieJumpState(Zombie zombie) : base(zombie) { }
-
-    protected override void OnEnter(in JumpData data)
+    
+    protected override void OnEnter()
     {
-        Movement.ExecuteJump(in data, OnJumpComplete);
+        JumpData jumpData = _zombie.PendingJumpData;
+        _zombie.Movement.ExecuteJump(jumpData, OnJumpComplete);
     }
-
-    protected override void OnUpdate()
-    {
-        // Jump execution is handled by ZombieMovement.ExecuteJump
-    }
-
+    
     private void OnJumpComplete()
     {
         Animator.SetTrigger(ZombieAnimatorHash.JumpToTrace);

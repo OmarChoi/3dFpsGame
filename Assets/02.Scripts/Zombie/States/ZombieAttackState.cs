@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class ZombieAttackState : ZombieStateBase, IAnimationEventHandler
 {
     private float _attackTimer;
@@ -9,7 +7,8 @@ public class ZombieAttackState : ZombieStateBase, IAnimationEventHandler
 
     protected override void OnEnter()
     {
-        _attackTimer = 0f;
+        _zombie.StopAgent();
+        _attackTimer = -_zombie.Stats.AttackInterval;
         _isAttacking = false;
     }
 
@@ -17,8 +16,6 @@ public class ZombieAttackState : ZombieStateBase, IAnimationEventHandler
     {
         if (!Transform.IsInRange(Player.position, _zombie.Stats.AttackDistance))
         {
-            _attackTimer = 0f;
-            Agent.speed = _zombie.Stats.RunSpeed;
             Animator.SetTrigger(ZombieAnimatorHash.AttackToTrace);
             TransitionTo(EZombieState.Trace);
             return;
@@ -26,7 +23,7 @@ public class ZombieAttackState : ZombieStateBase, IAnimationEventHandler
 
         if (_isAttacking) return;
 
-        _attackTimer += Time.deltaTime;
+        _attackTimer += UnityEngine.Time.deltaTime;
         if (_attackTimer >= _zombie.Stats.AttackInterval)
         {
             _isAttacking = true;

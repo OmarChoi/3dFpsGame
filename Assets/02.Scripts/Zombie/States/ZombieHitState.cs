@@ -1,33 +1,24 @@
-using UnityEngine;
-
-public class ZombieHitState : ZombieDataStateBase<Damage>, IAnimationEventHandler
+public class ZombieHitState : ZombieStateBase, IAnimationEventHandler
 {
     public ZombieHitState(Zombie zombie) : base(zombie) { }
 
-    protected override void OnEnter(in Damage damage)
+    protected override void OnEnter()
     {
-        Vector3 direction = damage.Normal;
+        _zombie.Agent.isStopped = true;
+        _zombie.Agent.ResetPath();
+        
+        UnityEngine.Vector3 direction = -_zombie.LastDamage.Normal;
         direction.y = 0f;
         direction.Normalize();
 
-        Movement.ExecuteKnockback(direction, damage.Value, OnKnockbackComplete);
+        Movement.ExecuteKnockback(direction, _zombie.LastDamage.Value);
     }
-
-    protected override void OnUpdate()
-    {
-        // Knockback execution is handled by ZombieMovement.ExecuteKnockback
-    }
-
+    
     protected override void OnExit()
     {
         Agent.isStopped = false;
     }
-
-    private void OnKnockbackComplete()
-    {
-        // Knockback finished, waiting for animation end
-    }
-
+    
     public void OnAnimationEnd()
     {
         TransitionTo(EZombieState.Idle);

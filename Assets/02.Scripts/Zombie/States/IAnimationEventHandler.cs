@@ -1,4 +1,4 @@
 public interface IAnimationEventHandler
 {
-    void OnAnimationEnd();
+    public void OnAnimationEnd();
 }

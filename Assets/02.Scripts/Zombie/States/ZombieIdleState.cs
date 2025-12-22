@@ -8,7 +8,7 @@ public class ZombieIdleState : ZombieStateBase
     protected override void OnEnter()
     {
         _enterIdleTime = Time.time;
-        Agent.ResetPath();
+        _zombie.StopAgent();
     }
 
     protected override void OnUpdate()

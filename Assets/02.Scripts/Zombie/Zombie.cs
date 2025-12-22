@@ -27,19 +27,23 @@ public class Zombie : MonoBehaviour, IDamageable
 
     // Runtime
     private Vector3 _startPosition;
+    private Damage _lastDamage;
+    private JumpData _pendingJumpData;
 
     // Properties
     public ZombieStateBase CurrentState => _currentState;
 
-    public ZombieStats    Stats  => _stats;
+    public ZombieStats Stats => _stats;
     public ConsumableStat Health => _health;
 
-    public NavMeshAgent   Agent    => _agent;
-    public Animator       Animator => _animator;
+    public NavMeshAgent Agent => _agent;
+    public Animator Animator => _animator;
     public ZombieMovement Movement => _movement;
 
-    public Transform Player        => _player.transform;
-    public Vector3   StartPosition => _startPosition;
+    public Transform Player => _player.transform;
+    public Vector3 StartPosition => _startPosition;
+    public Damage LastDamage => _lastDamage;
+    public JumpData PendingJumpData => _pendingJumpData;
 
     private void Awake()
     {
@@ -88,7 +92,12 @@ public class Zombie : MonoBehaviour, IDamageable
         _currentState?.Update();
     }
 
-
+    public void StopAgent()
+    {
+        _agent.isStopped = true;
+        _agent.ResetPath();
+    }
+    
     public bool TryTakeDamage(in Damage damage)
     {
         if (_currentStateType == EZombieState.Death || _currentStateType == EZombieState.Hit) return false;
@@ -97,8 +106,7 @@ public class Zombie : MonoBehaviour, IDamageable
         GameObject bloodEffect = Instantiate(_bloodEffectPrefab, damage.HitPosition, Quaternion.identity, transform);
         bloodEffect.transform.forward = damage.Normal;
 
-        _agent.isStopped = true;
-        _agent.ResetPath();
+        _lastDamage = damage;
 
         if (_health.Value <= 0)
         {
@@ -107,7 +115,7 @@ public class Zombie : MonoBehaviour, IDamageable
         }
         else
         {
-            TransitionTo(EZombieState.Hit, in damage);
+            TransitionTo(EZombieState.Hit);
             _animator.SetTrigger(ZombieAnimatorHash.Hit);
         }
         return true;
@@ -123,17 +131,8 @@ public class Zombie : MonoBehaviour, IDamageable
         _currentState.Enter();
     }
 
-    public void TransitionTo<TData>(EZombieState newState, in TData data) where TData : struct
+    public void SetPendingJumpData(JumpData jumpData)
     {
-        if (_currentStateType == newState) return;
-
-        _currentState?.Exit();
-        _currentStateType = newState;
-        _currentState = _states[newState];
-
-        if (_currentState is IZombieDataState<TData> dataState)
-        {
-            dataState.EnterWithData(in data);
-        }
+        _pendingJumpData = jumpData;
     }
 }

@@ -6,12 +6,14 @@ public class ZombieTraceState : ZombieStateBase
 
     protected override void OnEnter()
     {
+        _zombie.StopAgent();
         Agent.speed = _zombie.Stats.RunSpeed;
+        Movement.MoveTo(Player.position);
     }
 
     protected override void OnUpdate()
     {
-        Movement.Move(Player.position);
+        Movement.MoveTo(Player.position);
         float distance = Transform.GetSquaredDistance(Player.position);
 
         if (Util.IsInRange(distance, _zombie.Stats.AttackDistance))
@@ -35,10 +37,9 @@ public class ZombieTraceState : ZombieStateBase
             JumpData jumpData = new JumpData(linkData.startPos, linkData.endPos);
             if (jumpData.EndPosition.y > jumpData.StartPosition.y)
             {
+                _zombie.SetPendingJumpData(jumpData);
                 Animator.SetTrigger(ZombieAnimatorHash.TraceToJump);
-                Agent.isStopped = true;
-                Agent.ResetPath();
-                _zombie.TransitionTo(EZombieState.Jump, in jumpData);
+                _zombie.TransitionTo(EZombieState.Jump);
             }
         }
     }
