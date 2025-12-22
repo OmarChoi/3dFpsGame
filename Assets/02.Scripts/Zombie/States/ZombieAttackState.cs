@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class ZombieAttackState : ZombieStateBase, IAnimationEventHandler
 {
     private float _attackTimer;
@@ -23,7 +25,7 @@ public class ZombieAttackState : ZombieStateBase, IAnimationEventHandler
 
         if (_isAttacking) return;
 
-        _attackTimer += UnityEngine.Time.deltaTime;
+        _attackTimer += Time.deltaTime;
         if (_attackTimer >= _zombie.Stats.AttackInterval)
         {
             _isAttacking = true;

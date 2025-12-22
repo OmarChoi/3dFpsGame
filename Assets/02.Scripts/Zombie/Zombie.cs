@@ -53,7 +53,7 @@ public class Zombie : MonoBehaviour, IDamageable
             _animator = GetComponentInChildren<Animator>();
         }
 
-        _movement = gameObject.GetComponent<ZombieMovement>();
+        _movement = GetComponent<ZombieMovement>();
         _movement.Init(_agent, _stats);
 
         InitializeStateMachine();

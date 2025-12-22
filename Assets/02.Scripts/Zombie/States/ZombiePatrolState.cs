@@ -26,6 +26,7 @@ public class ZombiePatrolState : ZombieStateBase
         if (!Agent.pathPending && Agent.remainingDistance <= Agent.stoppingDistance)
         {
             _patrolDestination = Movement.GetRandomPositionInRange(_zombie.StartPosition, _zombie.Stats.PatrolDistance);
+            Movement.MoveTo(_patrolDestination);
         }
     }
 }

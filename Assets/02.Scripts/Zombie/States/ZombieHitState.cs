@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class ZombieHitState : ZombieStateBase, IAnimationEventHandler
 {
     public ZombieHitState(Zombie zombie) : base(zombie) { }
@@ -7,7 +9,7 @@ public class ZombieHitState : ZombieStateBase, IAnimationEventHandler
         _zombie.Agent.isStopped = true;
         _zombie.Agent.ResetPath();
         
-        UnityEngine.Vector3 direction = -_zombie.LastDamage.Normal;
+        Vector3 direction = -_zombie.LastDamage.Normal;
         direction.y = 0f;
         direction.Normalize();
 
