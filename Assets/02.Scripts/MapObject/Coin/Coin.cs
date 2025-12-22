@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
     [SerializeField] private float _scatterAmount;
 
     [Space]
-    [Header("attraction Option")]
+    [Header("Attraction Option")]
     [SerializeField] private float _attractionDuration;
     [SerializeField] private float _controlPointHeight;
     [SerializeField] private float _attractionRotationSpeed;
@@ -86,6 +86,7 @@ public class Coin : MonoBehaviour
 
     private void ProcessAttraction()
     {
+        if (!_targetTransform) return;
         Vector3 currentPlayerPosition = _targetTransform.position;
         Vector3 position = CalculateQuadraticBezier(
             _attractProgress,

@@ -70,6 +70,7 @@ public class CoinFactory : MonoBehaviour
 
     private ECoinType GetRandomType()
     {
+        if (_coinInfos.Length == 0) return default;
         float randomValue = Random.Range(0f, _totalWeight);
         float cumulativeWeight = 0f;
 
