@@ -25,7 +25,9 @@ public class ZombieStats : ScriptableObject
 
     [Header("Combat")]
     [SerializeField] private float _damage = 10f;
+    [SerializeField] private int _dropItems = 10;
     public float Damage => _damage;
+    public int DropItems => _dropItems;
 
     [Header("Hit")]
     [SerializeField] private float _hitDuration = 0.5f;
