@@ -90,7 +90,7 @@ public class GunWeapon
         
         _lastFireTime = Time.time;
         
-        Ray ray = new Ray(shooter.transform.position, direction);
+        Ray ray = new Ray(cameraController.transform.position, direction);
         RaycastHit hitInfo = new RaycastHit();
         bool isHit = Physics.Raycast(ray, out hitInfo, Mathf.Infinity,_hitLayer);
         if (isHit)
