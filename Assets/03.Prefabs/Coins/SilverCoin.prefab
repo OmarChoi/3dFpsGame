@@ -74,10 +74,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe16f177d132ce44a99ef342da3a933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attractionDuration: 0
   _scatterPower: 10
   _spinPower: 5
   _scatterAmount: 0.5
+  _attractionDuration: 0.25
+  _controlPointHeight: 1.5
+  _attractionRotationSpeed: 720
 --- !u!65 &904950875404047326
 BoxCollider:
   m_ObjectHideFlags: 0

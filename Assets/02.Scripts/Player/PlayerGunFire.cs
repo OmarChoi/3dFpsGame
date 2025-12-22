@@ -34,6 +34,9 @@ public class PlayerGunFire : MonoBehaviour
         _gunWeapon.OnCoroutineRequested += StartCoroutine;
         _animator = GetComponentInChildren<Animator>();
         _muzzleCoroutines = new Coroutine[_muzzleEffects.Count];
+        
+        _normalCrosshair.SetActive(true);
+        _zoomInCrosshair.SetActive(false);
     }
     
     private void OnDestroy()
