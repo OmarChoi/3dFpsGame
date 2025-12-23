@@ -78,7 +78,7 @@ public class LoginScene : MonoBehaviour
             return;
         }
         
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadSceneAsync("LoadingScene");
     }
 
     private void Register()
