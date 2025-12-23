@@ -100,7 +100,6 @@ public class CameraController : MonoBehaviour
     private void ApplyRotationInput(BaseCamera cam)
     {
         if (!GameManager.Instance.CanPlay()) return;
-        if (!CursorManager.Instance.IsCursorLocked) return;
         
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");

@@ -8,7 +8,6 @@ public class PlayerRotate : MonoBehaviour
     private void Update()
     {
         if (!GameManager.Instance.CanPlay()) return;
-        if (!CursorManager.Instance.IsCursorLocked) return;
         
         float mouseX = Input.GetAxis("Mouse X");
         
