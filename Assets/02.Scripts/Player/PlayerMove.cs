@@ -38,8 +38,7 @@ public class PlayerMove : MonoBehaviour
 
     private bool CanHandleInput()
     {
-        return GameManager.Instance.CanPlay() &&
-               CursorManager.Instance.IsCursorLocked;
+        return GameManager.Instance.CanPlay();
     }
     
     private void HandleInput()

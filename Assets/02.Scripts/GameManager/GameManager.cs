@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _stateTextUI;
 
+    [SerializeField] private OptionPopupUI _optionPopupUI;
+    
     private const float  GameReadyDuration = 2f;
     private const float  GameStartDelay    = 0.5f;
     private const string ReadyStateText    = "준비중...";
@@ -25,6 +28,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         _instance = this;
+        LockCursor();
     }
 
     private void Start()
@@ -58,5 +62,53 @@ public class GameManager : MonoBehaviour
     public bool CanPlay()
     {
         return _state == EGameState.Playing;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+            _optionPopupUI.Show();
+        }
+    }
+    
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    
+    private void Pause()
+    {
+        Time.timeScale = 0;
+        UnlockCursor();
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+        LockCursor();
+    }
+    
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+    
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingScene");
     }
 }
