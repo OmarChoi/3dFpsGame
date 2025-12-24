@@ -2143,7 +2143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6231f4bb0b4c78f4a82dd88e448333bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _passwordCofirmObject: {fileID: 282074853}
+  _passwordConfirmObject: {fileID: 282074853}
   _gotoRegisterButton: {fileID: 1021110574}
   _loginButton: {fileID: 931889645}
   _gotoLoginButton: {fileID: 1642382151}

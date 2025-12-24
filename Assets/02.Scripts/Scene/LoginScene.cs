@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +17,7 @@ public class LoginScene : MonoBehaviour
     
     private ESceneMode _mode = ESceneMode.Login;
     
-    [SerializeField] private GameObject _passwordCofirmObject;
+    [SerializeField] private GameObject _passwordConfirmObject;
     [SerializeField] private Button _gotoRegisterButton;
     [SerializeField] private Button _loginButton;
     [SerializeField] private Button _gotoLoginButton;
@@ -25,6 +27,15 @@ public class LoginScene : MonoBehaviour
     [SerializeField] private TMP_InputField _passwordInputField;
     [SerializeField] private TMP_InputField _passwordConfirmInputField;
     [SerializeField] private TextMeshProUGUI _messageTextUI;
+    
+    private const string LoginErrorMessage = "잘못된 아이디 또는 비밀번호 입니다.";
+    private string _errorMessage;
+    
+    private const string EmailPattern =
+        @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
+
+    private const string PasswordPattern =
+        @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])[A-Za-z\d\W_]{7,20}$";
     
     private void Start()
     {
@@ -42,7 +53,7 @@ public class LoginScene : MonoBehaviour
 
     private void Refresh()
     {
-        _passwordCofirmObject.SetActive(_mode == ESceneMode.Register);
+        _passwordConfirmObject.SetActive(_mode == ESceneMode.Register);
         _gotoRegisterButton.gameObject.SetActive(_mode == ESceneMode.Login);
         _loginButton.gameObject.SetActive(_mode == ESceneMode.Login);
         _gotoLoginButton.gameObject.SetActive(_mode == ESceneMode.Register);
@@ -52,29 +63,29 @@ public class LoginScene : MonoBehaviour
     private void Login()
     {
         string id = _idInputField.text;
-        if (string.IsNullOrEmpty(id))
+        if (!IsValidID(id))
         {
-            _messageTextUI.text = "아이디를 입력해주세요.";
+            _messageTextUI.text = LoginErrorMessage;
             return;
         }
         
         string password = _passwordInputField.text;
-        if (string.IsNullOrEmpty(password))
+        if (!IsValidPassword(password))
         {
-            _messageTextUI.text = "비밀번호를 입력해주세요.";
+            _messageTextUI.text = LoginErrorMessage;
             return;
         }
         
         if (!PlayerPrefs.HasKey(id))
         {
-            _messageTextUI.text = "아이디를 확인해주세요.";
+            _messageTextUI.text = LoginErrorMessage;
             return;
         }
         
         string myPassword = PlayerPrefs.GetString(id);
         if (myPassword != password)
         {
-            _messageTextUI.text = "비밀번호를 확인해주세요.";
+            _messageTextUI.text = LoginErrorMessage;
             return;
         }
         
@@ -84,19 +95,20 @@ public class LoginScene : MonoBehaviour
     private void Register()
     {
         string id = _idInputField.text;
-        if (string.IsNullOrEmpty(id))
+
+        if (!IsValidID(id))
         {
-            _messageTextUI.text = "아이디를 입력해주세요.";
+            _messageTextUI.text = _errorMessage;
             return;
         }
-        
+
         string password = _passwordInputField.text;
-        if (string.IsNullOrEmpty(password))
+        if (!IsValidPassword(password))
         {
-            _messageTextUI.text = "패스워드를 입력해주세요.";
+            _messageTextUI.text = _errorMessage;
             return;
         }
-        
+
         string confirmPassword = _passwordInputField.text;
         if (string.IsNullOrEmpty(confirmPassword) || password != confirmPassword)
         {
@@ -114,7 +126,38 @@ public class LoginScene : MonoBehaviour
 
         GotoLogin();
     }
+    
+    private bool IsValidPassword(string password)
+    {
+        if (string.IsNullOrEmpty(password))
+        {
+            _errorMessage = "패스워드를 입력해주세요.";
+            return false;
+        }
+        if (!Regex.IsMatch(password, PasswordPattern))
+        {
+            _errorMessage = "잘못된 비밀번호 형식입니다.";
+            return false;
+        }
+        return true;
+    }
 
+
+    private bool IsValidID(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+        {
+            _errorMessage = "아이디를 확인해주세요.";
+            return false;
+        }
+        if (!Regex.IsMatch(id, EmailPattern))
+        {
+            _errorMessage = "잘못된 아이디 형식입니다.";
+            return false;
+        }
+        return true;
+    }
+    
     private void GotoLogin()
     {
         _mode = ESceneMode.Login;
