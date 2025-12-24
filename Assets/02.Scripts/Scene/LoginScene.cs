@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -72,22 +71,21 @@ public class LoginScene : MonoBehaviour
         string id = _idInputField.text;
         if (!IsValidID(id))
         {
-            ShowErrorMessage(_errorMessage);
+            ShowErrorMessage(LoginErrorMessage);
             return;
         }
         
         string password = _passwordInputField.text;
         if (!IsValidPassword(password))
         {
-            ShowErrorMessage(_errorMessage);
+            ShowErrorMessage(LoginErrorMessage);
             return;
         }
 
-        bool success = LoginController.Instance.TryLogin(id, password, out string message);
-        
+        bool success = LoginController.Instance.TryLogin(id, password);
         if (!success)
         {
-            ShowErrorMessage(message);
+            ShowErrorMessage(LoginErrorMessage);
             return;
         }
         SceneManager.LoadSceneAsync("LoadingScene");

@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Security.Cryptography;
-using UnityEngine;
 
 public static class PasswordHashService
 {
@@ -40,7 +39,7 @@ public static class PasswordHashService
     private static byte[] GenerateSalt()
     {
         byte[] salt = new byte[SaltSize];
-        using (var rng = new RNGCryptoServiceProvider())
+        using (var rng = RandomNumberGenerator.Create())
         {
             rng.GetBytes(salt);
         }
@@ -57,7 +56,6 @@ public static class PasswordHashService
     
     private static bool CompareHashes(byte[] hash1, byte[] hash2)
     {
-        if (hash1.Length != hash2.Length) return false;
-        return !hash1.Where((t, i) => t != hash2[i]).Any();
+        return CryptographicOperations.FixedTimeEquals(hash1, hash2);
     }
 }

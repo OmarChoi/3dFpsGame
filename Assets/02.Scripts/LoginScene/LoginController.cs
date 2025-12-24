@@ -25,7 +25,7 @@ public class LoginController : MonoBehaviour
     
     public bool Register(string id, string password, out string message)
     {
-        string key = UserIdPrefix + id;
+        string key = $"{UserIdPrefix}{id}";
         if (PlayerPrefs.HasKey(key))
         {
             message = "이미 존재하는 아이디입니다.";
@@ -41,27 +41,17 @@ public class LoginController : MonoBehaviour
         return true;
     }
     
-    public bool TryLogin(string id, string password, out string message)
+    public bool TryLogin(string id, string password)
     {
         string key = UserIdPrefix + id;
-        if (!PlayerPrefs.HasKey(key))
-        {
-            message = "존재하지 않는 아이디입니다.";
-            return false;
-        }
+        if (!PlayerPrefs.HasKey(key)) return false;
         
         string storedHash = PlayerPrefs.GetString(key);
         bool isValid = PasswordHashService.VerifyPassword(password, storedHash);
-        
-        if (!isValid)
-        {
-            message = "비밀번호가 일치하지 않습니다.";
-            return false;
-        }
+        if (!isValid) return false;
         
         PlayerPrefs.SetString(LastLoginIdKey, id);
         PlayerPrefs.Save();
-        message = null;
         return true;
     }
 }

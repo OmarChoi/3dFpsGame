@@ -24,7 +24,7 @@ public class LoadingScene : MonoBehaviour
         {
             float progress = ao.progress;
             _progressSlider.value = progress;
-            _progressText.text = $"{progress * 100}%";
+            _progressText.text = $"{(int)(progress * 100)}%";
 
             if (progress >= 0.9f)
             {
