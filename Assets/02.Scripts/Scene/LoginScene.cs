@@ -17,23 +17,30 @@ public class LoginScene : MonoBehaviour
     
     private ESceneMode _mode = ESceneMode.Login;
     
+    [Header("Button")]
     [SerializeField] private GameObject _passwordConfirmObject;
     [SerializeField] private Button _gotoRegisterButton;
     [SerializeField] private Button _loginButton;
     [SerializeField] private Button _gotoLoginButton;
     [SerializeField] private Button _registerButton;
 
+    [Header("Text")]
     [SerializeField] private TMP_InputField _idInputField;
     [SerializeField] private TMP_InputField _passwordInputField;
     [SerializeField] private TMP_InputField _passwordConfirmInputField;
     [SerializeField] private TextMeshProUGUI _messageTextUI;
     
+    // Error Message
     private const string LoginErrorMessage = "잘못된 아이디 또는 비밀번호 입니다.";
     private string _errorMessage;
+
+    // 마지막 로그인 아이디 정보
+    private const string LastLoginID = "LastLoginID";
+    private string _lastLoginID;
     
+    // 정규 표현식
     private const string EmailPattern =
         @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
-
     private const string PasswordPattern =
         @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])[A-Za-z\d\W_]{7,20}$";
     
@@ -41,6 +48,15 @@ public class LoginScene : MonoBehaviour
     {
         AddButtonEvents();
         Refresh();
+        if (PlayerPrefs.HasKey(LastLoginID))
+        {
+            _idInputField.text = PlayerPrefs.GetString(LastLoginID);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetString(LastLoginID, _lastLoginID);
     }
 
     private void AddButtonEvents()
@@ -88,7 +104,7 @@ public class LoginScene : MonoBehaviour
             _messageTextUI.text = LoginErrorMessage;
             return;
         }
-        
+        _lastLoginID = id;
         SceneManager.LoadSceneAsync("LoadingScene");
     }
 
@@ -169,5 +185,4 @@ public class LoginScene : MonoBehaviour
         _mode = ESceneMode.Register;
         Refresh();
     }
-    
 }
