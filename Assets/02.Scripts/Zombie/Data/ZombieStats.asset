@@ -15,11 +15,12 @@ MonoBehaviour:
   _maxHealth: 100
   _moveSpeed: 2
   _runSpeed: 4
-  _detectDistance: 10
+  _detectDistance: 100
   _patrolDistance: 5
   _attackDistance: 2
   _arrivalThreshold: 0.5
   _damage: 10
+  _dropItems: 10
   _hitDuration: 0.5
   _knockbackRate: 0.1
   _waitPatrolTime: 3
