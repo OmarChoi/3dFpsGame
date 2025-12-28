@@ -15,7 +15,7 @@ MonoBehaviour:
   _maxHealth: 100
   _moveSpeed: 2
   _runSpeed: 4
-  _detectDistance: 100
+  _detectDistance: 20
   _patrolDistance: 5
   _attackDistance: 2
   _arrivalThreshold: 0.5

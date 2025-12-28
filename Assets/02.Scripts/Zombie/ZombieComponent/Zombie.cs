@@ -92,6 +92,11 @@ public class Zombie : MonoBehaviour, IDamageable
         _currentState?.Update();
     }
 
+    public void SetPlayer(GameObject player)
+    {
+        _player = player;
+    }
+    
     public void StopAgent()
     {
         _agent.isStopped = true;
