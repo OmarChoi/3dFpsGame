@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2347832, guid: 2625fd40f9742e041adae0733e5b7bda, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -359,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -414,6 +422,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -467,6 +479,10 @@ PrefabInstance:
     - target: {fileID: 486490, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000030908623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -522,6 +538,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -575,6 +595,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -630,6 +654,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454301
       objectReference: {fileID: 0}
+    - target: {fileID: 2336726, guid: 844d555ff5b93b246b2e27f48bc4732f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -683,6 +711,10 @@ PrefabInstance:
     - target: {fileID: 488242, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -738,6 +770,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454294
       objectReference: {fileID: 0}
+    - target: {fileID: 2336726, guid: 844d555ff5b93b246b2e27f48bc4732f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -791,6 +827,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: -1.0496954e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -846,6 +886,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -895,6 +939,10 @@ PrefabInstance:
     - target: {fileID: 448194, guid: c77c9941a488b844f81552ee194644cb, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338950, guid: c77c9941a488b844f81552ee194644cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -950,6 +998,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1004,6 +1056,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1057,6 +1113,10 @@ PrefabInstance:
     - target: {fileID: 488242, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1120,6 +1180,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000021854495
       objectReference: {fileID: 0}
+    - target: {fileID: 2309898, guid: 0a81ac6994fc89e46890e21d8e33ab34, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1174,6 +1238,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1227,6 +1295,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1290,6 +1362,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535027
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1339,6 +1415,10 @@ PrefabInstance:
     - target: {fileID: 416178, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333526, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1394,6 +1474,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2338950, guid: c77c9941a488b844f81552ee194644cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1447,6 +1531,10 @@ PrefabInstance:
     - target: {fileID: 486490, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1510,6 +1598,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535027
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1564,6 +1656,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1613,6 +1709,10 @@ PrefabInstance:
     - target: {fileID: 416178, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333526, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1668,6 +1768,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1717,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 443890, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314900, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1772,6 +1880,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1826,6 +1938,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1875,6 +1991,10 @@ PrefabInstance:
     - target: {fileID: 404608, guid: 524061fa15faee94887d05ced93705bd, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351820, guid: 524061fa15faee94887d05ced93705bd, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1930,6 +2050,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1983,6 +2107,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: -1.0496954e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2038,6 +2166,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454306
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2091,6 +2223,10 @@ PrefabInstance:
     - target: {fileID: 484144, guid: 0605deaa6afb37547a376b965328a405, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2146,6 +2282,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2199,6 +2339,10 @@ PrefabInstance:
     - target: {fileID: 429902, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000021855698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2254,6 +2398,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2307,6 +2455,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2362,6 +2514,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2415,6 +2571,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2470,6 +2630,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2523,6 +2687,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2578,6 +2746,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000218557
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2631,6 +2803,10 @@ PrefabInstance:
     - target: {fileID: 429902, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.00000001545432
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2686,6 +2862,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2739,6 +2919,10 @@ PrefabInstance:
     - target: {fileID: 435038, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2794,6 +2978,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2847,6 +3035,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2902,6 +3094,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2955,6 +3151,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3010,6 +3210,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000218557
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3059,6 +3263,10 @@ PrefabInstance:
     - target: {fileID: 484144, guid: 0605deaa6afb37547a376b965328a405, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3114,6 +3322,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3163,6 +3375,10 @@ PrefabInstance:
     - target: {fileID: 416178, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333526, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3218,6 +3434,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3271,6 +3491,10 @@ PrefabInstance:
     - target: {fileID: 435038, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
       propertyPath: m_LocalRotation.z
       value: -1.197079e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3326,6 +3550,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3379,6 +3607,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3434,6 +3666,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3487,6 +3723,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3542,6 +3782,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3595,6 +3839,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3650,6 +3898,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3703,6 +3955,10 @@ PrefabInstance:
     - target: {fileID: 484144, guid: 0605deaa6afb37547a376b965328a405, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3758,6 +4014,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3811,6 +4071,10 @@ PrefabInstance:
     - target: {fileID: 435038, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3866,6 +4130,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3919,6 +4187,10 @@ PrefabInstance:
     - target: {fileID: 494626, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3974,6 +4246,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373166
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4027,6 +4303,10 @@ PrefabInstance:
     - target: {fileID: 429902, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000021855698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4082,6 +4362,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4135,6 +4419,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4190,6 +4478,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000021855701
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4243,6 +4535,10 @@ PrefabInstance:
     - target: {fileID: 435038, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4298,6 +4594,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4351,6 +4651,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0000000218557
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4406,6 +4710,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4459,6 +4767,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4514,6 +4826,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4567,6 +4883,10 @@ PrefabInstance:
     - target: {fileID: 494626, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4622,6 +4942,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4675,6 +4999,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4730,6 +5058,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2343058, guid: 8a201771cc9ff174098d36a9f9bca350, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4783,6 +5115,10 @@ PrefabInstance:
     - target: {fileID: 435038, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4838,6 +5174,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4887,6 +5227,10 @@ PrefabInstance:
     - target: {fileID: 416178, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333526, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4942,6 +5286,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4995,6 +5343,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -4.6629367e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5050,6 +5402,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454313
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5099,6 +5455,10 @@ PrefabInstance:
     - target: {fileID: 443890, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314900, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5154,6 +5514,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5208,6 +5572,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5257,6 +5625,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5312,6 +5684,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5365,6 +5741,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000021855701
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5420,6 +5800,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5473,6 +5857,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5528,6 +5916,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373166
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5581,6 +5973,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5636,6 +6032,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5689,6 +6089,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5744,6 +6148,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015291615
       objectReference: {fileID: 0}
+    - target: {fileID: 2309898, guid: 0a81ac6994fc89e46890e21d8e33ab34, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5797,6 +6205,10 @@ PrefabInstance:
     - target: {fileID: 486490, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5852,6 +6264,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5905,6 +6321,10 @@ PrefabInstance:
     - target: {fileID: 484144, guid: 0605deaa6afb37547a376b965328a405, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5960,6 +6380,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6013,6 +6437,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6068,6 +6496,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454305
       objectReference: {fileID: 0}
+    - target: {fileID: 2314742, guid: 99595bd0d03112b4480b3101e8806de5, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6122,6 +6554,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6171,6 +6607,10 @@ PrefabInstance:
     - target: {fileID: 447612, guid: 844d555ff5b93b246b2e27f48bc4732f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454301
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336726, guid: 844d555ff5b93b246b2e27f48bc4732f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6226,6 +6666,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -1.197079e-14
       objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6279,6 +6723,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6334,6 +6782,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373166
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6387,6 +6839,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0000000218557
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6442,6 +6898,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6495,6 +6955,10 @@ PrefabInstance:
     - target: {fileID: 488242, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6550,6 +7014,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6604,6 +7072,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000021855696
       objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6653,6 +7125,10 @@ PrefabInstance:
     - target: {fileID: 429902, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6707,6 +7183,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6770,6 +7250,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535027
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6824,6 +7308,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6873,6 +7361,10 @@ PrefabInstance:
     - target: {fileID: 443890, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314900, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6928,6 +7420,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454297
       objectReference: {fileID: 0}
+    - target: {fileID: 2314742, guid: 99595bd0d03112b4480b3101e8806de5, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6981,6 +7477,10 @@ PrefabInstance:
     - target: {fileID: 408810, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7036,6 +7536,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7089,6 +7593,10 @@ PrefabInstance:
     - target: {fileID: 429902, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7144,6 +7652,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7193,6 +7705,10 @@ PrefabInstance:
     - target: {fileID: 408810, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7248,6 +7764,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7297,6 +7817,10 @@ PrefabInstance:
     - target: {fileID: 435038, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342788, guid: 27c15c3480e146944b29c1661765cc65, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7352,6 +7876,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7401,6 +7929,10 @@ PrefabInstance:
     - target: {fileID: 443890, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314900, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7456,6 +7988,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000218557
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7505,6 +8041,10 @@ PrefabInstance:
     - target: {fileID: 443890, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314900, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7560,6 +8100,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7613,6 +8157,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7668,6 +8216,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2338950, guid: c77c9941a488b844f81552ee194644cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7721,6 +8273,10 @@ PrefabInstance:
     - target: {fileID: 454228, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7776,6 +8332,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7829,6 +8389,10 @@ PrefabInstance:
     - target: {fileID: 486490, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000030908623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7884,6 +8448,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000021855696
       objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7938,6 +8506,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7987,6 +8559,10 @@ PrefabInstance:
     - target: {fileID: 404608, guid: 524061fa15faee94887d05ced93705bd, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351820, guid: 524061fa15faee94887d05ced93705bd, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8042,6 +8618,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8095,6 +8675,10 @@ PrefabInstance:
     - target: {fileID: 408810, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8150,6 +8734,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8199,6 +8787,10 @@ PrefabInstance:
     - target: {fileID: 494626, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8254,6 +8846,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373166
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8307,6 +8903,10 @@ PrefabInstance:
     - target: {fileID: 494626, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8362,6 +8962,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8415,6 +9019,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8470,6 +9078,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8519,6 +9131,10 @@ PrefabInstance:
     - target: {fileID: 471334, guid: 99595bd0d03112b4480b3101e8806de5, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314742, guid: 99595bd0d03112b4480b3101e8806de5, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8574,6 +9190,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.00000001545432
       objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8623,6 +9243,10 @@ PrefabInstance:
     - target: {fileID: 437180, guid: 0a81ac6994fc89e46890e21d8e33ab34, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309898, guid: 0a81ac6994fc89e46890e21d8e33ab34, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8678,6 +9302,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2338950, guid: c77c9941a488b844f81552ee194644cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8731,6 +9359,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8786,6 +9418,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8839,6 +9475,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8894,6 +9534,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8947,6 +9591,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9002,6 +9650,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -2.047876e-14
       objectReference: {fileID: 0}
+    - target: {fileID: 2348124, guid: 7579c08e8ad921f4aac1f2ae2dac25cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9055,6 +9707,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9110,6 +9766,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9164,6 +9824,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9213,6 +9877,10 @@ PrefabInstance:
     - target: {fileID: 443890, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314900, guid: a9dab6aa18391414e848ba3c6c0959b1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9268,6 +9936,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9321,6 +9993,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9376,6 +10052,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9425,6 +10105,10 @@ PrefabInstance:
     - target: {fileID: 491938, guid: 8a201771cc9ff174098d36a9f9bca350, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343058, guid: 8a201771cc9ff174098d36a9f9bca350, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9479,6 +10163,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9542,6 +10230,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535027
       objectReference: {fileID: 0}
+    - target: {fileID: 2309898, guid: 0a81ac6994fc89e46890e21d8e33ab34, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9596,6 +10288,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9645,6 +10341,10 @@ PrefabInstance:
     - target: {fileID: 408810, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9700,6 +10400,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015454306
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9754,6 +10458,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9803,6 +10511,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9858,6 +10570,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9912,6 +10628,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -4.6629367e-15
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9961,6 +10681,10 @@ PrefabInstance:
     - target: {fileID: 416178, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333526, guid: fe546dac68b4ae943a161dec60c98fed, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10016,6 +10740,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000021855701
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10070,6 +10798,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10120,6 +10852,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10169,6 +10905,10 @@ PrefabInstance:
     - target: {fileID: 454228, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10224,6 +10964,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10277,6 +11021,10 @@ PrefabInstance:
     - target: {fileID: 494626, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10332,6 +11080,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10385,6 +11137,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10440,6 +11196,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10493,6 +11253,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10548,6 +11312,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10601,6 +11369,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10656,6 +11428,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10709,6 +11485,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -4.6629367e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10764,6 +11544,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10817,6 +11601,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10876,6 +11664,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535027
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10929,6 +11721,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10984,6 +11780,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -1.0496954e-15
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11037,6 +11837,10 @@ PrefabInstance:
     - target: {fileID: 489046, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11092,6 +11896,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398590, guid: 8b12109de90b0e74ca16680ae843457f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11145,6 +11953,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11200,6 +12012,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11253,6 +12069,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11308,6 +12128,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11361,6 +12185,10 @@ PrefabInstance:
     - target: {fileID: 465494, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331968, guid: 31a01b4eec39eee4a8f9af7cd90c52da, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11416,6 +12244,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11469,6 +12301,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015373185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11524,6 +12360,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11577,6 +12417,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11632,6 +12476,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11685,6 +12533,10 @@ PrefabInstance:
     - target: {fileID: 471334, guid: 99595bd0d03112b4480b3101e8806de5, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000021855696
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314742, guid: 99595bd0d03112b4480b3101e8806de5, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11740,6 +12592,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11793,6 +12649,10 @@ PrefabInstance:
     - target: {fileID: 484144, guid: 0605deaa6afb37547a376b965328a405, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11848,6 +12708,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454313
       objectReference: {fileID: 0}
+    - target: {fileID: 2315806, guid: 4364c4769d122564abbf7277ef60854f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11901,6 +12765,10 @@ PrefabInstance:
     - target: {fileID: 494626, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377056, guid: 812c9b36537fa8146bed44183a36cf7a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11956,6 +12824,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12009,6 +12881,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12072,6 +12948,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535027
       objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12121,6 +13001,10 @@ PrefabInstance:
     - target: {fileID: 408810, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12176,6 +13060,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12230,6 +13118,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000015535011
       objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12279,6 +13171,10 @@ PrefabInstance:
     - target: {fileID: 437858, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399992, guid: dc203fb0cc8d7e34c8a64e7cba631d02, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12334,6 +13230,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12387,6 +13287,10 @@ PrefabInstance:
     - target: {fileID: 420674, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0000000218557
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12442,6 +13346,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2338950, guid: c77c9941a488b844f81552ee194644cb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12495,6 +13403,10 @@ PrefabInstance:
     - target: {fileID: 496040, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374588, guid: 16c6f5a63ed8092489595b871a61c620, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12550,6 +13462,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
       objectReference: {fileID: 0}
+    - target: {fileID: 2317636, guid: 49b7895d0e133d24ca6c78d4ea46be33, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12603,6 +13519,10 @@ PrefabInstance:
     - target: {fileID: 484144, guid: 0605deaa6afb37547a376b965328a405, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359422, guid: 0605deaa6afb37547a376b965328a405, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12658,6 +13578,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000015454315
       objectReference: {fileID: 0}
+    - target: {fileID: 2328948, guid: 53ac28d4b9ad6684181c2de777dc2f4f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12711,6 +13635,10 @@ PrefabInstance:
     - target: {fileID: 486490, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375754, guid: 5f8119929abe75e4e8f9da64a6263f12, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12766,6 +13694,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -1.0496954e-15
       objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12815,6 +13747,10 @@ PrefabInstance:
     - target: {fileID: 492412, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303840, guid: b5c6f1e15b5541a4990e2f0b2715e6be, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12869,6 +13805,10 @@ PrefabInstance:
     - target: {fileID: 488242, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000015454308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325348, guid: 112948aafeb21724f8d6f18be1b0127c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
